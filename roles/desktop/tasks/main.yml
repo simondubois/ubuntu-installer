@@ -1,4 +1,4 @@
 ---
 
 - name: install web chromium-browser
-  apt: apt: name=chromium-browser
+  apt: name=chromium-browser
