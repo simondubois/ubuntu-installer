@@ -3,5 +3,3 @@
 - hosts: *
   roles:
      - desktop
-     - desktop-unity
-     - desktop-gnome
