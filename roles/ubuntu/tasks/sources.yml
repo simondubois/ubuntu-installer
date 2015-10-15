@@ -8,3 +8,6 @@
     line: 'deb http://archive.canonical.com/ubuntu\1'
     backrefs: yes
     state: present
+
+- name: update sources
+  apt: update_cache=yes
