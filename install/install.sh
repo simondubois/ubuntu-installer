@@ -6,9 +6,9 @@ apt-get update
 apt-get install software-properties-common ansible git -y
 
 # Allow sudo without password
-echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ansible
-chown root:root /etc/sudoers.d/ansible
-chmod 0440 /etc/sudoers.d/ansible
+#echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ansible
+#chown root:root /etc/sudoers.d/ansible
+#chmod 0440 /etc/sudoers.d/ansible
 
 # Import github SSH key
 mkdir -p ~/.ssh
