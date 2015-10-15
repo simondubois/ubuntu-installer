@@ -6,4 +6,5 @@
     dest: /etc/apt/sources.list
     regexp: '^# deb http://archive.canonical.com/ubuntu(.+)$'
     line: 'deb http://archive.canonical.com/ubuntu\1'
+    backrefs: yes
     state: present
