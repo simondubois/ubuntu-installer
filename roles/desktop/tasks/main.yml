@@ -1,9 +1,6 @@
 ---
 
-- hosts: all
+- name: install web chromium-browser
+  apt: name=chromium-browser
   become: yes
   become_user: postgres
-
-  - name: install web chromium-browser
-    apt: name=chromium-browser
-    sudo: true
