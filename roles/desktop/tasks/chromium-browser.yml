@@ -5,3 +5,5 @@
 
 - name: open chromium-browser for setup
   command: chromium-browser
+  become: yes
+  become_user: sel
