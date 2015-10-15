@@ -9,6 +9,6 @@ On a fresh Ubuntu (14.04) installation, run :
 
 ```Shell
 
-wget -O - https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/install/install.sh | sudo bash
+sudo bash -c "wget -O - https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/install/install.sh | bash"
 
 ```
