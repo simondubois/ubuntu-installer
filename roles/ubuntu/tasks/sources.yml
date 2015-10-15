@@ -1,0 +1,11 @@
+---
+
+apt_repository: repo='deb http://archive.canonical.com/ubuntu hardy partner' state=present
+
+- name:  uncomment a line
+  backup: yes
+  lineinfile: dest=/etc/apt/sources.list
+    regexp='^# deb http://archive.canonical.com/ubuntu.+$'
+    insertafter='^# deb http://archive.canonical.com/ubuntu.+$'
+    line='deb http://archive.canonical.com/ubuntu.+$'
+    state=present

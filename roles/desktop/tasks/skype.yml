@@ -4,4 +4,4 @@
   apt: name=skype
 
 - name: open skype for setup
-  command: skype
+  shell: skype &
