@@ -19,6 +19,7 @@ mkdir -p ~/.ssh
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Deploy playbook
+echo "localhost ansible_connection=local" | sudo tee -a /etc/ansible/hosts
 ansible-pull -o -U git://github.com/simondubois/ubuntu-installer.git
 
 ```

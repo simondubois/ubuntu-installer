@@ -1,5 +1,5 @@
 ---
 
-- hosts: simon-desktop
+- hosts: localhost
   roles:
      - desktop
