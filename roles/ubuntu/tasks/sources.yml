@@ -1,8 +1,8 @@
 ---
 
 - name:  uncomment a line
-  backup: yes
   lineinfile:
+    backup: yes
     dest: /etc/apt/sources.list
     regexp: '^# deb http://archive.canonical.com/ubuntu.+$'
     insertafter: '^# deb http://archive.canonical.com/ubuntu.+$'
