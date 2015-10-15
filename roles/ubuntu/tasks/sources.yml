@@ -4,7 +4,6 @@
   lineinfile:
     backup: yes
     dest: /etc/apt/sources.list
-    regexp: '^# deb http://archive.canonical.com/ubuntu'
-    insertafter: '^# deb http://archive.canonical.com/ubuntu.+$'
-    line: 'deb http://archive.canonical.com/ubuntu'
+    regexp: '^# deb http://archive.canonical.com/ubuntu(.+)$'
+    line: 'deb http://archive.canonical.com/ubuntu\1'
     state: present
