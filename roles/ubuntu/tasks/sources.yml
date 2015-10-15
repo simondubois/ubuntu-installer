@@ -1,7 +1,5 @@
 ---
 
-apt_repository: repo='deb http://archive.canonical.com/ubuntu hardy partner' state=present
-
 - name:  uncomment a line
   backup: yes
   lineinfile:
