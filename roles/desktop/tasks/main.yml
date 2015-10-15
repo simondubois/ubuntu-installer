@@ -4,7 +4,6 @@
   become: yes
   become_user: postgres
 
-  tasks:
   - name: install web chromium-browser
     apt: name=chromium-browser
     sudo: true
