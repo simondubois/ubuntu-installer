@@ -9,6 +9,6 @@ On a fresh Ubuntu (14.04) installation, run :
 
 ```Shell
 
-sudo bash -c "wget -O - https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/install/install.sh | bash"
+wget https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/install/install.sh -O /tmp/ansible.sh && bash /tmp/ansible.sh
 
 ```
