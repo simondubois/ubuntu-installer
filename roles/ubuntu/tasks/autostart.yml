@@ -15,10 +15,16 @@
     path: "{{ ansible_env.HOME }}/.config/autostart"
     state: directory
 
-- name: disable startup applications
+- name: copy startup applications
   copy:
     src: "/etc/xdg/autostart/{{ item }}"
     dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
+  lineinfile:
+    dest: "{{ item }}"
+    regexp: '^X-GNOME-Autostart-enabled=true$'
+    line: 'X-GNOME-Autostart-enabled=false'
+    backrefs: yes
+    state: present
   with_items:
     - deja-dup-monitor.desktop
     - onboard-autostart.desktop
