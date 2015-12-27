@@ -8,6 +8,8 @@
     line: 'deb http://archive.canonical.com/ubuntu\1'
     backrefs: yes
     state: present
+  become: yes
+  become_user: root
 
 - name: update sources
   apt: update_cache=yes
