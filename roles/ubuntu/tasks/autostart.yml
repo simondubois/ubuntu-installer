@@ -7,8 +7,9 @@
 - name: show all autostart applications
   lineinfile:
     backup: yes
-    dest: {{list_system_autostart}}
+    dest: {{item}}
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
     backrefs: yes
     state: present
+    with_items: list_system_autostart.stdout_lines
