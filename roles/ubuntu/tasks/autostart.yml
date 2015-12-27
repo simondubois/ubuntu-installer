@@ -13,7 +13,7 @@
 - name: disable startup applications
   copy:
     src: "/etc/xdg/autostart/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.conf/autostart/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
   with_items:
     - deja-dup-monitor.desktop
     - onboard-autostart.desktop
