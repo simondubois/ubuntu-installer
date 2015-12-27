@@ -1,0 +1,46 @@
+---
+
+- name: add flirc ppa
+  apt_repository:
+    repo: deb http://apt.flirc.tv/arch/i386 binary/
+    state: present
+  become: yes
+  become_user: root
+
+- name: add ppa
+  apt_repository:
+    repo:
+    state: present
+  become: yes
+  become_user: root
+
+- name: add kodi ppa
+  apt_repository:
+    repo: ppa:team-xbmc/ppa
+    state: present
+  become: yes
+  become_user: root
+
+- name: add numix ppa
+  apt_repository:
+    repo: ppa:numix/ppa
+    state: present
+  become: yes
+  become_user: root
+
+- name: add my-weather-indicator ppa
+  apt_repository:
+    repo: ppa:atareao/atareao
+    state: present
+  become: yes
+  become_user: root
+
+- name: add plowshare ppa
+  apt_repository:
+    repo: ppa:plowsharepackagers/daily
+    state: present
+  become: yes
+  become_user: root
+
+
+
