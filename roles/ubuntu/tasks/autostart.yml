@@ -1,0 +1,14 @@
+---
+
+- name: list system autostart
+  raw: find /etc/xdg/autostart -type f -name "*.desktop"
+  register: list_system_autostart
+
+- name: show all autostart applications
+  lineinfile:
+    backup: yes
+    dest: {{list_system_autostart}}
+    regexp: '^NoDisplay=true$'
+    line: 'NoDisplay=false'
+    backrefs: yes
+    state: present
