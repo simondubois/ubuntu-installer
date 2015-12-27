@@ -19,6 +19,15 @@
   copy:
     src: "/etc/xdg/autostart/{{ item }}"
     dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
+  with_items:
+    - deja-dup-monitor.desktop
+    - onboard-autostart.desktop
+    - orca-autostart.desktop
+    - telepathy-indicator.desktop
+    - update-notifier.desktop
+    - vino-server.desktop
+
+- name: disable startup applications
   lineinfile:
     dest: "{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
