@@ -5,7 +5,6 @@
     dest: "{{ item }}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
-    backrefs: yes
     state: present
   with_fileglob:
     - /etc/xdg/autostart/*
@@ -32,7 +31,6 @@
     dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
-    backrefs: yes
     state: present
   with_items:
     - deja-dup-monitor.desktop
