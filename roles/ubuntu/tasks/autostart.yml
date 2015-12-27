@@ -7,7 +7,7 @@
 - name: show all autostart applications
   lineinfile:
     backup: yes
-    dest: {{item}}
+    dest: "{{item}}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
     backrefs: yes
