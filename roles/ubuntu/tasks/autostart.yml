@@ -29,7 +29,7 @@
 
 - name: disable startup applications
   lineinfile:
-    dest: "{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
     backrefs: yes
