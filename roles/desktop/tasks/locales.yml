@@ -6,4 +6,4 @@
 
 - name: install missing language packages
   apt:
-    name: "{{ missing_language_packages.stdout_lines }}"
+    name: "{{ missing_language_packages.stdout.split( ) }}"
