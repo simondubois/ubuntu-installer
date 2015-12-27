@@ -7,3 +7,5 @@
 - name: install missing language packages
   apt:
     name: "{{ missing_language_packages.stdout.split( ) }}"
+  become: yes
+  become_user: root
