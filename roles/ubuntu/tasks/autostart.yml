@@ -8,6 +8,8 @@
     state: present
   with_fileglob:
     - /etc/xdg/autostart/*
+  become: yes
+  become_user: root
 
 - name: Create startup application directory
   file:
