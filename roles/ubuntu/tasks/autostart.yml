@@ -1,8 +1,7 @@
 ---
 
-- name: show all autostart applications
+- name: show all startup applications
   lineinfile:
-    backup: yes
     dest: "{{ item }}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
@@ -10,3 +9,15 @@
     state: present
   with_fileglob:
     - /etc/xdg/autostart/*
+
+- name: disable startup applications
+  copy:
+    src: "/etc/xdg/autostart/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.conf/autostart/{{ item }}"
+  with_items:
+    - deja-dup-monitor.desktop
+    - onboard-autostart.desktop
+    - orca-autostart.desktop
+    - telepathy-indicator.desktop
+    - update-notifier.desktop
+    - vino-server.desktop
