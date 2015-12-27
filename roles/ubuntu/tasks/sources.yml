@@ -1,6 +1,6 @@
 ---
 
-- name:  uncomment a line
+- name:  uncomment repositories
   lineinfile:
     backup: yes
     dest: /etc/apt/sources.list
