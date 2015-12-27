@@ -10,6 +10,11 @@
   with_fileglob:
     - /etc/xdg/autostart/*
 
+- name: Create startup application directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config/autostart"
+    state: directory
+
 - name: disable startup applications
   copy:
     src: "/etc/xdg/autostart/{{ item }}"
