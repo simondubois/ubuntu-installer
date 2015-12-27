@@ -8,5 +8,5 @@
     line: 'NoDisplay=false'
     backrefs: yes
     state: present
-    with_fileglob:
-      - /etc/xdg/autostart/*
+  with_fileglob:
+    - /etc/xdg/autostart/*
