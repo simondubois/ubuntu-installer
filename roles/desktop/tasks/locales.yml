@@ -1,0 +1,9 @@
+---
+
+- name: list missing language packages
+  command: check-language-support
+  register: missing_language_packages
+
+- name: install missing language packages
+  apt:
+    name: "{{ missing_language_packages }}"

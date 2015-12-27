@@ -1,5 +1,5 @@
 ---
 
 - include: ppa.yml
-#- include: sources.yml
-#- include: autostart.yml
+- include: sources.yml
+- include: autostart.yml
