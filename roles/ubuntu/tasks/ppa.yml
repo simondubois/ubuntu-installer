@@ -7,13 +7,6 @@
   become: yes
   become_user: root
 
-- name: add ppa
-  apt_repository:
-    repo:
-    state: present
-  become: yes
-  become_user: root
-
 - name: add kodi ppa
   apt_repository:
     repo: ppa:team-xbmc/ppa
@@ -38,6 +31,13 @@
 - name: add plowshare ppa
   apt_repository:
     repo: ppa:plowsharepackagers/daily
+    state: present
+  become: yes
+  become_user: root
+
+- name: add tlp ppa
+  apt_repository:
+    repo: ppa:linrunner/tlp
     state: present
   become: yes
   become_user: root
