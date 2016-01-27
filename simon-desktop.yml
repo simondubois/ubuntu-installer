@@ -4,4 +4,4 @@
   roles:
      - system
      - desktop
-#     - applications
+     - applications
