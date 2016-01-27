@@ -2,4 +2,5 @@
 
 - name: install remarkable
   apt: deb=remarkable_1.62_all.deb
+  become: yes
   become_user: root

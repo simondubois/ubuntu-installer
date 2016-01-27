@@ -2,4 +2,5 @@
 
 - name: install chromium-browser
   apt: name=chromium-browser
+  become: yes
   become_user: root
