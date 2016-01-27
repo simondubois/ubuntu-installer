@@ -1,11 +1,20 @@
 ---
 
-- name: uncomment repositories
+- name: uncomment package repositories
   replace:
     backup: yes
     dest: /etc/apt/sources.list
     regexp: '^# deb http://archive.canonical.com/ubuntu(.+)$'
     replace: 'deb http://archive.canonical.com/ubuntu\1'
+  become: yes
+  become_user: root
+
+- name: comment source repositories
+  replace:
+    backup: yes
+    dest: /etc/apt/sources.list
+    regexp: '^deb-src http://archive.canonical.com/ubuntu(.+)$'
+    replace: '# deb-src http://archive.canonical.com/ubuntu\1'
   become: yes
   become_user: root
 
