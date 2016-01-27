@@ -2,3 +2,4 @@
 
 - name: install skype
   apt: name=skype
+  become_user: root
