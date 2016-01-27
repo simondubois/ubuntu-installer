@@ -2,6 +2,3 @@
 
 - name: install skype
   apt: name=skype
-
-- name: open skype for setup
-  shell: skype &

@@ -2,8 +2,3 @@
 
 - name: install chromium-browser
   apt: name=chromium-browser
-
-- name: open chromium-browser for setup
-  shell: chromium-browser &
-  become: yes
-  become_user: sel
