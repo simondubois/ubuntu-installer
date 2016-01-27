@@ -2,4 +2,4 @@
 
 - include: chromium-browser.yml
 - include: skype.yml
-- include: feedindicator.yml
+- include: remarkable.yml

@@ -1,0 +1,4 @@
+---
+
+- name: install remarkable
+  apt: deb=remarkable_1.62_all.deb

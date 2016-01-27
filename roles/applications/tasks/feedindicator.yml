@@ -1,7 +1,0 @@
----
-
-- name: install feedindicator
-  apt: deb=feedindicator_1.05-1.deb
-
-- name: open feedindicator for setup
-  shell: feedindicator &
