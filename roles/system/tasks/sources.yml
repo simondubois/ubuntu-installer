@@ -1,13 +1,11 @@
 ---
 
 - name: uncomment repositories
-  lineinfile:
+  replace:
     backup: yes
     dest: /etc/apt/sources.list
     regexp: '^# deb http://archive.canonical.com/ubuntu(.+)$'
-    line: 'deb http://archive.canonical.com/ubuntu\1'
-    backrefs: yes
-    state: present
+    replace: 'deb http://archive.canonical.com/ubuntu\1'
   become: yes
   become_user: root
 
