@@ -1,7 +1,18 @@
 
 # unsplash-downloader
 
-CLI to set up my personal Ubuntu system
+![Ubuntu logo](https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/screenshot.png  "Ubuntu logo")
+
+[WIP] CLI to set up my personal Ubuntu system
+
+## Status
+
+This application is currently under development :
+
+- [x] Project setup
+- [x] System role
+- [ ] Application roles
+- [ ] Unity role
 
 ## Usage
 
