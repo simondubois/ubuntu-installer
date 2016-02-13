@@ -12,7 +12,6 @@ desktop:
     faenza-icon-theme
     indicator-sysmonitor
     libnotify-dev
-    my-weather-indicator
     unity-tweak-tool
     owncloud-client
 

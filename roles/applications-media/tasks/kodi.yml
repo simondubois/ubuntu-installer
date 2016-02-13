@@ -27,5 +27,6 @@
   apt:
     name: flirc
     update_cache: yes
+    force: yes
   become: yes
   become_user: root
