@@ -8,13 +8,13 @@
 
 - name: download remarkable
   get_url:
-    url: {{ download_url }}
-    dest: {{ download_path }}
+    url: "{{ download_url }}"
+    dest: "{{ download_path }}"
   when: installed_version.stdout != available_version
 
 - name: install remarkable
   apt:
-    deb: {{ download_path }}
+    deb: "{{ download_path }}"
   when: installed_version.stdout != available_version
   become: yes
   become_user: root
