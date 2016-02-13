@@ -2,6 +2,13 @@
 
 - include_vars: "sources.yml"
 
+- name: remove default source file
+  file:
+      path: /etc/apt/sources.list
+      state: absent
+  become: yes
+  become_user: root
+
 - name: enable package sources
   apt_repository:
     repo: deb {{item}}
