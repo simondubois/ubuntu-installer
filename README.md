@@ -33,3 +33,7 @@ For future update, run :
 ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 
 ```
+
+## Not installed
+
+- intel-linux-graphics-installer

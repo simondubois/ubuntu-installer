@@ -18,6 +18,8 @@ desktop:
     numix-icon-theme-circle
     numix-plank-theme
     numix-plymouth-theme
+    samba
+    libreoffice-style-crystal
 
 deployment:
     apache2
@@ -41,7 +43,3 @@ deployment:
     php5-xdebug
     phpmyadmin
     phpunit
-
-intel-linux-graphics-installer
-libreoffice-style-crystal
-samba
