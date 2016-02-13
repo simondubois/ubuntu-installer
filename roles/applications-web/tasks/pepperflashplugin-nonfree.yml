@@ -7,6 +7,6 @@
   become_user: root
 
 - name: update pepperflashplugin-nonfree
-  command: update-pepperflashplugin-nonfree
+  command: update-pepperflashplugin-nonfree --install
   become: yes
   become_user: root
