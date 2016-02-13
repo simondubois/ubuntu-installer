@@ -4,7 +4,6 @@
   apt_repository:
     repo: ppa:numix/ppa
     state: present
-    update_cache: no
   become: yes
   become_user: root
 
@@ -12,6 +11,5 @@
   apt_repository:
     repo: ppa:atareao/atareao
     state: present
-    update_cache: no
   become: yes
   become_user: root
