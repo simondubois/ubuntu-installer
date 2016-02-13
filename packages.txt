@@ -17,7 +17,6 @@ applications-sys:
 applications-dev:
     tilda
     virtualbox
-    sublime-text
     filezilla
     apache2
     git-core

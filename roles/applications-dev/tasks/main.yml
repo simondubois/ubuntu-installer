@@ -2,3 +2,4 @@
 
 - include: remarkable.yml
 - include: sublime-text.yml
+- include: filezilla.yml
