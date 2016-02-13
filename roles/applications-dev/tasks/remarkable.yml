@@ -3,7 +3,7 @@
 - include_vars: remarkable.yml
 
 - name: get remarkable version
-  shell: "dpkg-query --showformat='${Version}' --show python3-lxml || echo 0"
+  shell: "dpkg-query --showformat='${Version}' --show remarkable || echo 0"
   register: installed_version
 
 - name: download remarkable
