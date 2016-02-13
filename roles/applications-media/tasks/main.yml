@@ -1,7 +1,6 @@
 ---
 
-- include: vlc.yml
-- include: steam.yml
 - include: gimp.yml
 - include: easytag.yml
 - include: nautilus-image-converter.yml
+- include: vlc.yml
