@@ -1,2 +1,4 @@
 
-ppa: ppa:plowsharepackagers/daily
+repo_url: https://github.com/mcrapet/plowshare.git
+
+repo_path: /opt/plowshare

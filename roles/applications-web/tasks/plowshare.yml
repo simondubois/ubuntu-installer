@@ -2,22 +2,18 @@
 
 - include_vars: plowshare.yml
 
-- name: add plowshare ppa
-  apt_repository:
-    repo: "{{ ppa }}"
-    state: present
-    update_cache: yes
+- name: clone plowshare repository
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ repo_path }}"
   become: yes
   become_user: root
+  register: clone_plowshare
 
 - name: install plowshare
-  apt:
-    name: plowshare4
+  command: make install
+  args:
+    chdir: "{{ repo_path }}"
   become: yes
   become_user: root
-
-- name: install plowshare
-  apt:
-    name: plowshare-modules
-  become: yes
-  become_user: root
+  when: clone_plowshare.changed
