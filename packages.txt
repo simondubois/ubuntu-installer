@@ -1,18 +1,18 @@
 applications-web:
 
 applications-media:
-        vlc
-        steam:i386
-        gimp
-        easytag
-        nautilus-image-converter
+    vlc
+    steam:i386
+    gimp
+    easytag
+    nautilus-image-converter
 
 applications-sys:
-        rar
-        gparted
-        cifs-utils
-        trash-cli
-        unetbootin
+    rar
+    gparted
+    cifs-utils
+    trash-cli
+    unetbootin
 
 desktop:
     dconf-editor
