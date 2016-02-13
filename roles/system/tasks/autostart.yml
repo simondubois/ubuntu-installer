@@ -9,24 +9,31 @@
     line: 'NoDisplay=false'
     state: present
   with_fileglob:
-    - /etc/xdg/autostart/*
+    - "{{ autostart_source }}/*"
   become: yes
   become_user: root
 
-- name: Create startup application directory
+- name: create startup application directory
   file:
-    path: "{{ ansible_env.HOME }}/.config/autostart"
+    path: "{{ autostart_destination }}"
     state: directory
+
+- name: get startup application file infos
+  stat:
+    path: "{{ autostart_destination }}/{{ item }}"
+  with_items: get_disabled_autostart
+  register: get_disabled_autostart
 
 - name: copy startup applications
   copy:
-    src: "/etc/xdg/autostart/{{ item }}"
-    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
-  with_items: disabled_autostart
+    src: "{{ autostart_source }}/{{ item }}"
+    dest: "{{ autostart_destination }}/{{ item }}"
+  with_items: get_disabled_autostart
+  when: item.stat.exists == false
 
 - name: disable startup applications
   lineinfile:
-    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
+    dest: "{{ autostart_destination }}/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
     state: present
