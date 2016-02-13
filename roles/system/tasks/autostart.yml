@@ -18,18 +18,12 @@
     path: "{{ autostart_destination }}"
     state: directory
 
-- name: get startup application file infos
-  stat:
-    path: "{{ autostart_destination }}/{{ item }}"
-  with_items: disabled_autostart
-  register: get_disabled_autostart
-
 - name: copy startup applications
   copy:
-    src: "{{ autostart_source }}/{{ item.item }}"
-    dest: "{{ autostart_destination }}/{{ item.item }}"
-  with_items: get_disabled_autostart
-  when: item.stat.exists == false
+    src: "{{ autostart_source }}/{{ item }}"
+    dest: "{{ autostart_destination }}/{{ item }}"
+    force: no
+  with_items: disabled_autostart
 
 - name: disable startup applications
   lineinfile:
