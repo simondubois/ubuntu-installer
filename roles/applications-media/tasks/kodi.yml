@@ -20,7 +20,7 @@
   apt_repository:
     repo: "{{ flirc_ppa }}"
     state: present
-    update_cache: no
+    update_cache: yes
   become: yes
   become_user: root
 
