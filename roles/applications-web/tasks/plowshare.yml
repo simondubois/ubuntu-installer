@@ -20,6 +20,3 @@
 
 - name: install plowshare modules
   command: plowmod --install
-  become: yes
-  become_user: root
-  when: clone_plowshare.changed
