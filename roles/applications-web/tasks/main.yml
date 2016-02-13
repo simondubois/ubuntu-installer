@@ -1,7 +1,7 @@
 ---
 
 - include: chromium-browser.yml
-- include: my-weather-indicator.yml.yml
+- include: my-weather-indicator.yml
 - include: pepperflashplugin-nonfree.yml
 - include: plowshare.yml
 - include: skype.yml

@@ -1,6 +1,4 @@
 
-
-
 applications-sys:
     rar
     gparted
