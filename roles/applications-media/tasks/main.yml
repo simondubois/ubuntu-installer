@@ -1,6 +1,7 @@
 ---
 
-- include: gimp.yml
 - include: easytag.yml
+- include: gimp.yml
+- include: kodi.yml
 - include: nautilus-image-converter.yml
 - include: vlc.yml

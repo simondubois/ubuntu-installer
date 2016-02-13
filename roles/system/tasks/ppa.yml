@@ -15,11 +15,3 @@
     update_cache: no
   become: yes
   become_user: root
-
-- name: add plowshare ppa
-  apt_repository:
-    repo: ppa:plowsharepackagers/daily
-    state: present
-    update_cache: no
-  become: yes
-  become_user: root

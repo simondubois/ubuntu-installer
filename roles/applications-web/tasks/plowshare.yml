@@ -1,0 +1,17 @@
+---
+
+- include_vars: plowshare.yml
+
+- name: add plowshare ppa
+  apt_repository:
+    repo: "{{ ppa }}"
+    state: present
+    update_cache: yes
+  become: yes
+  become_user: root
+
+- name: install plowshare
+  apt:
+    name: plowshare
+  become: yes
+  become_user: root

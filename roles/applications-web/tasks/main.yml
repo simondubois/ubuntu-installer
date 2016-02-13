@@ -2,4 +2,5 @@
 
 - include: chromium-browser.yml
 - include: pepperflashplugin-nonfree.yml
+- include: plowshare.yml
 - include: skype.yml
