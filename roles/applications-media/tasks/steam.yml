@@ -1,0 +1,7 @@
+---
+
+- name: install steam
+  apt:
+    name: steam
+  become: yes
+  become_user: root

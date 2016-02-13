@@ -1,12 +1,3 @@
-applications-web:
-
-applications-media:
-    vlc
-    steam:i386
-    gimp
-    easytag
-    nautilus-image-converter
-
 applications-sys:
     rar
     gparted

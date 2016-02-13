@@ -1,0 +1,16 @@
+---
+
+- name: install imagemagick
+  apt:
+    name: imagemagick
+  become: yes
+  become_user: root
+
+- name: install nautilus-image-converter
+  apt:
+    name: nautilus-image-converter
+  become: yes
+  become_user: root
+
+- name: restart nautilus
+  shell: nautilus -q && nautilus &
