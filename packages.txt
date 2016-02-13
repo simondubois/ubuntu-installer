@@ -16,16 +16,6 @@ applications-sys:
 
 applications-dev:
     tilda
-    virtualbox
-    filezilla
-    apache2
-    git-core
-    mysql-server
-    mysql-workbench
-    php5-common
-    php5-xdebug
-    phpmyadmin
-    phpunit
 
 desktop:
     dconf-editor
@@ -37,6 +27,14 @@ desktop:
     libnotify-dev
     my-weather-indicator
     unity-tweak-tool
-
-files:
     owncloud-client
+
+deployment:
+    apache2
+    git-core
+    mysql-server
+    mysql-workbench
+    php5-common
+    php5-xdebug
+    phpmyadmin
+    phpunit

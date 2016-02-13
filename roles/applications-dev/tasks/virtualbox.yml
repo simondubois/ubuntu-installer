@@ -1,0 +1,7 @@
+---
+
+- name: install virtualbox
+  apt:
+    name: virtualbox
+  become: yes
+  become_user: root
