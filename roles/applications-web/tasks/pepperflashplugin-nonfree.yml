@@ -1,7 +1,12 @@
 ---
 
 - name: install pepperflashplugin-nonfree
-  apt: name=pepperflashplugin-nonfree
+  apt:
+    name: pepperflashplugin-nonfree
   become: yes
   become_user: root
 
+- name: update pepperflashplugin-nonfree
+  command: update-pepperflashplugin-nonfree
+  become: yes
+  become_user: root
