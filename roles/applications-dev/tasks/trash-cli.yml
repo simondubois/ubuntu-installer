@@ -1,0 +1,7 @@
+---
+
+- name: install trash-cli
+  apt:
+    name: trash-cli
+  become: yes
+  become_user: root

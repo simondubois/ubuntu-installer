@@ -1,8 +1,10 @@
+
+
+
 applications-sys:
     rar
     gparted
     cifs-utils
-    trash-cli
 
 desktop:
     dconf-editor
