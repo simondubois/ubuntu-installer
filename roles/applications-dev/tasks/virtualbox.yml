@@ -1,7 +1,12 @@
 ---
 
+- include_vars: virtualbox.yml
+
 - name: install virtualbox
   apt:
     name: virtualbox
   become: yes
   become_user: root
+
+- name: set virtualbox machine folder
+  command: VBoxManage setproperty machinefolder {{ machine_folder }}
