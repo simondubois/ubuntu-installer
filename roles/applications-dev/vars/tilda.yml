@@ -1,4 +1,6 @@
 
+config_directory: "{{ ansible_env.HOME }}/.config/tilda"
+
 config_source: "{{ role_path }}/files/tilda/config_0"
 
-config_destination: "{{ ansible_env.HOME }}/.config/tilda/config_0"
+config_destination: "{{ config_directory }}/config_0"

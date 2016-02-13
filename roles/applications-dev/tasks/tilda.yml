@@ -8,6 +8,11 @@
   become: yes
   become_user: root
 
+- name: create tilda configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
 - name: set tilda configuration
   file:
     src: "{{ config_source }}"
