@@ -14,9 +14,6 @@ applications-sys:
         trash-cli
         unetbootin
 
-applications-dev:
-    tilda
-
 desktop:
     dconf-editor
     gconf-editor
