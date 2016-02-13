@@ -1,5 +1,7 @@
 ---
 
+- include_vars: autostart.yml
+
 - name: show all startup applications
   lineinfile:
     dest: "{{ item }}"
