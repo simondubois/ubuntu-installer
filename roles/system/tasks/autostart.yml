@@ -26,8 +26,8 @@
 
 - name: copy startup applications
   copy:
-    src: "{{ autostart_source }}/{{ item }}"
-    dest: "{{ autostart_destination }}/{{ item }}"
+    src: "{{ autostart_source }}/{{ item.item }}"
+    dest: "{{ autostart_destination }}/{{ item.item }}"
   with_items: get_disabled_autostart
   when: item.stat.exists == false
 
