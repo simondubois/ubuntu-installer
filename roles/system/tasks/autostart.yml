@@ -18,12 +18,14 @@
 
 - name: copy startup applications
   copy:
-    src: "/etc/xdg/autostart/{{ disabled_autostart }}"
-    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ disabled_autostart }}"
+    src: "/etc/xdg/autostart/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
+  with_items: disabled_autostart
 
 - name: disable startup applications
   lineinfile:
-    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ disabled_autostart }}"
+    dest: "{{ ansible_env.HOME }}/.config/autostart/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
     state: present
+  with_items: disabled_autostart
