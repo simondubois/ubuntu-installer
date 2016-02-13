@@ -1,5 +1,23 @@
 ---
 
+- name: agree on steam licence (1/2)
+  debconf:
+    name: steam
+    question: 'steam/question'
+    value: 'I AGREE'
+    vtype: 'select'
+  # become: yes
+  # become_user: root
+
+- name: agree on steam licence (2/2)
+  debconf:
+    name: steam
+    question: 'steam/license'
+    value: ''
+    vtype: 'note'
+  # become: yes
+  # become_user: root
+
 - name: install steam
   apt:
     name: steam
