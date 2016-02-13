@@ -1,24 +1,27 @@
 ---
 
-- name: uncomment package repositories
-  replace:
-    backup: yes
-    dest: /etc/apt/sources.list
-    regexp: '^# deb http://archive.canonical.com/ubuntu(.+)$'
-    replace: 'deb http://archive.canonical.com/ubuntu\1'
-  become: yes
-  become_user: root
+- include_vars: "sources.yml"
 
-- name: comment source repositories
-  replace:
-    backup: yes
-    dest: /etc/apt/sources.list
-    regexp: '^deb-src http://archive.canonical.com/ubuntu(.+)$'
-    replace: '# deb-src http://archive.canonical.com/ubuntu\1'
+- name: enable package sources
+  apt_repository:
+    repo: deb {{item}}
+    state: present
+    update_cache: no
   become: yes
   become_user: root
+  with_items: enabled_sources
+
+- name: disable package sources
+  apt_repository:
+    repo: deb {{item}}
+    state: absent
+    update_cache: no
+  become: yes
+  become_user: root
+  with_items: disabled_sources
 
 - name: update sources
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
   become: yes
   become_user: root
