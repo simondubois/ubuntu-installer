@@ -21,7 +21,7 @@
 - name: get startup application file infos
   stat:
     path: "{{ autostart_destination }}/{{ item }}"
-  with_items: get_disabled_autostart
+  with_items: disabled_autostart
   register: get_disabled_autostart
 
 - name: copy startup applications
