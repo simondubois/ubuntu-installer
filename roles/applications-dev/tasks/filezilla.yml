@@ -1,0 +1,7 @@
+---
+
+- name: install filezilla
+  apt:
+    name: filezilla
+  become: yes
+  become_user: root
