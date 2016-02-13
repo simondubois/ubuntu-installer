@@ -4,5 +4,5 @@
   roles:
      - system
 #     - desktop
-    - applications-web
-    - applications-dev
+#     - applications-web
+#     - applications-dev
