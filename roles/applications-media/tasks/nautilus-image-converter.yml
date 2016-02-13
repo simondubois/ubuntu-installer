@@ -11,6 +11,3 @@
     name: nautilus-image-converter
   become: yes
   become_user: root
-
-- name: restart nautilus
-  shell: nautilus -q && nautilus -n &
