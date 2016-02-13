@@ -10,6 +10,6 @@
 
 - name: set tilda configuration
   file:
-    src: tilda/config_0
-    dest: "{{ ansible_env.HOME }}/.config/tilda/config_0"
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
     state: link
