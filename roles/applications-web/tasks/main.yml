@@ -1,4 +1,5 @@
 ---
 
 - include: chromium-browser.yml
+- include: pepperflashplugin-nonfree.yml
 - include: skype.yml
