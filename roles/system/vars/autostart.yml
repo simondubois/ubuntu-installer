@@ -1,7 +1,7 @@
 
 autostart_source: /etc/xdg/autostart/
 
-autostart_destination: {{ ansible_env.HOME }}/.config/autostart
+autostart_destination: "{{ ansible_env.HOME }}/.config/autostart"
 
 disabled_autostart:
   - deja-dup-monitor.desktop
