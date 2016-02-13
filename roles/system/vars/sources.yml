@@ -24,6 +24,7 @@ enabled_sources:
   - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates restricted
   - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates multiverse
   - http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main
+  - http://archive.canonical.com/ubuntu {{ansible_distribution_release}} partner
 
 disabled_sources:
   - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed universe
