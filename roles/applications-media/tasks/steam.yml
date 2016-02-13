@@ -21,5 +21,7 @@
 - name: install steam
   apt:
     name: steam
+  environment:
+    DEBIAN_FRONTEND: "noninteractive"
   become: yes
   become_user: root
