@@ -1,0 +1,40 @@
+enabled_sources:
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}} main
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}} universe
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}} restricted
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}} multiverse
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-security main
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-security universe
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-security restricted
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates main
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates universe
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates restricted
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates multiverse
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}} main
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}} universe
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}} restricted
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}} multiverse
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security main
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security universe
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security restricted
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-security multiverse
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates main
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates universe
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates restricted
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-updates multiverse
+  - http://extras.ubuntu.com/ubuntu {{ansible_distribution_release}} main
+
+disabled_sources:
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed universe
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed restricted
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed multiverse
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports universe
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports restricted
+  - http://fr.archive.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports multiverse
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed universe
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed restricted
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-proposed multiverse
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports universe
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports restricted
+  - http://security.ubuntu.com/ubuntu {{ansible_distribution_release}}-backports multiverse
