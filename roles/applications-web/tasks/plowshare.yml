@@ -20,3 +20,9 @@
 
 - name: install plowshare modules
   command: plowmod --install
+
+- name: install screen
+  apt:
+    name: screen
+  become: yes
+  become_user: root

@@ -14,13 +14,34 @@ desktop:
     libnotify-dev
     unity-tweak-tool
     owncloud-client
+    numix-icon-theme
+    numix-icon-theme-circle
+    numix-plank-theme
+    numix-plymouth-theme
 
 deployment:
     apache2
     git-core
+    mcrypt
+    mysql-client-5.6
+    mysql-client-core-5.6
     mysql-server
+    mysql-server-5.6
+    mysql-server-core-5.6
     mysql-workbench
+    npm
+    php5-cli
     php5-common
+    php5-curl
+    php5-json
+    php5-mcrypt
+    php5-mysql
+    php5-readline
+    php5-sqlite
     php5-xdebug
     phpmyadmin
     phpunit
+
+intel-linux-graphics-installer
+libreoffice-style-crystal
+samba
