@@ -1,0 +1,7 @@
+disabled_autostart:
+  - deja-dup-monitor.desktop
+  - onboard-autostart.desktop
+  - orca-autostart.desktop
+  - telepathy-indicator.desktop
+  - update-notifier.desktop
+  - vino-server.desktop
