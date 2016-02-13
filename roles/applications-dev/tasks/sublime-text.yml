@@ -1,0 +1,20 @@
+---
+
+- include_vars: sublime-text.yml
+
+- name: get sublime-text version
+  shell: "dpkg-query --showformat='${Version}' --show sublime-text || echo 0"
+  register: installed_version
+
+- name: download sublime-text
+  get_url:
+    url: "{{ download_url }}"
+    dest: "{{ download_path }}"
+  when: installed_version.stdout != available_version
+
+- name: install sublime-text
+  apt:
+    deb: "{{ download_path }}"
+  when: installed_version.stdout != available_version
+  become: yes
+  become_user: root
