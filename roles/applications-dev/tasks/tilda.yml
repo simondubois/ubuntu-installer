@@ -1,7 +1,15 @@
 ---
 
+- include_vars: tilda.yml
+
 - name: install tilda
   apt:
     name: tilda
   become: yes
   become_user: root
+
+- name: set tilda configuration
+  file:
+    src: tilda/config_0
+    dest: {{ ansible_env.HOME }}/.config/tilda/config_0
+    state: link
