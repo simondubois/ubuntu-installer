@@ -1,0 +1,7 @@
+---
+
+- name: install tilda
+  apt:
+    name: tilda
+  become: yes
+  become_user: root
