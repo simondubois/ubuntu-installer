@@ -12,6 +12,12 @@
 
 - name: install plowshare
   apt:
-    name: plowshare
+    name: plowshare4
+  become: yes
+  become_user: root
+
+- name: install plowshare
+  apt:
+    name: plowshare-modules
   become: yes
   become_user: root

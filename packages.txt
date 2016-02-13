@@ -3,7 +3,6 @@ applications-sys:
     gparted
     cifs-utils
     trash-cli
-    unetbootin
 
 desktop:
     dconf-editor
