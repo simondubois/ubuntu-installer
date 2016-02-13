@@ -39,14 +39,3 @@
     update_cache: no
   become: yes
   become_user: root
-
-- name: add tlp ppa
-  apt_repository:
-    repo: ppa:linrunner/tlp
-    state: present
-    update_cache: no
-  become: yes
-  become_user: root
-
-
-
