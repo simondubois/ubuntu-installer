@@ -1,2 +1,2 @@
 
-machine_folder: {{ ansible_env.HOME }}/.VirtualBox VMs
+machine_folder: "{{ ansible_env.HOME }}/.VirtualBox VMs"
