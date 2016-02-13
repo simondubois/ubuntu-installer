@@ -16,7 +16,6 @@ applications-sys:
 
 applications-dev:
     tilda
-    remarkable
     virtualbox
     sublime-text
     filezilla
