@@ -13,4 +13,4 @@
   become_user: root
 
 - name: restart nautilus
-  shell: nautilus -q && nautilus -n
+  shell: nautilus -q && nautilus -n &
