@@ -1,0 +1,31 @@
+---
+
+- include_vars: kodi.yml
+
+- name: add kodi ppa
+  apt_repository:
+    repo: "{{ kodi_ppa }}"
+    state: present
+    update_cache: yes
+  become: yes
+  become_user: root
+
+- name: install kodi
+  apt:
+    name: kodi
+  become: yes
+  become_user: root
+
+- name: add flirc ppa
+  apt_repository:
+    repo: "{{ flirc_ppa }}"
+    state: present
+    update_cache: no
+  become: yes
+  become_user: root
+
+- name: install flirc
+  apt:
+    name: flirc
+  become: yes
+  become_user: root

@@ -1,0 +1,4 @@
+
+kodi_ppa: ppa:team-xbmc/ppa
+
+flirc_ppa: deb http://apt.flirc.tv/arch/i386 binary/

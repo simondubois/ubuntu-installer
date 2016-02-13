@@ -1,21 +1,5 @@
 ---
 
-- name: add flirc ppa
-  apt_repository:
-    repo: deb http://apt.flirc.tv/arch/i386 binary/
-    state: present
-    update_cache: no
-  become: yes
-  become_user: root
-
-- name: add kodi ppa
-  apt_repository:
-    repo: ppa:team-xbmc/ppa
-    state: present
-    update_cache: no
-  become: yes
-  become_user: root
-
 - name: add numix ppa
   apt_repository:
     repo: ppa:numix/ppa

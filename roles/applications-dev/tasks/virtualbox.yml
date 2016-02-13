@@ -9,4 +9,4 @@
   become_user: root
 
 - name: set virtualbox machine folder
-  command: VBoxManage setproperty machinefolder {{ machine_folder }}
+  command: VBoxManage setproperty machinefolder "{{ machine_folder }}"
