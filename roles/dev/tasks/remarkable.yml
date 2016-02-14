@@ -5,6 +5,7 @@
 - name: get remarkable version
   shell: "dpkg-query --showformat='${Version}' --show remarkable || echo 0"
   register: installed_version
+  changed_when: false
 
 - name: download remarkable
   get_url:

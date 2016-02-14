@@ -3,6 +3,7 @@
 - name: list missing language packages
   command: check-language-support
   register: missing_language_packages
+  changed_when: false
 
 - name: install missing language packages
   apt:

@@ -5,6 +5,7 @@
 - name: get sublime-text version
   shell: "dpkg-query --showformat='${Version}' --show sublime-text || echo 0"
   register: installed_version
+  changed_when: false
 
 - name: download sublime-text
   get_url:
