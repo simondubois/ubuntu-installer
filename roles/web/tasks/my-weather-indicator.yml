@@ -16,6 +16,11 @@
   become: yes
   become_user: root
 
+- name: create my-weather-indicator configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
 - name: set my-weather-indicator configuration
   file:
     src: "{{ config_source }}"
