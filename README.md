@@ -35,6 +35,12 @@ ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 
 ```
 
-## Not installed
+## To be installed manually
 
 - intel-linux-graphics-installer
+- steam
+
+## To be configured manually
+
+- chromium-browser
+- skype

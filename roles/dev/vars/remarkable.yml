@@ -4,3 +4,9 @@ available_version: 1.62
 download_url: https://remarkableapp.github.io/files/remarkable_1.62_all.deb
 
 download_path: /tmp/remarkable.deb
+
+config_directory: "{{ ansible_env.HOME }}/.remarkable"
+
+config_source: "{{ role_path }}/files/remarkable/remarkable.settings"
+
+config_destination: "{{ config_directory }}/remarkable.settings"

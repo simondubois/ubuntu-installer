@@ -18,3 +18,9 @@
   when: installed_version.stdout != available_version
   become: yes
   become_user: root
+
+- name: set remarkable configuration
+  file:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    state: link
