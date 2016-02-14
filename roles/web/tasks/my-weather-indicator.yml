@@ -28,6 +28,7 @@
     state: link
 
 - name: add my-weather-indicator startup
-  file:
+  copy:
     src: "{{ startup_source }}"
     dest: "{{ startup_destination }}"
+    force: no
