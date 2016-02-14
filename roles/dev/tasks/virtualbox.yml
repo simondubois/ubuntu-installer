@@ -10,3 +10,4 @@
 
 - name: set virtualbox machine folder
   command: VBoxManage setproperty machinefolder "{{ machine_folder }}"
+  changed_when: false
