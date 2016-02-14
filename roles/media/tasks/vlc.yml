@@ -15,6 +15,6 @@
 
 - name: disable vlc qt-privacy-ask
   copy:
-    src: "{{ config_source }}"
+    content: "qt-privacy-ask=0"
     dest: "{{ config_destination }}"
     force: no
