@@ -14,7 +14,7 @@
     state: directory
 
 - name: turn on gimp single-window-mode
-  template:
-    src: "{{ config_source }}"
+  copy:
+    content: "(single-window-mode yes)"
     dest: "{{ config_destination }}"
     force: no

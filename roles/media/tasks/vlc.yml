@@ -14,7 +14,7 @@
     state: directory
 
 - name: disable vlc qt-privacy-ask
-  template:
+  copy:
     src: "{{ config_source }}"
     dest: "{{ config_destination }}"
     force: no
