@@ -44,3 +44,4 @@ ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 
 - chromium-browser
 - skype
+- kodi

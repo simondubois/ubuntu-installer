@@ -1,7 +1,15 @@
 ---
 
+- include_vars: gimp.yml
+
 - name: install gimp
   apt:
     name: gimp
   become: yes
   become_user: root
+
+- name: turn on gimp single-window-mode
+  lineinfile:
+    dest: "{{ session_config }}"
+    line: '(single-window-mode yes)'
+    state: present
