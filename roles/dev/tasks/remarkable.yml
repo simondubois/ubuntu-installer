@@ -19,6 +19,11 @@
   become: yes
   become_user: root
 
+- name: create remarkable configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
 - name: set remarkable configuration
   file:
     src: "{{ config_source }}"

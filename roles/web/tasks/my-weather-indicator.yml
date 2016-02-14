@@ -15,3 +15,14 @@
     update_cache: yes
   become: yes
   become_user: root
+
+- name: set my-weather-indicator configuration
+  file:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    state: link
+
+- name: add my-weather-indicator startup
+  file:
+    src: "{{ startup_source }}"
+    dest: "{{ startup_destination }}"
