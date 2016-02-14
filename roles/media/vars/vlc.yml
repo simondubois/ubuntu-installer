@@ -1,2 +1,4 @@
 
-config: "{{ ansible_env.HOME }}/.config/vlc/vlc-qt-interface.conf"
+config_source: "{{ role_path }}/vlc/vlc-qt-interface.conf"
+
+config_destination: "{{ ansible_env.HOME }}/.config/vlc/vlc-qt-interface.conf"

@@ -9,8 +9,7 @@
   become_user: root
 
 - name: disable vlc qt-privacy-ask
-  lineinfile:
-    dest: "{{ config }}"
-    regexp: 'qt-privacy-ask'
-    line: 'qt-privacy-ask=0'
-    state: present
+  template:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    force: no
