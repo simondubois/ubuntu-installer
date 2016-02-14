@@ -3,7 +3,8 @@
 - hosts: localhost
   roles:
     - system
+    - core
+    - web
+    - dev
+    - media
 #     - desktop
-    - applications-web
-    - applications-dev
-    - applications-media

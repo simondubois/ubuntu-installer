@@ -11,8 +11,9 @@ This application is currently under development :
 
 - [x] Project setup
 - [x] System role
-- [x] Dev applications roles
+- [x] Core applications roles
 - [x] Web applications roles
+- [x] Dev applications roles
 - [x] Media applications roles
 - [ ] Unity role
 
