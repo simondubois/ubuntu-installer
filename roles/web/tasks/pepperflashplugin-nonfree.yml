@@ -10,3 +10,5 @@
   command: update-pepperflashplugin-nonfree --install
   become: yes
   become_user: root
+  register: update_pepperflashplugin
+  changed_when: update_pepperflashplugin.stdout.strip() != ""

@@ -20,6 +20,7 @@
 
 - name: install plowshare modules
   command: plowmod --install
+  changed_when: false
 
 - name: install screen
   apt:
