@@ -8,6 +8,11 @@
   become: yes
   become_user: root
 
+- name: create vlc configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
 - name: disable vlc qt-privacy-ask
   template:
     src: "{{ config_source }}"
