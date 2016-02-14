@@ -1,4 +1,5 @@
 
-config_directory: "{{ ansible_env.HOME }}/.gimp-2.8"
+config_source: "{{ role_path }}/template/gimp/sessionrc"
 
-session_config: "{{ config_directory }}/sessionrc"
+config_destination: "{{ ansible_env.HOME }}/.gimp-2.8/sessionrc"
+
