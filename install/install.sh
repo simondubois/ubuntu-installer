@@ -13,7 +13,3 @@ sudo chmod 0440 /etc/sudoers.d/ansible
 # Import github SSH key
 mkdir -p ~/.ssh
 ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-# Deploy playbooks
-echo "localhost ansible_connection=local" | sudo tee -a /etc/ansible/hosts
-ansible-pull -o -U git://github.com/simondubois/ubuntu-installer.git
