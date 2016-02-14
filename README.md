@@ -19,7 +19,9 @@ This application is currently under development :
 
 ## Usage
 
-On a fresh Ubuntu (14.04) installation, run :
+1. Set your hostname to match one of the .yml file at the root of the repository.
+
+2. Configure your computer for ansible-pull :
 
 ```Shell
 
@@ -27,7 +29,7 @@ wget https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/insta
 
 ```
 
-For future update, run :
+3. Deploy this repository
 
 ```Shell
 
