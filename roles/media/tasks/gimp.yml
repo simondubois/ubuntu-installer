@@ -8,6 +8,11 @@
   become: yes
   become_user: root
 
+- name: create gimp configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
 - name: turn on gimp single-window-mode
   template:
     src: "{{ config_source }}"
