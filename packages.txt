@@ -1,9 +1,4 @@
 
-applications-sys:
-    rar
-    gparted
-    cifs-utils
-
 desktop:
     dconf-editor
     gconf-editor

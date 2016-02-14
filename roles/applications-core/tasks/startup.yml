@@ -1,0 +1,23 @@
+---
+
+- include_vars: startup.yml
+
+- name: create startup application directory
+  file:
+    path: "{{ destination }}"
+    state: directory
+
+- name: copy startup applications
+  copy:
+    src: "{{ source }}/{{ item }}"
+    dest: "{{ destination }}/{{ item }}"
+    force: no
+  with_items: disabled
+
+- name: disable startup applications
+  lineinfile:
+    dest: "{{ destination }}/{{ item }}"
+    regexp: '^X-GNOME-Autostart-enabled=true$'
+    line: 'X-GNOME-Autostart-enabled=false'
+    state: present
+  with_items: disabled

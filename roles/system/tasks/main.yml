@@ -3,4 +3,4 @@
 - include: ppa.yml
 - include: sources.yml
 - include: locales.yml
-- include: autostart.yml
+- include: startup.yml

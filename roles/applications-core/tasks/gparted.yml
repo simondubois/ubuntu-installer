@@ -1,0 +1,7 @@
+---
+
+- name: install gparted
+  apt:
+    name: gparted
+  become: yes
+  become_user: root

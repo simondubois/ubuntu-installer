@@ -1,0 +1,14 @@
+---
+
+- include_vars: startup.yml
+
+- name: show all startup applications
+  lineinfile:
+    dest: "{{ item }}"
+    regexp: '^NoDisplay=true$'
+    line: 'NoDisplay=false'
+    state: present
+  with_fileglob:
+    - "{{ source }}/*"
+  become: yes
+  become_user: root

@@ -1,9 +1,9 @@
 
-autostart_source: /etc/xdg/autostart/
+source: /etc/xdg/autostart/
 
-autostart_destination: "{{ ansible_env.HOME }}/.config/autostart"
+destination: "{{ ansible_env.HOME }}/.config/autostart"
 
-disabled_autostart:
+disabled:
   - deja-dup-monitor.desktop
   - onboard-autostart.desktop
   - orca-autostart.desktop
