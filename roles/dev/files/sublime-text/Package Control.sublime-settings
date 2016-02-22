@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"All Autocomplete",
+		"DocBlockr",
+		"GitGutter",
+		"GotoDocumentation",
+		"Laravel Blade Highlighter",
+		"Material Theme",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-html-tidy",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-php",
+		"SublimeLinter-shellcheck",
+		"Text Pastry",
+		"Vue Syntax Highlight"
+	]
+}

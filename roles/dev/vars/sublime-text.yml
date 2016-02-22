@@ -1,6 +1,18 @@
 
 available_version: 3103
 
-download_url: https://download.sublimetext.com/sublime-text_build-3103_amd64.deb
+download_url: https://download.sublimetext.com/sublime-text_build-{{ available_version }}_amd64.deb
 
 download_path: /tmp/sublime-text.deb
+
+config_directory: "{{ ansible_env.HOME }}/.config/sublime-text-3/Packages"
+
+config_source: "{{ role_path }}/files/sublime-text"
+
+config_destination: "{{ config_directory }}/User"
+
+packagecontrol_directory: "{{ ansible_env.HOME }}/.config/sublime-text-3/Installed Packages"
+
+packagecontrol_source: "https://packagecontrol.io/Package%20Control.sublime-package"
+
+packagecontrol_destination: "{{packagecontrol_directory}}/Package Control.sublime-package"

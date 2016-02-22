@@ -19,3 +19,24 @@
   when: installed_version.stdout != available_version
   become: yes
   become_user: root
+
+- name: create sublime-text configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: set sublime-text configuration
+  file:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    state: link
+
+- name: create package control directory
+  file:
+    path: "{{ packagecontrol_directory }}"
+    state: directory
+
+- name: install package control for sublime-text
+  get_url:
+      url: "{{ packagecontrol_source }}"
+      dest: "{{ packagecontrol_destination }}"

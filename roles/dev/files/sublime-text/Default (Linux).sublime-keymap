@@ -1,0 +1,16 @@
+[
+	{ "keys": ["ctrl+alt+v"], "command": "run_macro_file", "args": {"file": "Packages/User/var_dump.sublime-macro"} },
+    { "keys": ["ctrl+alt+d"], "command": "run_macro_file", "args": {"file": "Packages/User/die.sublime-macro"} },
+	{ "keys": ["ctrl+alt+c"], "command": "run_macro_file", "args": {"file": "Packages/User/console.log.sublime-macro"} },
+
+    { "keys": ["f1"], "command": "goto_documentation" },
+    { "keys": ["f2"], "command": "goto_definition" },
+
+    { "keys": ["ctrl+œ"], "command": "focus_neighboring_group" },
+
+    { "keys": ["ctrl+t"], "command": "text_pastry_show_menu" },
+    { "keys": ["up"], "command": "text_pastry_history_navigator", "args": { "reverse": true },
+      "context": [{ "key": "setting.text_pastry_command_line", "operator": "equal", "operand": true }, {"key": "panel_has_focus"}] },
+    { "keys": ["down"], "command": "text_pastry_history_navigator", "args": { "reverse": false },
+      "context": [{ "key": "setting.text_pastry_command_line", "operator": "equal", "operand": true }, {"key": "panel_has_focus"}] }
+]
