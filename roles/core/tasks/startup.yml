@@ -19,6 +19,5 @@
     dest: "{{ destination }}/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
-    state: present
     backrefs: yes
   with_items: disabled

@@ -7,7 +7,6 @@
     dest: "{{ item }}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
-    state: present
   with_fileglob:
     - "{{ source }}/*"
   become: yes

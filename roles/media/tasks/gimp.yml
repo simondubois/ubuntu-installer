@@ -13,8 +13,12 @@
     path: "{{ config_directory }}"
     state: directory
 
-- name: turn on gimp single-window-mode
+- name: set gimp configuration
   copy:
-    content: "(single-window-mode yes)"
+    src: "{{ config_source }}"
     dest: "{{ config_destination }}"
-    force: no
+
+- name: turn on gimp single-window-mode
+  lineinfile:
+    dest: "{{ config_destination }}"
+    line: "(single-window-mode yes)"
