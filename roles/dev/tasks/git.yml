@@ -1,0 +1,11 @@
+---
+
+- include_vars: git.yml
+
+- name: set global email
+  command: git config --global user.email "{{ email }}"
+  changed_when: false
+
+- name: set global name
+  command: git config --global user.name "{{ name }}"
+  changed_when: false

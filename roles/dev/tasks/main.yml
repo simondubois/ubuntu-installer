@@ -1,6 +1,7 @@
 ---
 
 - include: filezilla.yml
+- include: git.yml
 - include: remarkable.yml
 - include: sublime-text.yml
 - include: tilda.yml
