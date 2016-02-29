@@ -11,7 +11,7 @@
 
 - name: enable package sources
   apt_repository:
-    repo: deb {{item}}
+    repo: "deb {{item}}"
     state: present
   become: yes
   become_user: root
@@ -19,7 +19,7 @@
 
 - name: disable package sources
   apt_repository:
-    repo: deb {{item}}
+    repo: "deb {{item}}"
     state: absent
   become: yes
   become_user: root

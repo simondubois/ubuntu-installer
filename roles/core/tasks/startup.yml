@@ -12,11 +12,11 @@
     src: "{{ source }}/{{ item }}"
     dest: "{{ destination }}/{{ item }}"
     force: no
-  with_items: disabled
+  with_items: "{{ disabled }}"
 
 - name: disable startup applications
   lineinfile:
     dest: "{{ destination }}/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
-  with_items: disabled
+  with_items: "{{ disabled }}"
