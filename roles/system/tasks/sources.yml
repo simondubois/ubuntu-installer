@@ -15,7 +15,7 @@
     state: present
   become: yes
   become_user: root
-  with_items: enabled_sources
+  with_items: "{{ enabled_sources }}"
 
 - name: disable package sources
   apt_repository:
@@ -23,7 +23,7 @@
     state: absent
   become: yes
   become_user: root
-  with_items: disabled_sources
+  with_items: "{{ disabled_sources }}"
 
 - name: update sources
   apt:
