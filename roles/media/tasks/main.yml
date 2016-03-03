@@ -4,5 +4,6 @@
 - include: gimp.yml
 - include: kodi.yml
 - include: nautilus-image-converter.yml
+- include: rhythmbox.yml
 - include: totem.yml
 - include: vlc.yml
