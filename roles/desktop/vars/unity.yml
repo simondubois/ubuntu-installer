@@ -1,0 +1,8 @@
+
+gsettings:
+  - { schema: 'com.canonical.Unity', key: 'double-click-activate', value: 'false' }
+  - { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://filezilla.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" }
+  - { schema: 'com.canonical.Unity.Lenses', key: 'remote-content-search', value: 'none' }
+  - { schema: 'com.canonical.Unity.Lenses', key: 'always-search', value: "['applications.scope', 'files.scope']" }
+  - { schema: 'com.canonical.Unity.Webapps', key: 'integration-allowed', value: 'false' }
+  - { schema: 'com.canonical.Unity.Webapps', key: 'preauthorized-domains', value: '[]' }
