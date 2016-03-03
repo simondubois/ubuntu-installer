@@ -1,0 +1,3 @@
+
+gsettings:
+  - { schema: 'org.compiz.integrated', key: 'show-hud', value: "['disabled']" }
