@@ -1,0 +1,3 @@
+
+gsettings:
+  - { schema: 'org.gnome.eog.plugins', key: 'active-plugins', value: "['fullscreen', 'statusbar-date']" }
