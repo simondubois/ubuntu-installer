@@ -1,8 +1,10 @@
 ---
 
+- include_vars: numix.yml
+
 - name: add numix ppa
   apt_repository:
-    repo: ppa:numix/ppa
+    repo: "{{ ppa }}"
     state: present
   become: yes
   become_user: root
