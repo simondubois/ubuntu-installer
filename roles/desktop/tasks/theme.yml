@@ -1,19 +1,21 @@
 ---
 
-- include_vars: numixtheme.yml
+- include_vars: theme.yml
 
 - name: add numix ppa
   apt_repository:
-    repo: "{{ ppa }}"
+    repo: "{{ numix_ppa }}"
     state: present
   become: yes
   become_user: root
+  when: "theme_in_use == 'Numix'"
 
 - name: install numix gtk theme
   apt:
     name: numix-gtk-theme
   become: yes
   become_user: root
+  when: "theme_in_use == 'Numix'"
 
 - name: gsettings
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"

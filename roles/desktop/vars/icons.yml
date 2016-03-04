@@ -1,0 +1,5 @@
+
+numix_ppa: ppa:numix/ppa
+
+gsettings:
+  - { schema: 'org.gnome.desktop.interface', key: 'icon-theme', value: "{{ icons_in_use }}" }
