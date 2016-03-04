@@ -9,7 +9,7 @@
     # - media
     - {
       role: desktop,
-      theme_in_use: Radiance,
+      theme_in_use: Numix,
       icons_in_use: Numix-Circle
     }
 
