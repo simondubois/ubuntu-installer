@@ -8,8 +8,8 @@
     # - dev
     # - media
     - {
-      role: desktop
-      theme: Radiance
+      role: desktop,
+      theme: Radiance,
       icons: Numix-Circle
     }
 
