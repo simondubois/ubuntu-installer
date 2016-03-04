@@ -4,3 +4,5 @@ gsettings:
   - { schema: 'com.canonical.indicator.power', key: 'show-time', value: 'true' }
   - { schema: 'org.gnome.desktop.screensaver', key: 'lock-enabled', value: 'false' }
   - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'idle-dim', value: 'false' }
+  - { schema: 'org.gnome.desktop.session', key: 'idle-delay', value: '0' }
+  - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'idle-dim', value: 'false' }
