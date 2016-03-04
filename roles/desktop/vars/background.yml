@@ -1,0 +1,6 @@
+
+gsettings_options:
+  - { schema: 'org.gnome.desktop.background', key: 'picture-options', value: "{{ background_options }}" }
+
+gsettings_uri:
+  - { schema: 'org.gnome.desktop.background', key: 'picture-uri', value: "{{ background_uri }}" }
