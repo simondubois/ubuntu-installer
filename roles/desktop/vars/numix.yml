@@ -2,6 +2,6 @@
 ppa: ppa:numix/ppa
 
 gsettings:
-  - { schema: 'org.gnome.desktop.wm.preferences', key: 'theme', value: 'Numix' }
-  - { schema: 'org.gnome.desktop.interface', key: 'gtk-theme', value: 'Numix' }
+  - { schema: 'org.gnome.desktop.wm.preferences', key: 'theme', value: 'Numix Light' }
+  - { schema: 'org.gnome.desktop.interface', key: 'gtk-theme', value: 'Numix Light' }
   - { schema: 'org.gnome.desktop.interface', key: 'icon-theme', value: 'Numix-Circle' }
