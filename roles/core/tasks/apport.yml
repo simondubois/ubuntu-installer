@@ -1,0 +1,11 @@
+---
+
+- include_vars: apport.yml
+
+- name: disable apport
+  lineinfile:
+    dest: "{{ config_file }}"
+    regexp: '^enabled=1$'
+    line: 'enabled=0'
+  become: yes
+  become_user: root
