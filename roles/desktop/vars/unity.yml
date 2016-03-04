@@ -6,3 +6,5 @@ gsettings:
   - { schema: 'com.canonical.Unity.Lenses', key: 'always-search', value: "['applications.scope', 'files.scope']" }
   - { schema: 'com.canonical.unity.webapps', key: 'integration-allowed', value: 'false' }
   - { schema: 'com.canonical.unity.webapps', key: 'preauthorized-domains', value: '[]' }
+  - { schema: 'org.compiz.core:/org/compiz/profiles/unity/plugins/core/', key: 'hsize', value: '2' }
+  - { schema: 'org.compiz.core:/org/compiz/profiles/unity/plugins/core/', key: 'vsize', value: '2' }

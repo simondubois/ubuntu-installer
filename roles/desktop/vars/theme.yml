@@ -4,3 +4,4 @@ numix_ppa: ppa:numix/ppa
 gsettings:
   - { schema: 'org.gnome.desktop.wm.preferences', key: 'theme', value: "{{ theme_in_use }}" }
   - { schema: 'org.gnome.desktop.interface', key: 'gtk-theme', value: "{{ theme_in_use }}" }
+  - { schema: 'com.canonical.unity-greeter', key: 'theme-name', value: "{{ theme_in_use }}" }
