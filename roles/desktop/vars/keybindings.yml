@@ -4,3 +4,23 @@ gsettings:
   - { schema: 'com.canonical.indicator.keyboard', key: 'visible', value: 'false' }
   - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source', value: "['']" }
   - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source-backward', value: "['']" }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'logout', value: '' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'home', value: '<Primary><Alt>e' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'search', value: '<Primary><Alt>r' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'custom-keybindings', value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']" }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'calculator', value: '<Primary><Alt>c' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'www', value: '<Primary><Alt>i' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'email', value: '<Primary><Alt>m' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'screensaver', value: '' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', key: 'binding', value: '<Primary><Alt>Delete' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', key: 'command', value: 'gnome-system-monitor' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', key: 'name', value: 'Moniteur système' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', key: 'binding', value: '<Primary><Alt>l' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', key: 'command', value: '/usr/bin/chromium-browser --app=https://trello.com/' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', key: 'name', value: 'Trello' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', key: 'binding', value: '<Primary><Alt>o' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', key: 'command', value: '/usr/bin/chromium-browser "--app=https://cloud.dubandubois.com/index.php/apps/news#/items"' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', key: 'name', value: 'Owncloud' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', key: 'binding', value: '<Primary><Alt>s' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', key: 'command', value: 'subl' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', key: 'name', value: 'Sublime Text' }
