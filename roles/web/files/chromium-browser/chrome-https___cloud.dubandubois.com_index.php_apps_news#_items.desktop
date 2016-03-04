@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=News - ownCloud
+Exec=/usr/bin/chromium-browser "--app=https://cloud.dubandubois.com/index.php/apps/news#/items"
+Icon=owncloud
+StartupWMClass=cloud.dubandubois.com__index.php_apps_news

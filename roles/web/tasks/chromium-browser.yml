@@ -1,7 +1,16 @@
 ---
 
+- include_vars: chromium-browser.yml
+
 - name: install chromium-browser
   apt:
     name: chromium-browser
   become: yes
   become_user: root
+
+- name: copy shortcuts
+  file:
+    src: "{{ shortcut_source }}/{{ item }}"
+    dest: "{{ shortcut_destination }}/{{ item }}"
+    state: link
+  with_items: "{{ shortcuts }}"
