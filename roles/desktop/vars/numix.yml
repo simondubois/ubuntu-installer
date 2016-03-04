@@ -1,0 +1,5 @@
+
+ppa: ppa:numix/ppa
+
+gsettings:
+  - { schema: 'org.gnome.desktop.interface', key: 'icon-theme', value: 'Numix-Square' }
