@@ -3,5 +3,8 @@
 - include: compiz.yml
 - include: datetime.yml
 - include: keybindings.yml
-- include: numix.yml
+- include: numixicons.yml
+  when: "icons == 'Numix-Circle'"
+- include: numixtheme.yml
+  when: "theme == 'Numix'"
 - include: unity.yml

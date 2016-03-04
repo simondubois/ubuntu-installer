@@ -1,0 +1,26 @@
+---
+
+- include_vars: numixicons.yml
+
+- name: add numix ppa
+  apt_repository:
+    repo: "{{ ppa }}"
+    state: present
+  become: yes
+  become_user: root
+
+- name: install numix icon theme
+  apt:
+    name: numix-icon-theme
+  become: yes
+  become_user: root
+
+- name: install circle numix icon theme
+  apt:
+    name: numix-icon-theme-circle
+  become: yes
+  become_user: root
+
+- name: gsettings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items: "{{ gsettings }}"

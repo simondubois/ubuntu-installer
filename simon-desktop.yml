@@ -7,4 +7,9 @@
     # - web
     # - dev
     # - media
-    - desktop
+    - {
+      role: desktop
+      theme: Radiance
+      icons: Numix-Circle
+    }
+

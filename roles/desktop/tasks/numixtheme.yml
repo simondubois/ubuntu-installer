@@ -1,6 +1,6 @@
 ---
 
-- include_vars: numix.yml
+- include_vars: numixtheme.yml
 
 - name: add numix ppa
   apt_repository:
@@ -12,18 +12,6 @@
 - name: install numix gtk theme
   apt:
     name: numix-gtk-theme
-  become: yes
-  become_user: root
-
-- name: install numix icon theme
-  apt:
-    name: numix-icon-theme
-  become: yes
-  become_user: root
-
-- name: install circle numix icon theme
-  apt:
-    name: numix-icon-theme-circle
   become: yes
   become_user: root
 
