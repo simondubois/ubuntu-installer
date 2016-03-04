@@ -1,0 +1,4 @@
+
+gsettings:
+  - { schema: 'org.gnome.calculator', key: ' button-mode', value: 'advanced' }
+  - { schema: 'org.gnome.calculator', key: ' number-format', value: 'fixed' }

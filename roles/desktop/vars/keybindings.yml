@@ -1,4 +1,5 @@
 
 gsettings:
+  - { schema: 'org.gnome.settings-daemon.peripherals.touchpad', key: 'scroll-method', value: 'edge-scrolling' }
   - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source', value: "['']" }
   - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source-backward', value: "['']" }

@@ -1,5 +1,6 @@
 ---
 
+- include: calculator.yml
 - include: gparted.yml
 - include: rar.yml
 - include: startup.yml
