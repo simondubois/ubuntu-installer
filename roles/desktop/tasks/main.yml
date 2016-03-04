@@ -7,6 +7,7 @@
 - include: keybindings.yml
 - include: icons.yml
   when: icons_in_use is defined
+- include: power.yml
 - include: theme.yml
   when: theme_in_use is defined
 - include: unity.yml
