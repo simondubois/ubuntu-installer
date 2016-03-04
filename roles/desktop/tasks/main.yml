@@ -2,5 +2,6 @@
 
 - include: compiz.yml
 - include: datetime.yml
+- include: keybindings.yml
 - include: numix.yml
 - include: unity.yml
