@@ -1,0 +1,4 @@
+
+gsettings:
+  - { schema: 'org.gnome.nautilus.icon-view', key: 'default-zoom-level', value: 'larger' }
+  - { schema: 'org.gnome.nautilus.list-view', key: 'use-tree-view', value: 'true' }
