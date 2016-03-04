@@ -2,9 +2,9 @@
 
 - hosts: localhost
   roles:
-    - system
-    - core
-    - web
-    - dev
-    - media
+    # - system
+    # - core
+    # - web
+    # - dev
+    # - media
     - desktop
