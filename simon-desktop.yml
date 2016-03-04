@@ -10,8 +10,8 @@
     - {
       role: desktop,
       theme_in_use: Numix,
-      icons_in_use: Numix-Circle
-      background_options: spanned
+      icons_in_use: Numix-Circle,
+      background_options: spanned,
       background_uri: file:///home/sel/Images/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml
     }
 
