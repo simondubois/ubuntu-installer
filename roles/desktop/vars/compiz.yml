@@ -1,3 +1,5 @@
 
 gsettings:
   - { schema: 'org.compiz.integrated', key: 'show-hud', value: "['disabled']" }
+  - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'disable-show-desktop', value: 'true' }
+  - { schema: 'org.compiz.wall:/org/compiz/profiles/unity/plugins/wall/', key: 'miniscreen', value: 'false' }
