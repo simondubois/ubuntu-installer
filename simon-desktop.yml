@@ -2,7 +2,7 @@
 
 - hosts: localhost
   roles:
-    # - system
+    - system
     - {
       role: 'core',
       startup_enabled: [
@@ -11,9 +11,9 @@
         '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
       ]
     }
-    # - web
-    # - dev
-    # - media
+    - web
+    - dev
+    - media
     - {
       role: "desktop",
       theme_in_use: "Numix",
