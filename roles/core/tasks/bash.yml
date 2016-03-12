@@ -18,3 +18,9 @@
     src: "{{ aliases_source }}"
     dest: "{{ aliases_destination }}"
     state: link
+
+- name: install undistract-me
+  apt:
+    name: undistract-me
+  become: yes
+  become_user: root
