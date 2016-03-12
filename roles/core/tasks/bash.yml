@@ -1,0 +1,15 @@
+---
+
+- include_vars: bash.yml
+
+- name: copy bashrc file
+  file:
+    src: "{{ rc_source }}"
+    dest: "{{ rc_destination }}"
+    state: link
+
+- name: copy aliases file
+  file:
+    src: "{{ aliases_source }}"
+    dest: "{{ aliases_destination }}"
+    state: link

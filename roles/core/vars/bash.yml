@@ -1,0 +1,8 @@
+
+rc_source: "{{ role_path }}/files/bash/.bashrc"
+
+rc_destination: "{{ ansible_env.HOME }}/.bashrc"
+
+aliases_source: "{{ role_path }}/files/bash/.bash_aliases"
+
+aliases_destination: "{{ ansible_env.HOME }}/.bash_aliases"

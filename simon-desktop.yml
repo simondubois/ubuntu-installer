@@ -4,7 +4,7 @@
   roles:
     # - system
     # - owncloud
-    - web
+    # - web
     # - dev
     # - media
     # - {
@@ -19,13 +19,13 @@
     #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
     #   ],
     # }
-    # - {
-    #   role: 'core',
-    #   startup_enabled: [
-    #     '/usr/share/applications/owncloud.desktop',
-    #     '/usr/share/applications/extras-my-weather-indicator.desktop',
-    #     '/usr/share/applications/thunderbird.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-    #   ]
-    # }
+    - {
+      role: 'core',
+      startup_enabled: [
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+      ]
+    }
 

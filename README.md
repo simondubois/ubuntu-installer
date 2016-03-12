@@ -11,11 +11,12 @@ This application is currently under development :
 
 - [x] Project setup
 - [x] System role
-- [x] Core applications roles
+- [ ] Owncloud role
 - [x] Web applications roles
 - [x] Dev applications roles
 - [x] Media applications roles
-- [ ] Unity role
+- [x] Desktop role
+- [x] Core roles
 
 ## Usage
 
@@ -45,6 +46,7 @@ ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 ## To be configured manually
 
 - chromium-browser (just sign in to sync)
+- filezilla
 - thunderbird
 - skype
 - kodi

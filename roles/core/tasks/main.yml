@@ -1,6 +1,7 @@
 ---
 
 - include: apport.yml
+- include: bash.yml
 - include: calculator.yml
 - include: gparted.yml
 - include: nautilus.yml
