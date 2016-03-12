@@ -2,3 +2,7 @@
 repo_url: https://github.com/mcrapet/plowshare.git
 
 repo_path: /opt/plowshare
+
+ddl_source: "{{ role_path }}/files/plowshare/ddl"
+
+ddl_destination: "/usr/local/bin/ddl"

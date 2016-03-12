@@ -27,3 +27,10 @@
     name: screen
   become: yes
   become_user: root
+
+- name: install ddl script
+  file:
+    src: "{{ ddl_source }}"
+    dest: "{{ ddl_destination }}"
+    mode: 0777
+    state: link

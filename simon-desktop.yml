@@ -3,8 +3,8 @@
 - hosts: localhost
   roles:
     # - system
-    - owncloud
-    # - web
+    # - owncloud
+    - web
     # - dev
     # - media
     # - {
