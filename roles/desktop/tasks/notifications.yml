@@ -9,9 +9,9 @@
   become: yes
   become_user: root
 
-- name: install libnotify
+- name: upgrade libnotify
   apt:
-    name: libnotify-bin
+    upgrade: yes
   become: yes
   become_user: root
 
