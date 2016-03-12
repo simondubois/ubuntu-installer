@@ -19,10 +19,11 @@
       theme_in_use: "Numix",
       icons_in_use: "Numix-Circle",
       background_options: "spanned",
-      background_uri: "file:///home/sel/Images/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml"
+      background_uri: "file:///home/sel/Images/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml",
       custom_compiz: [
         { schema: 'org.compiz.place', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
         { schema: 'org.compiz.place', key: 'viewport-x-values', value: '[2, 2]' },
         { schema: 'org.compiz.place', key: 'viewport-y-values', value: '[1, 2]' },
+      ],
     }
 
