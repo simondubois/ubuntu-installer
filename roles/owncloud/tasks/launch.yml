@@ -7,5 +7,5 @@
   register: owncloud_is_running
 
 - name: start owncloud
-  command: owncloud
+  shell: nohup owncloud &
   when: owncloud_is_running.rc == 1
