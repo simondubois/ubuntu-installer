@@ -2,11 +2,11 @@
 
 - hosts: localhost
   roles:
-    - system
-    - core
-    - web
-    - dev
-    - media
+    # - system
+    # - core
+    # - web
+    # - dev
+    # - media
     - {
       role: "desktop",
       theme_in_use: "Numix",

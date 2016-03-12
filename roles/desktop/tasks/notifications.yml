@@ -1,0 +1,19 @@
+---
+
+- include_vars: notifications.yml
+
+- name: add libnotify ppa
+  apt_repository:
+    repo: "{{ libnotify_ppa }}"
+    state: present
+  become: yes
+  become_user: root
+
+- name: install libnotify
+  apt:
+    name: libnotify
+  become: yes
+  become_user: root
+
+- name: restart libnotify
+  command: pkill notify-osd
