@@ -5,7 +5,6 @@
 - name: add numix ppa
   apt_repository:
     repo: "{{ numix_ppa }}"
-    state: present
   become: yes
   become_user: root
   when: "theme_in_use == 'Numix'"

@@ -5,7 +5,6 @@
 - name: add libnotify ppa
   apt_repository:
     repo: "{{ libnotify_ppa }}"
-    state: present
   become: yes
   become_user: root
 

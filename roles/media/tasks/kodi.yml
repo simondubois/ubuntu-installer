@@ -5,7 +5,6 @@
 - name: add kodi ppa
   apt_repository:
     repo: "{{ kodi_ppa }}"
-    state: present
   become: yes
   become_user: root
 
@@ -18,8 +17,6 @@
 - name: add flirc ppa
   apt_repository:
     repo: "{{ flirc_ppa }}"
-    state: present
-  become: yes
   become_user: root
 
 - name: install flirc

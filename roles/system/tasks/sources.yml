@@ -12,7 +12,6 @@
 - name: enable package sources
   apt_repository:
     repo: "deb {{item}}"
-    state: present
     update_cache: no
   become: yes
   become_user: root

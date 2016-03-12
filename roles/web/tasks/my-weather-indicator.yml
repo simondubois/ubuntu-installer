@@ -5,7 +5,6 @@
 - name: add my-weather-indicator ppa
   apt_repository:
     repo: "{{ ppa }}"
-    state: present
   become: yes
   become_user: root
 
