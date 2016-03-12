@@ -23,8 +23,8 @@
 
 - name: copy startup applications to enable
   copy:
-    src: "{{ application_source }}/{{ item }}"
-    dest: "{{ destination }}/{{ item }}"
+    src: "{{ item }}"
+    dest: "{{ destination }}"
     force: no
   with_items: "{{ startup_enabled|default([]) }}"
 
