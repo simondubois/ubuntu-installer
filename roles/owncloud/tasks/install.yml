@@ -1,0 +1,27 @@
+---
+
+- include_vars: install.yml
+
+- name: add owncloud keyserver
+  apt_key:
+      url: "{{ owncloud_keyserver }}"
+  become: yes
+  become_user: root
+
+- name: add owncloud ppa
+  apt_repository:
+    repo: "{{ owncloud_ppa }}"
+  become: yes
+  become_user: root
+
+- name: install owncloud-client
+  apt:
+    name: owncloud-client
+  become: yes
+  become_user: root
+
+- name: install owncloud-client-nautilus
+  apt:
+    name: owncloud-client-nautilus
+  become: yes
+  become_user: root
