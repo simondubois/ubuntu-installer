@@ -44,11 +44,11 @@ ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 
 ## To be configured manually
 
-- sublime-text (just restard the application to load packages)
 - chromium-browser (just sign in to sync)
-- skype (just login and)
-- kodi (no setup supported)
+- thunderbird
+- skype
+- kodi
 
 ## Known issues
 
- - **Script fails on first run on fresh install.** This is due to ansible package update when running. Just restart the deployment with ansible-pull to continue.
+ - **Script fails after "TASK [system : update sources]".** This is due to upgrade of ansible package while ansible is running. Just restart the deployment with ansible-pull to continue.

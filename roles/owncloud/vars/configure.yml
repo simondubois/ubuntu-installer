@@ -1,0 +1,8 @@
+
+config_source: '{{ ansible_hostname}}/owncloud.cfg'
+
+config_directory_1: "{{ ansible_env.HOME }}/.local/share/data"
+
+config_directory_2: "{{ config_directory_1 }}/ownCloud"
+
+config_destination: '{{ config_directory_2 }}/owncloud.cfg'

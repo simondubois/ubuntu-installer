@@ -1,0 +1,17 @@
+---
+
+- name: create ownclound configuration directory 1
+  file:
+    path: "{{ config_directory_1 }}"
+    state: directory
+
+- name: create ownclound configuration directory 2
+  file:
+    path: "{{ config_directory_2 }}"
+    state: directory
+
+- name: copy ownclound configuration file
+  copy:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    force: no
