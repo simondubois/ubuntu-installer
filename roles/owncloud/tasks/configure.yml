@@ -1,5 +1,7 @@
 ---
 
+- include_vars: configure.yml
+
 - name: create ownclound configuration directory 1
   file:
     path: "{{ config_directory_1 }}"
