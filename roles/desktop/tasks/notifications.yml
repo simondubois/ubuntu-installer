@@ -15,5 +15,12 @@
   become: yes
   become_user: root
 
+- name: set libnotify configuration
+  file:
+    src: "{{ configuration_source }}"
+    dest: "{{ configuration_destination }}"
+    state: link
+
 - name: restart libnotify
   command: pkill notify-osd
+  ignore_errors: yes

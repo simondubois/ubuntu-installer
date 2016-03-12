@@ -1,2 +1,6 @@
 
 libnotify_ppa: ppa:leolik/leolik
+
+configuration_source: "{{ role_path }}/files/notifications/.notify-osd"
+
+configuration_destination: "{{ ansible_env.HOME }}/.notify-osd"
