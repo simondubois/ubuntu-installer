@@ -2,6 +2,11 @@
 
 - include_vars: bash.yml
 
+- name: delete previous bashrc file
+  file:
+    dest: "{{ rc_destination }}"
+    state: absent
+
 - name: copy bashrc file
   file:
     src: "{{ rc_source }}"
