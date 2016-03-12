@@ -11,7 +11,7 @@
 
 - name: install libnotify
   apt:
-    name: libnotify
+    name: libnotify-bin
   become: yes
   become_user: root
 
