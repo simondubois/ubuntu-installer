@@ -1,5 +1,7 @@
 
-source: /etc/xdg/autostart/
+system_source: /etc/xdg/autostart/
+
+application_source: /usr/share/applications/
 
 destination: "{{ ansible_env.HOME }}/.config/autostart"
 

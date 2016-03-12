@@ -7,9 +7,9 @@
     path: "{{ destination }}"
     state: directory
 
-- name: copy startup applications
+- name: copy startup applications to disable
   copy:
-    src: "{{ source }}/{{ item }}"
+    src: "{{ system_source }}/{{ item }}"
     dest: "{{ destination }}/{{ item }}"
     force: no
   with_items: "{{ disabled }}"
@@ -20,3 +20,19 @@
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
   with_items: "{{ disabled }}"
+
+- name: copy startup applications to enable
+  copy:
+    src: "{{ application_source }}/{{ item }}"
+    dest: "{{ destination }}/{{ item }}"
+    force: no
+  with_items: "{{ startup_enabled }}"
+  when: startup_enabled is defined
+
+- name: enable startup applications
+  lineinfile:
+    dest: "{{ destination }}/{{ item }}"
+    regexp: '^X-GNOME-Autostart-enabled=false$'
+    line: 'X-GNOME-Autostart-enabled=true'
+  with_items: "{{ startup_enabled }}"
+  when: startup_enabled is defined

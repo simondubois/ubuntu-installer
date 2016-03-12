@@ -6,7 +6,3 @@ config_directory: "{{ ansible_env.HOME }}/.config/my-weather-indicator"
 config_source: "{{ role_path }}/files/my-weather-indicator//my-weather-indicator.conf"
 
 config_destination: "{{ config_directory }}/my-weather-indicator.conf"
-
-startup_source: "my-weather-indicator/my-weather-indicator-autostart.desktop"
-
-startup_destination: "{{ ansible_env.HOME }}/.config/autostart/my-weather-indicator-autostart.desktop"

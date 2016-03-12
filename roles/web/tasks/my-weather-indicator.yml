@@ -26,9 +26,3 @@
     src: "{{ config_source }}"
     dest: "{{ config_destination }}"
     state: link
-
-- name: add my-weather-indicator startup
-  copy:
-    src: "{{ startup_source }}"
-    dest: "{{ startup_destination }}"
-    force: no
