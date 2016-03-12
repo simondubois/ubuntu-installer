@@ -11,7 +11,7 @@
 
 - name: upgrade libnotify
   apt:
-    upgrade: "yes"
+    upgrade: dist
   become: yes
   become_user: root
 
