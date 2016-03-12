@@ -30,7 +30,7 @@
 
 - name: enable startup applications
   lineinfile:
-    dest: "{{ destination }}/{{ item }}"
+    dest: "{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=false$'
     line: 'X-GNOME-Autostart-enabled=true'
   with_items: "{{ startup_enabled|default([]) }}"
