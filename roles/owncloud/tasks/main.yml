@@ -3,5 +3,5 @@
 
 - include: install.yml
 - include: configure.yml
+- include: launch.yml
 # - include: link.yml
-# - include: launch.yml

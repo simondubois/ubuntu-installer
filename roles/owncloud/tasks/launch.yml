@@ -1,0 +1,11 @@
+---
+
+- name: check if owncloud is running
+  command: pidof owncloud
+  changed_when: false
+  ignore_errors: yes
+  register: owncloud_is_running
+
+- name: start owncloud
+  command: owncloud
+  when: owncloud_is_running.rc == 1
