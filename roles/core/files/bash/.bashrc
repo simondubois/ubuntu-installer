@@ -192,3 +192,6 @@ then
 	. /usr/share/undistract-me/long-running.bash
 	notify_when_long_running_commands_finish_install
 fi
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
