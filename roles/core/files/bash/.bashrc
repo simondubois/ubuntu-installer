@@ -193,5 +193,12 @@ then
 	notify_when_long_running_commands_finish_install
 fi
 
-# Hook for desk activation
+
+
+# DESK
+
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
+
+if [ -n "$DESK_NAME" ]; then
+    PS1='\[$(tput setaf 3)\]\u@\h\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 6)\]\342\227\262 $DESK_NAME\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 2)\]\w\[$(tput setaf 7)\]\[$(tput bold)\]$\[$(tput sgr0)\] '
+fi
