@@ -175,7 +175,7 @@ esac
 
 PS1='\[$(tput setaf 3)\]\u@\h\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 2)\]\w\[$(tput setaf 7)\]\[$(tput bold)\]$\[$(tput sgr0)\] '
 
-EDITOR='nano'
+export EDITOR='nano'
 
 VERT="\\033[1;32m"
 NORMAL="\\033[0;39m"
