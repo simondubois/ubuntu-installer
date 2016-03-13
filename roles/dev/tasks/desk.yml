@@ -1,0 +1,18 @@
+---
+
+- include_vars: desk.yml
+
+- name: download desk
+  get_url:
+    url: "{{ desk_url }}"
+    dest: "{{ desk_path }}"
+    mode: 0777
+  become: yes
+  become_user: root
+
+- name: download desk completion
+  get_url:
+    url: "{{ completion_url }}"
+    dest: "{{ completion_path }}"
+  become: yes
+  become_user: root

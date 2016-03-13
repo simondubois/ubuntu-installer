@@ -1,0 +1,8 @@
+
+desk_url: https://raw.githubusercontent.com/jamesob/desk/master/desk
+
+desk_path: /usr/local/bin/desk
+
+completion_url: https://raw.githubusercontent.com/jamesob/desk/master/shell_plugins/bash/desk
+
+completion_path: /usr/share/bash-completion/completions/desk

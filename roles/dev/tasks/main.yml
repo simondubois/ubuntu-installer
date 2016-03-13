@@ -1,5 +1,6 @@
 ---
 
+- include: desk.yml
 - include: filezilla.yml
 - include: git.yml
 - include: remarkable.yml

@@ -40,6 +40,8 @@ video-rotate() { avconv -i "$1" -vf transpose=1 -strict experimental ~/$1.mp4; }
 # Development environment
 #
 
+alias d='desk .'
+
 alias log='tail -f /var/log/apache2/error.log'
 blackfire-php() { (sudo php5dismod xdebug && sudo service php5-fpm restart; blackfire run $@; sudo php5enmod xdebug && sudo service php5-fpm restart); }
 
