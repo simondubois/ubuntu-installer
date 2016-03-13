@@ -13,3 +13,9 @@
     name: indicator-sysmonitor
   become: yes
   become_user: root
+
+- name: set indicator-sysmonitor configuration
+  file:
+    src: "{{ configuration_source }}"
+    dest: "{{ configuration_destination }}"
+    state: link

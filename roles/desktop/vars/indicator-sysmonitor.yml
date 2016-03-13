@@ -1,2 +1,6 @@
 
 ppa: ppa:fossfreedom/indicator-sysmonitor
+
+configuration_source: "{{ role_path }}/files/indicator-sysmonitor/.indicator-sysmonitor.json"
+
+configuration_destination: "{{ ansible_env.HOME }}/.indicator-sysmonitor.json"
