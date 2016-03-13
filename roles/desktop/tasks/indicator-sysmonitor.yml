@@ -1,0 +1,15 @@
+---
+
+- include_vars: indicator-sysmonitor.yml
+
+- name: add indicator-sysmonitor ppa
+  apt_repository:
+    repo: "{{ ppa }}"
+  become: yes
+  become_user: root
+
+- name: install indicator-sysmonitor
+  apt:
+    name: indicator-sysmonitor
+  become: yes
+  become_user: root
