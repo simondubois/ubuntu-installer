@@ -16,3 +16,9 @@
     dest: "{{ completion_path }}"
   become: yes
   become_user: root
+
+- name: set desk configuration
+  file:
+    src: "{{ config_source }}"
+    dest: "{{ config_destination }}"
+    state: link

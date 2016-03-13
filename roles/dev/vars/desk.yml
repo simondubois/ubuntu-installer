@@ -6,3 +6,7 @@ desk_path: /usr/local/bin/desk
 completion_url: https://raw.githubusercontent.com/jamesob/desk/master/shell_plugins/bash/desk
 
 completion_path: /usr/share/bash-completion/completions/desk
+
+config_source: "{{ role_path }}/files/desk"
+
+config_destination: "{{ ansible_env.HOME }}/.desk"
