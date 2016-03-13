@@ -4,29 +4,28 @@
   roles:
     # - system
     # - owncloud
-    # - web
+    - web
     # - dev
     # - media
-    - {
-      role: "desktop",
-      theme_in_use: "Numix",
-      icons_in_use: "Numix-Circle",
-      background_options: "spanned",
-      background_uri: "file:///home/sel/Images/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml",
-      custom_compiz: [
-        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
-        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
-        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
-      ],
-    }
-    - {
-      role: 'core',
-      startup_enabled: [
-        '/usr/share/applications/owncloud.desktop',
-        '/usr/share/applications/extras-my-weather-indicator.desktop',
-        '/usr/share/applications/indicator-sysmonitor.desktop',
-        '/usr/share/applications/thunderbird.desktop',
-        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-      ]
-    }
-
+    # - {
+    #   role: "desktop",
+    #   theme_in_use: "Numix",
+    #   icons_in_use: "Numix-Circle",
+    #   background_options: "spanned",
+    #   background_uri: "file:///home/sel/Images/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml",
+    #   custom_compiz: [
+    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
+    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
+    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
+    #   ],
+    # }
+    # - {
+    #   role: 'core',
+    #   startup_enabled: [
+    #     '/usr/share/applications/owncloud.desktop',
+    #     '/usr/share/applications/extras-my-weather-indicator.desktop',
+    #     '/usr/share/applications/indicator-sysmonitor.desktop',
+    #     '/usr/share/applications/thunderbird.desktop',
+    #     '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+    #   ]
+    # }
