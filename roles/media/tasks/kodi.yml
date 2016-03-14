@@ -17,6 +17,7 @@
 - name: add flirc ppa
   apt_repository:
     repo: "{{ flirc_ppa }}"
+  become: yes
   become_user: root
 
 - name: install flirc
