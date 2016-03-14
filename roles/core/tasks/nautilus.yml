@@ -4,7 +4,7 @@
 
 - name: remove Examples folder
   file:
-    dest: {{ examples_path }}
+    dest: "{{ examples_path }}"
     state: absent
 
 - name: install nautilus-image-converter
