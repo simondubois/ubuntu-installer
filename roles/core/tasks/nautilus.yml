@@ -2,6 +2,11 @@
 
 - include_vars: nautilus.yml
 
+- name: remove Examples folder
+  apt:
+    name: {{ examples_path }}
+    state: absent
+
 - name: install nautilus-image-converter
   apt:
     name: nautilus-image-converter
