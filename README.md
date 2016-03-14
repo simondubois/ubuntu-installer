@@ -3,20 +3,45 @@
 
 ![Ubuntu logo](https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/screenshot.png  "Ubuntu logo")
 
-[WIP] CLI to set up my personal Ubuntu system
+CLI to set up my personal Ubuntu system
 
-## Status
 
-This application is currently under development :
+## Roles
 
-- [x] Project setup
-- [x] System role
-- [ ] Owncloud role
-- [x] Web applications roles
-- [x] Dev applications roles
-- [x] Media applications roles
-- [x] Desktop role
-- [x] Core roles
+### system
+System wide configuration.
+No parameters.
+
+### owncloud
+Owncloud sync setup.
+No parameters.
+
+### web
+Web applications.
+No parameters.
+
+### dev
+Development environment
+No settings.
+
+### media
+Media applications
+No parameters.
+
+### desktop
+Desktop settings.
+Parameters are :
+    - theme_in_use (Gtk theme to set as active).
+    - icons_in_use (icon theme to set as active).
+    - background_options (how background is resized).
+    - background_uri (path to background file).
+    - custom_compiz ( array of compiz settings).
+
+### core
+Core settings.
+Parameter is :
+    - startup_enabled (array of desktop file to launch on session start).
+
 
 ## Usage
 
@@ -43,13 +68,15 @@ ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
 - intel-linux-graphics-installer
 - steam
 
-## To be configured manually
+## To be configured manually (post install)
 
 - chromium-browser (just sign in to sync)
 - filezilla
 - thunderbird
 - skype
 - kodi
+- custom folders icons :
+    - ``gvfs-set-attribute ~/www metadata::custom-icon-name network``
 
 ## Known issues
 
