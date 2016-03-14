@@ -17,7 +17,7 @@
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
-        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mdoe', value: '2' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
         { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
       ],
     }
