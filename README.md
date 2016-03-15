@@ -59,7 +59,7 @@ wget https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/insta
 
 ```Shell
 
-ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
+ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
 
 ```
 
