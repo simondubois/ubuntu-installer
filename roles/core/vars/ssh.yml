@@ -1,0 +1,4 @@
+
+ssh_source: "{{ ansible_env.HOME }}/Documents/ubuntu/.ssh"
+
+ssh_destination: "{{ ansible_env.HOME }}/.ssh"
