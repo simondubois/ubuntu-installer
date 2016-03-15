@@ -20,6 +20,9 @@
         { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
         { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
       ],
+      custom_unity: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
     }
     - {
       role: 'core',
