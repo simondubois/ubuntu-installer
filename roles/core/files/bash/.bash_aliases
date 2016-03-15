@@ -24,11 +24,11 @@ alias sysup='sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get
 # Media handling
 #
 
-unsplashpath='~/Images/wallpapers/unsplash.com'
+unsplashpath='~/Pictures/wallpapers/unsplash.com'
 alias unsplash-download='php ~/www/unsplash-downloader/build/unsplash-downloader --featured --destination '$unsplashpath' --history '$unsplashpath'/history.txt --quantity 100 && n '$unsplashpath
 alias unsplash-refresh='cd '$unsplashpath' && sudo python slideshowBuilder.py && cd -'
 
-alias mp3bitratecheck='find ~/Musique/Parodies/ -name "*.mp3" -exec mp3info -r a -p "\"{}\"\t%r\n" "{}" \; | grep -v "12[0-9]."'
+alias mp3bitratecheck='find . -name "*.mp3" -exec mp3info -r a -p "\"{}\"\t%r\n" "{}" \; | grep -v "12[0-9]."'
 alias mp3bitrateconvert='for f in *.mp3; do avconv -i "$f" -c:a libmp3lame -b:a 128k "${f%.*}2.mp3"; done'
 
 video-encode() { avconv -i "$1" -strict experimental ~/$1.mp4; }

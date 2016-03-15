@@ -4,7 +4,7 @@ color_default="\\033[0;39m"
 color_green="\\033[1;32m"
 color_yellow="\\033[1;33m"
 
-download_dest='~/Téléchargements/'
+download_dest='~/Downloads/'
 download_list='~/web/downloads.txt'
 download_logs='/tmp/ddl.log'
 screen_comman="plowdown --min-space 100M -o $download_dest -m $download_list"
