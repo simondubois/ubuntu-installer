@@ -6,5 +6,6 @@
 - include: gparted.yml
 - include: nautilus.yml
 - include: rar.yml
+- include: ssh.yml
 - include: startup.yml
 - include: unetbootin.yml

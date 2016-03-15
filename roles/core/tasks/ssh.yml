@@ -1,0 +1,20 @@
+---
+
+- include_vars: ssh.yml
+
+- name: get ssh config destination status
+  stat:
+    path: "{{ ssh_destination }}"
+  register: ssh_destination_status
+
+- name: delete previous ssh destination
+  file:
+    dest: "{{ ssh_destination }}"
+    state: absent
+  when: ssh_destination_status.stat.isdir is defined and ssh_destination_status.stat.isdir
+
+- name: copy ssh config
+  file:
+    src: "{{ ssh_source }}"
+    dest: "{{ ssh_destination }}"
+    state: link
