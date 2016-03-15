@@ -2,10 +2,14 @@
 
 - include_vars: git.yml
 
-- name: set global email
-  command: git config --global user.email "{{ email }}"
+- name: set global user email
+  command: git config --global user.email "{{ user_email }}"
   changed_when: false
 
-- name: set global name
-  command: git config --global user.name "{{ name }}"
+- name: set global user name
+  command: git config --global user.name "{{ user_name }}"
+  changed_when: false
+
+- name: set global push default
+  command: git config --global push.default "{{ push_default }}"
   changed_when: false

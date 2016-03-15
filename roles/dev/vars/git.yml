@@ -1,4 +1,6 @@
 
-email: simon@dubandubois.com
+user_email: simon@dubandubois.com
 
-name: Simon Dubois
+user_name: Simon Dubois
+
+push_default: simple
