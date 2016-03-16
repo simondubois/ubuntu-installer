@@ -11,7 +11,7 @@
 - name: build background slideshows
   command: python "{{ item.path }}/slideshowBuilder.py"
   with_items:
-    - "{{ background_folder_list.files }}"
+    - background_folder_list.files
 
 - name: gsettings options
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
