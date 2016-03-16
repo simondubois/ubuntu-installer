@@ -10,7 +10,7 @@
   register: slideshow_builder_list
 
 - name: build background slideshows
-  command: python "{{ item.path }}/slideshowBuilder.py"
+  command: python "{{ item.path }}"
   with_items: "{{ slideshow_builder_list.files }}"
 
 - name: gsettings options
