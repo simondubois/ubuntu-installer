@@ -11,7 +11,7 @@
       role: "desktop",
       theme_in_use: "Numix",
       icons_in_use: "Numix-Circle",
-      background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash/unsplash-1.xml",
+      background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
       custom_compiz: [
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
