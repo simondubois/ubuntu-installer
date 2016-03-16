@@ -2,15 +2,16 @@
 
 - include_vars: background.yml
 
-- name: list background folders
+- name: list slideshow builders
   find:
-    paths: "{{ background_folder }}"
-    file_type: directory
-  register: background_folder_list
+    path: "{{ background_folder }}"
+    pattern: "slideshowBuilder.py"
+    recurse: yes
+  register: slideshow_builder_list
 
 - name: build background slideshows
   command: python "{{ item.path }}/slideshowBuilder.py"
-  with_items: background_folder_list.files
+  with_items: slideshow_builder_list.files
 
 - name: gsettings options
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
