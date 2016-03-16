@@ -16,11 +16,9 @@
   become_user: root
 
 - name: gsettings options
-  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
-  with_items: "{{ gsettings_options }}"
+  command: gsettings set org.gnome.desktop.background picture-options "{{ background_options }}"
   when: background_options is defined
 
 - name: gsettings uri
-  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
-  with_items: "{{ gsettings_uri }}"
+  command: gsettings set org.gnome.desktop.background picture-uri "{{ background_uri }}"
   when: background_uri is defined
