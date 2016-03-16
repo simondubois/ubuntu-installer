@@ -6,5 +6,5 @@ gsettings:
   - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'idle-dim', value: 'false' }
   - { schema: 'org.gnome.desktop.session', key: 'idle-delay', value: '0' }
   - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'idle-dim', value: 'false' }
-  - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'lid-close-ac-action', value: 'suspend' }
-  - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'lid-close-battery-action', value: 'suspend' }
+  - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'lid-close-ac-action', value: 'nothing' }
+  - { schema: 'org.gnome.settings-daemon.plugins.power', key: 'lid-close-battery-action', value: 'nothing' }
