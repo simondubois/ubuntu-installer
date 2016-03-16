@@ -10,7 +10,7 @@
   register: slideshow_builder_list
 
 - name: build background slideshows
-  command: python "{{ item.path }}"
+  command: cd "{{ item.path | dirname }}" && python "{{ item.path | basename }}"
   with_items: "{{ slideshow_builder_list.files }}"
   become: yes
   become_user: root
