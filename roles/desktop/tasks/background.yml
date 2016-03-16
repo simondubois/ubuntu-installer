@@ -12,6 +12,8 @@
 - name: build background slideshows
   command: python "{{ item.path }}"
   with_items: "{{ slideshow_builder_list.files }}"
+  become: yes
+  become_user: root
 
 - name: gsettings options
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
