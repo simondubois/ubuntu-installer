@@ -3,7 +3,7 @@
 - include_vars: background.yml
 
 - name: build background slideshows
-  command: "python {{ item }}/slideshowBuilder.py"
+  command: python {{ item }}/slideshowBuilder.py
   with_fileglob:
     - "{{ background_folders }}"
 
