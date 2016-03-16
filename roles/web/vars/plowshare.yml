@@ -9,4 +9,4 @@ ddl_destination: "/usr/local/bin/ddl"
 
 shortcut_source: "{{ role_path }}/files/plowshare/ddl.desktop"
 
-shortcut_destination: "{{ ansible_env.HOME }}/.local/share/applications"
+shortcut_destination: "{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop"
