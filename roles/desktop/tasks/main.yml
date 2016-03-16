@@ -1,16 +1,15 @@
 ---
 
-- include: actions.yml
-- include: compiz.yml
+#- include: actions.yml
+#- include: compiz.yml
 - include: background.yml
-  when: background_options is defined or background_uri is defined
-- include: datetime.yml
-- include: keybindings.yml
-- include: icons.yml
-  when: icons_in_use is defined
-- include: indicator-sysmonitor.yml
-- include: notifications.yml
-- include: power.yml
-- include: theme.yml
-  when: theme_in_use is defined
-- include: unity.yml
+#- include: datetime.yml
+#- include: keybindings.yml
+#- include: icons.yml
+#  when: icons_in_use is defined
+#- include: indicator-sysmonitor.yml
+#- include: notifications.yml
+#- include: power.yml
+#- include: theme.yml
+#  when: theme_in_use is defined
+#- include: unity.yml
