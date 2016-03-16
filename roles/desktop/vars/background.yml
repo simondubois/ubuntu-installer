@@ -1,4 +1,6 @@
 
+background_folders: '{{ ansible_env.HOME }}/Pictures/wallpapers/*'
+
 gsettings_options:
   - { schema: 'org.gnome.desktop.background', key: 'picture-options', value: "{{ background_options }}" }
 
