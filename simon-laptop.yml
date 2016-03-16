@@ -4,7 +4,7 @@
   roles:
     # - system
     # - owncloud
-    # - web
+    - web
     # - dev
     # - media
     - {
@@ -31,7 +31,7 @@
         '/usr/share/applications/indicator-sysmonitor.desktop',
         '/usr/share/applications/thunderbird.desktop',
         '/usr/share/applications/tilda.desktop',
-        '{{ inventory_dir }}roles/web/files/plowshare/ddl.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
         '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
       ]
     }

@@ -6,3 +6,7 @@ repo_path: /opt/plowshare
 ddl_source: "{{ role_path }}/files/plowshare/ddl"
 
 ddl_destination: "/usr/local/bin/ddl"
+
+shortcut_source: "{{ role_path }}/files/plowshare/ddl.desktop"
+
+shortcut_destination: "{{ ansible_env.HOME }}/.local/share/applications"

@@ -36,3 +36,9 @@
     state: link
   become: yes
   become_user: root
+
+- name: copy shortcut
+  file:
+    src: "{{ shortcut_source }}"
+    dest: "{{ shortcut_destination }}"
+    state: link
