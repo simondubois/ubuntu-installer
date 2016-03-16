@@ -23,14 +23,15 @@
         { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
       ],
     }
-    # - {
-    #   role: 'core',
-    #   startup_enabled: [
-    #     '/usr/share/applications/owncloud.desktop',
-    #     '/usr/share/applications/extras-my-weather-indicator.desktop',
-    #     '/usr/share/applications/indicator-sysmonitor.desktop',
-    #     '/usr/share/applications/thunderbird.desktop',
-    #     '/usr/share/applications/tilda.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-    #   ]
-    # }
+    - {
+      role: 'core',
+      startup_enabled: [
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '/usr/share/applications/tilda.desktop',
+        '{{ inventory_dir }}roles/web/files/plowshare/ddl.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+      ]
+    }
