@@ -1,7 +1,7 @@
 
 gsettings:
   - { schema: 'org.compiz.integrated', key: 'show-hud', value: "['disabled']" }
-  - { schema: 'org.compiz.put:/org/compiz/profiles/unity/plugins/put/', key: 'put-next-output-key', value: '<Super>oe' }
+  - { schema: 'org.compiz.put:/org/compiz/profiles/unity/plugins/put/', key: 'put-next-output-key', value: '<Super>œ' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'disable-show-desktop', value: 'true' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'launcher-capture-mouse', value: 'false' }
   - { schema: 'org.compiz.wall:/org/compiz/profiles/unity/plugins/wall/', key: 'miniscreen', value: 'false' }
