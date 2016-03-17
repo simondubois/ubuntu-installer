@@ -2,11 +2,11 @@
 
 - hosts: localhost
   roles:
-    # - system
-    # - owncloud
-    # - web
-    # - dev
-    # - media
+    - system
+    - owncloud
+    - web
+    - dev
+    - media
     - {
       role: "desktop",
       theme_in_use: "Numix",

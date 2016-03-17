@@ -1,7 +1,20 @@
 ---
 
+- include_vars: filezilla.yml
+
 - name: install filezilla
   apt:
     name: filezilla
   become: yes
   become_user: root
+
+- name: create configuration directory
+  file:
+    dest: "{{ config_directory }}"
+    state: directory
+
+- name: link sitemanager.xml file
+  file:
+    src: "{{ sitemanager_source }}"
+    dest: "{{ sitemanager_destination }}"
+    state: link

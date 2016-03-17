@@ -1,0 +1,6 @@
+
+config_directory: "{{ ansible_env.HOME }}/.filezilla"
+
+sitemanager_source: "{{ ansible_env.HOME }}/Documents/ubuntu/sitemanager.xml"
+
+sitemanager_destination: "{{ config_directory }}/sitemanager.xml"

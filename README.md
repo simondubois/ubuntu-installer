@@ -36,6 +36,7 @@ Parameters are :
     - background_options (how background is resized).
     - background_uri (path to background file).
     - custom_compiz ( array of compiz settings).
+    - custom_unity ( array of unity settings).
 
 ### core
 Core settings.
@@ -70,13 +71,10 @@ ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
 
 ## To be configured manually (post install)
 
-- chromium-browser (just sign in to sync)
-- filezilla
+- chromium-browser
 - thunderbird
 - skype
 - kodi
-- custom folders icons :
-    - ``gvfs-set-attribute ~/www metadata::custom-icon-name network``
 
 ## Known issues
 
