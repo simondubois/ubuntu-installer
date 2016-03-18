@@ -1,0 +1,3 @@
+
+gconf: 
+  - { key: '/apps/gnome-terminal/profiles/Default/background_type', type: 'string', value: 'transparent' }

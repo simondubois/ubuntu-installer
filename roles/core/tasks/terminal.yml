@@ -1,0 +1,7 @@
+---
+
+- include_vars: terminal.yml
+
+- name: gconf
+  command: gconftool -s "{{ item.key }}" -t "{{ item.type }}" "{{ item.value }}"
+  with_items: "{{ gconf }}"

@@ -8,4 +8,5 @@
 - include: rar.yml
 - include: ssh.yml
 - include: startup.yml
+- include: terminal.yml
 - include: unetbootin.yml
