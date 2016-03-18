@@ -56,11 +56,12 @@ wget https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/insta
 
 ```
 
-3. Deploy this repository
+3. Deploy this repository with one of the following commands :
 
 ```Shell
 
-ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
+ansible-pull -U git://github.com/simondubois/ubuntu-installer.git # public access
+ansible-pull -U git@github.com:simondubois/ubuntu-installer.git # credentials required
 
 ```
 
