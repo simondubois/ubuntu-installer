@@ -18,3 +18,4 @@
     src: "{{ sitemanager_source }}"
     dest: "{{ sitemanager_destination }}"
     state: link
+    force: true
