@@ -1,0 +1,16 @@
+---
+
+- include_vars: oneplusone.yml
+
+- name: add udev rules
+  lineinfile:
+    dest: "{{ udev_file }}"
+    line: "{{ item }}"
+  with_items: "{{ udev_rules }}"
+  become: yes
+  become_user: root
+
+- name: apply udev rules
+  command: udevadm control --reload-rules
+  become: yes
+  become_user: root

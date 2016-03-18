@@ -1,0 +1,6 @@
+
+udev_file: '/lib/udev/rules.d/69-libmtp.rules'
+
+udev_rules:
+  - 'ATTR{idVendor}=="05c6", ATTR{idProduct}=="9039", SYMLINK+="libmtp-%k", MODE="660", GROUP="audio", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"'
+  - 'ATTR{idVendor}=="05c6", ATTR{idProduct}=="f003", SYMLINK+="libmtp-%k", MODE="660", GROUP="audio", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"'
