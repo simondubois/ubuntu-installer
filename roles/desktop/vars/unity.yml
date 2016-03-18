@@ -6,4 +6,4 @@ gsettings:
   - { schema: 'com.canonical.unity.webapps', key: 'integration-allowed', value: 'false' }
   - { schema: 'com.canonical.unity.webapps', key: 'preauthorized-domains', value: '[]' }
   - { schema: 'com.canonical.indicator.bluetooth', key: 'visible', value: 'false' }
-  - { schema: 'org.gnome.desktop.interface', key: 'ubuntu-overlay-scrollbars', value: 'false' }
+  - { schema: 'com.canonical.desktop.interface', key: 'scrollbar-mode', value: 'normal' }

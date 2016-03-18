@@ -1,3 +1,5 @@
 
 gconf: 
   - { key: '/apps/gnome-terminal/profiles/Default/background_type', type: 'string', value: 'transparent' }
+  - { key: '/apps/gnome-terminal/profiles/Default/background_darkness', type: 'float', value: '0.75' }
+  - { key: '/apps/gnome-terminal/profiles/Default/scrollback_unlimited', type: 'bool', value: 'true' }
