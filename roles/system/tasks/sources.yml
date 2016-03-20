@@ -3,9 +3,9 @@
 - include_vars: "sources.yml"
 
 - name: remove default source file
-  file:
-      path: /etc/apt/sources.list
-      state: absent
+  copy:
+    path: /etc/apt/sources.list
+    content: ''
   become: yes
   become_user: root
 
