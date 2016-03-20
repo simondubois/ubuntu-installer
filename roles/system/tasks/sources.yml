@@ -5,7 +5,7 @@
 - name: remove default source file
   copy:
     path: /etc/apt/sources.list
-    content: ''
+    content: '#'
   become: yes
   become_user: root
 
