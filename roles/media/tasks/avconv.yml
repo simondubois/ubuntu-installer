@@ -1,0 +1,7 @@
+---
+
+- name: install avconv
+  apt:
+    name: avconv
+  become: yes
+  become_user: root
