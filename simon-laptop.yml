@@ -26,7 +26,7 @@
     - {
       role: 'core',
       nautilus_bookmarks: {
-        'file:///windows/Documents\ and\ Settings/Simon\ Dubois/Desktop',
+        'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
       },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
