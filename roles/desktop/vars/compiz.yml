@@ -2,7 +2,7 @@
 gsettings:
   - { schema: 'org.compiz.core:/org/compiz/profiles/Default/plugins/core/', key: 'active-plugins', value: "['core', 'composite', 'opengl', 'compiztoolbox', 'decor', 'vpswitch', 'snap', 'mousepoll', 'resize', 'place', 'move', 'wall', 'grid', 'regex', 'imgpng', 'session', 'gnomecompat', 'animation', 'fade', 'workarounds', 'scale', 'expo', 'ezoom', 'put']" }
   - { schema: 'org.compiz.integrated', key: 'show-hud', value: "['disabled']" }
-  - { schema: 'org.compiz.put:/org/compiz/profiles/unity/plugins/put/', key: 'put-next-output-key', value: '<Super>œ' }
+  - { schema: 'org.compiz.put:/org/compiz/profiles/unity/plugins/put/', key: 'put-next-output-key', value: '<Super>oe' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'disable-show-desktop', value: 'true' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'launcher-capture-mouse', value: 'false' }
   - { schema: 'org.compiz.wall:/org/compiz/profiles/unity/plugins/wall/', key: 'miniscreen', value: 'false' }
