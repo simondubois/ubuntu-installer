@@ -2,7 +2,7 @@
 # ubuntu-installer
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/screenshot.png" alt="Ubuntu logo" title="Ubuntu logo" style="max-width:100%;">
+<img src="https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/screenshot.png" alt="Ubuntu logo" title="Ubuntu logo" style="max-width:100%;"><br>
 CLI to set up my personal Ubuntu system
 </p>
 
