@@ -9,7 +9,3 @@ sudo apt-get install software-properties-common ansible git python-apt -y
 echo "%sudo ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/ansible
 sudo chown root:root /etc/sudoers.d/ansible
 sudo chmod 0440 /etc/sudoers.d/ansible
-
-# Import github SSH key
-mkdir -p ~/.ssh
-ssh-keyscan github.com >> ~/.ssh/known_hosts
