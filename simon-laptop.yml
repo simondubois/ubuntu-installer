@@ -25,6 +25,9 @@
     }
     - {
       role: 'core',
+      nautilus_bookmarks: {
+        'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
+      },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
         '/usr/share/applications/extras-my-weather-indicator.desktop',

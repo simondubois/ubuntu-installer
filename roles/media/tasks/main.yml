@@ -1,5 +1,6 @@
 ---
 
+- include: avconv.yml
 - include: easytag.yml
 - include: eog.yml
 - include: gimp.yml

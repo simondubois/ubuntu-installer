@@ -1,0 +1,7 @@
+---
+
+- name: install avconv
+  apt:
+    name: libav-tools
+  become: yes
+  become_user: root
