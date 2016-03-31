@@ -3,3 +3,4 @@ gsettings:
   - { schema: 'org.gnome.totem', key: 'auto-resize', value: 'true' }
   - { schema: 'org.gnome.totem', key: 'remember-position', value: 'true' }
   - { schema: 'org.gnome.totem', key: 'autoload-subtitles', value: 'true' }
+  - { schema: 'com.ubuntu.sound', key: 'allow-amplified-volume', value: 'true' }
