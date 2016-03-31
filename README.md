@@ -25,20 +25,31 @@ CLI to set up my personal Ubuntu system
 
 1. Set your hostname to match one of the .yml file at the root of the repository.
 
-2. Configure your computer for ansible-pull :
+2. Install ansible :
 
 ```Shell
 
-wget https://raw.githubusercontent.com/simondubois/ubuntu-installer/master/install/install.sh -O /tmp/ansible.sh && bash /tmp/ansible.sh
+sudo apt-add-repository ppa:ansible/ansible -y
+sudo apt-get update
+sudo apt-get install software-properties-common ansible git python-apt -y
 
 ```
 
-3. Deploy this repository with one of the following commands :
+3. Allow sudo without password for ansible :
 
 ```Shell
 
-ansible-pull -U git://github.com/simondubois/ubuntu-installer.git # public access
-ansible-pull -U git@github.com:simondubois/ubuntu-installer.git # credentials required
+echo "%sudo ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/ansible
+sudo chown root:root /etc/sudoers.d/ansible
+sudo chmod 0440 /etc/sudoers.d/ansible
+
+```
+
+4. Deploy and execute this repository :
+
+```Shell
+
+ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
 
 ```
 
