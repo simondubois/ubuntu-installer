@@ -3,6 +3,7 @@
 - include_vars: project-installer.yml
 
 - name: create root folder
+  file:
     path: "{{ root_path }}"
     state: directory
 
@@ -11,9 +12,10 @@
 
 - name: install projects
   command: ansible-pull -U {{ installer_source }} -e "git_repository={{ item }} git_destination={{ root_path }}/{{ repository | basename | regex_replace('.git$', '') }}" -d {{ installer_destination }}
-  with_item: "{{ repositories }}"
+  with_item: repositories
 
 - name: link ubuntu-installer pull
+  file:
     src: "{{ link_source }}"
     dest: "{{ link_destination }}"
     state: link
