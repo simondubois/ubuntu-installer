@@ -49,7 +49,7 @@ sudo chmod 0440 /etc/sudoers.d/ansible
 
 ```Shell
 
-ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
+ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
 
 ```
 
