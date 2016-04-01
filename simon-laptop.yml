@@ -22,33 +22,33 @@
     #     { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
     #   ],
     # }
-    # - {
-    #   role: 'core',
-    #   nautilus_bookmarks: {
-    #     'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
-    #     'file://{{ ansible_env.HOME }}/www',
-    #   },
-    #   startup_enabled: [
-    #     '/usr/share/applications/owncloud.desktop',
-    #     '/usr/share/applications/extras-my-weather-indicator.desktop',
-    #     '/usr/share/applications/indicator-sysmonitor.desktop',
-    #     '/usr/share/applications/thunderbird.desktop',
-    #     '/usr/share/applications/tilda.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-    #   ]
-    # }
     - {
-      role: "dev",
-      root_path: "{{ ansible_env.HOME }}/www",
-      repositories: [
-        'git@github.com:simondubois/budget.git',
-        'git@github.com:simondubois/c4media-test.git',
-        'git@github.com:simondubois/jsonresume-theme-paper.git',
-        'git@github.com:simondubois/photos.git',
-        'git@github.com:simondubois/project-installer.git',
-        'git@github.com:simondubois/simon.git',
-        'git@github.com:simondubois/ubuntu-installer.git',
-        'git@github.com:simondubois/unsplash-downloader.git',
-      ],
+      role: 'core',
+      nautilus_bookmarks: {
+        'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
+        "file://{{ ansible_env.HOME }}/www",
+      },
+      startup_enabled: [
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '/usr/share/applications/tilda.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+      ]
     }
+    # - {
+    #   role: "dev",
+    #   root_path: "{{ ansible_env.HOME }}/www",
+    #   repositories: [
+    #     'git@github.com:simondubois/budget.git',
+    #     'git@github.com:simondubois/c4media-test.git',
+    #     'git@github.com:simondubois/jsonresume-theme-paper.git',
+    #     'git@github.com:simondubois/photos.git',
+    #     'git@github.com:simondubois/project-installer.git',
+    #     'git@github.com:simondubois/simon.git',
+    #     'git@github.com:simondubois/ubuntu-installer.git',
+    #     'git@github.com:simondubois/unsplash-downloader.git',
+    #   ],
+    # }
