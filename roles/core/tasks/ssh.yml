@@ -20,11 +20,30 @@
     state: link
     force: yes
 
-- name: set rights
+- name: get private keys
+  find:
+    paths: "{{ ssh_source }}/keys"
+    patterns: "*_rsa"
+  register: private_keys
+
+- name: chmod private keys
   file:
-    path: "{{ ssh_source }}/keys"
-    state: directory
+    path: "{{ item }}"
     mode: 0600
-    recurse: yes
+  with_items: "{{ private_keys }}"
+  become: yes
+  become_user: root
+
+- name: get public keys
+  find:
+    paths: "{{ ssh_source }}/keys"
+    patterns: "*_rsa.pub"
+  register: public_keys
+
+- name: chmod public keys
+  file:
+    path: "{{ item }}"
+    mode: 0644
+  with_items: "{{ public_keys }}"
   become: yes
   become_user: root
