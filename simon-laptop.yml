@@ -7,7 +7,7 @@
     # - web
     - {
       role: "dev",
-      root_path: "{{ ansible_env.HOME }}/www"
+      root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
         # 'https://github.com/simondubois/budget.git',
         # 'https://github.com/simondubois/c4media-test.git',
