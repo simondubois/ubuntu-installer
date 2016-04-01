@@ -26,7 +26,7 @@
       role: 'core',
       nautilus_bookmarks: {
         'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
-        'file://{{ansible_env.HOME}}/www',
+        'file:///home/sel/www',
       },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
