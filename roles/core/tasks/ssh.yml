@@ -21,7 +21,7 @@
     force: yes
 
 - name: set rights
-  state:
+  file:
     path: "{{ ssh_source }}/keys"
     state: directory
     mode: 0600
