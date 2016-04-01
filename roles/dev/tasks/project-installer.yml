@@ -8,10 +8,10 @@
     state: directory
 
 - name: customize root folder
-  command: gvfs-set-attribute "{{ root_path }}" metadata::custom-icon-name network
+  command: "gvfs-set-attribute {{ root_path }} metadata::custom-icon-name network"
 
 - name: install projects
-  command: ansible-pull -U {{ installer_source }} -e "git_repository={{ item }} git_destination={{ root_path }}/{{ repository | basename | regex_replace('.git$', '') }}" -d {{ installer_destination }}
+  command: "ansible-pull -U {{ installer_source }} -e \"git_repository={{ item }} git_destination={{ root_path }}/{{ repository | basename | regex_replace('.git$', '') }}\" -d {{ installer_destination }}"
   with_item: repositories
 
 - name: link ubuntu-installer pull
