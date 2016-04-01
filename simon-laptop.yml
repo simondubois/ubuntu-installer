@@ -2,26 +2,26 @@
 
 - hosts: localhost
   roles:
-    # - system
-    # - owncloud
-    # - web
-    # - media
-    # - {
-    #   role: "desktop",
-    #   theme_in_use: "Numix",
-    #   icons_in_use: "Numix-Circle",
-    #   background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
-    #   custom_compiz: [
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
-    #     { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
-    #     { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
-    #   ],
-    #   custom_unity: [
-    #     { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
-    #   ],
-    # }
+    - system
+    - owncloud
+    - web
+    - media
+    - {
+      role: "desktop",
+      theme_in_use: "Numix",
+      icons_in_use: "Numix-Circle",
+      background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
+      custom_compiz: [
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'name=trello.com']" },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2]' },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 2]' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
+      ],
+      custom_unity: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://sublime_text.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }
     - {
       role: 'core',
       nautilus_bookmarks: {
@@ -38,17 +38,17 @@
         '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
       ]
     }
-    # - {
-    #   role: "dev",
-    #   root_path: "{{ ansible_env.HOME }}/www",
-    #   repositories: [
-    #     'git@github.com:simondubois/budget.git',
-    #     'git@github.com:simondubois/c4media-test.git',
-    #     'git@github.com:simondubois/jsonresume-theme-paper.git',
-    #     'git@github.com:simondubois/photos.git',
-    #     'git@github.com:simondubois/project-installer.git',
-    #     'git@github.com:simondubois/simon.git',
-    #     'git@github.com:simondubois/ubuntu-installer.git',
-    #     'git@github.com:simondubois/unsplash-downloader.git',
-    #   ],
-    # }
+    - {
+      role: "dev",
+      root_path: "{{ ansible_env.HOME }}/www",
+      repositories: [
+        'git@github.com:simondubois/budget.git',
+        'git@github.com:simondubois/c4media-test.git',
+        'git@github.com:simondubois/jsonresume-theme-paper.git',
+        'git@github.com:simondubois/photos.git',
+        'git@github.com:simondubois/project-installer.git',
+        'git@github.com:simondubois/simon.git',
+        'git@github.com:simondubois/ubuntu-installer.git',
+        'git@github.com:simondubois/unsplash-downloader.git',
+      ],
+    }
