@@ -22,28 +22,28 @@
 
 - name: get private keys
   find:
-    paths: "{{ ssh_source }}/keys"
-    patterns: "*_rsa"
+    path: "{{ ssh_source }}/keys"
+    pattern: "*_rsa"
   register: private_keys
 
 - name: chmod private keys
   file:
-    path: "{{ item }}"
+    path: "{{ item.path }}"
     mode: 0600
-  with_items: "{{ private_keys }}"
+  with_items: "{{ private_keys.files }}"
   become: yes
   become_user: root
 
 - name: get public keys
   find:
-    paths: "{{ ssh_source }}/keys"
-    patterns: "*_rsa.pub"
+    path: "{{ ssh_source }}/keys"
+    pattern: "*_rsa.pub"
   register: public_keys
 
 - name: chmod public keys
   file:
-    path: "{{ item }}"
+    path: "{{ item.path }}"
     mode: 0644
-  with_items: "{{ public_keys }}"
+  with_items: "{{ public_keys.files }}"
   become: yes
   become_user: root
