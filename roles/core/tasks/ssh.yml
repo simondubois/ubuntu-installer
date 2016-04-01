@@ -26,3 +26,5 @@
     state: directory
     mode: 0600
     recurse: yes
+  become: yes
+  become_user: root
