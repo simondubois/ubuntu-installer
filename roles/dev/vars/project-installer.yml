@@ -3,6 +3,6 @@ installer_source: https://github.com/simondubois/project-installer.git
 
 installer_destination: /tmp/project-installer
 
-link_source: "{{ root_path }}/ubuntu-installer"
+link_source: "{{ ansible_env.HOME }}/.ansible/pull/{{ ansible_hostname }}"
 
-link_destination: "{{ ansible_env.HOME }}/.ansible/pull/{{ ansible_hostname }}"
+link_destination: "{{ root_path }}/ubuntu-installer"
