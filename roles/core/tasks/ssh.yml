@@ -19,3 +19,10 @@
     dest: "{{ ssh_destination }}"
     state: link
     force: yes
+
+- name: set rights
+  state:
+    path: "{{ ssh_source }}/keys"
+    state: directory
+    mode: 0600
+    recurse: yes
