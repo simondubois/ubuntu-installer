@@ -13,9 +13,9 @@
         # 'https://github.com/simondubois/c4media-test.git',
         # 'https://github.com/simondubois/jsonresume-theme-paper.git',
         # 'https://github.com/simondubois/photos.git',
-        'https://github.com/simondubois/project-installer.git',
+        # 'https://github.com/simondubois/project-installer.git',
         # 'https://github.com/simondubois/simon.git',
-        # 'https://github.com/simondubois/ubuntu-installer.git',
+        'https://github.com/simondubois/ubuntu-installer.git',
         # 'https://github.com/simondubois/unsplash-downloader.git',
       ],
     }
