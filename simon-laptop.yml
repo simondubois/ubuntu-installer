@@ -5,7 +5,20 @@
     - system
     - owncloud
     - web
-    - dev
+    - {
+      role: "dev",
+      root_path: "{{ ansible_env.HOME }}/www"
+      repositories: [
+        # 'https://github.com/simondubois/budget.git',
+        # 'https://github.com/simondubois/c4media-test.git',
+        # 'https://github.com/simondubois/jsonresume-theme-paper.git',
+        # 'https://github.com/simondubois/photos.git',
+        'https://github.com/simondubois/project-installer.git',
+        # 'https://github.com/simondubois/simon.git',
+        # 'https://github.com/simondubois/ubuntu-installer.git',
+        # 'https://github.com/simondubois/unsplash-downloader.git',
+      ],
+    }
     - media
     - {
       role: "desktop",
@@ -27,6 +40,7 @@
       role: 'core',
       nautilus_bookmarks: {
         'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
+        'file://{{ ansible_env.HOME }}/www',
       },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
