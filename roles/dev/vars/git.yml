@@ -4,3 +4,5 @@ user_email: simon@dubandubois.com
 user_name: Simon Dubois
 
 push_default: simple
+
+core_excludesfile: "{{ role_path }}/files/git/gitignore_global"
