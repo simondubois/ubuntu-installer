@@ -20,6 +20,10 @@
     state: link
     force: yes
 
+- name: wait for file synchronisation
+  wait_for:
+    path: "{{ ssh_source }}"
+
 - name: get private keys
   find:
     path: "{{ ssh_source }}/keys"

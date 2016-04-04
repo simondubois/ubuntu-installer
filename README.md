@@ -55,6 +55,7 @@ ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
 
 ## To be installed manually
 
+- private PPAs (https://software-center.ubuntu.com/subscriptions/).
 - intel-linux-graphics-installer
 - steam
 
