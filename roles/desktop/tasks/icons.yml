@@ -5,23 +5,30 @@
 - name: add numix ppa
   apt_repository:
     repo: "{{ numix_ppa }}"
+  when: "icons_in_use == 'Numix-Circle' or icons_in_use == 'Numix-Square'"
   become: yes
   become_user: root
-  when: "icons_in_use == 'Numix-Circle'"
 
 - name: install numix icon theme
   apt:
     name: numix-icon-theme
+  when: "icons_in_use == 'Numix-Circle' or icons_in_use == 'Numix-Square'"
   become: yes
   become_user: root
-  when: "icons_in_use == 'Numix-Circle'"
 
 - name: install circle numix icon theme
   apt:
     name: numix-icon-theme-circle
+  when: "icons_in_use == 'Numix-Circle'"
   become: yes
   become_user: root
-  when: "icons_in_use == 'Numix-Circle'"
+
+- name: install square numix icon theme
+  apt:
+    name: numix-icon-theme-square
+  when: "icons_in_use == 'Numix-Square'"
+  become: yes
+  become_user: root
 
 - name: gsettings
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
