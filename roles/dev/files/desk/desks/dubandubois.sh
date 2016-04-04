@@ -25,5 +25,5 @@ prod-pull () {
 
 # Download production database
 prod-downloaddb () {
-	ssh dubandubois.com "mysqldump -umqlb_sel $PRJ_NAME" > "$PRJ_PATH/storage/database.sql"
+	ssh dubandubois.com "mysqldump -hmqlb.myd.infomaniak.com mqlb_$PRJ_NAME" > "$PRJ_PATH/storage/database.sql"
 }
