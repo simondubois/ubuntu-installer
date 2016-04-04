@@ -30,5 +30,6 @@
   apt:
     update_cache: yes
     upgrade: dist
+    force: yes
   become: yes
   become_user: root
