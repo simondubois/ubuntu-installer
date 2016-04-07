@@ -5,7 +5,6 @@
     - system
     - owncloud
     - web
-    - dev
     - media
     - {
       role: "desktop",
@@ -26,6 +25,14 @@
     }
     - {
       role: 'core',
+      nautilus_bookmarks: {
+        'file:///home/sel/www',
+        'afp://sdu@NAS.local/WebWork/ nas/webwork',
+        'afp://sdu@NAS.local/Infographie/ nas/infographie',
+        'file:///var/www/acces-serveurs',
+        'file:///var/www/mysup',
+        'file:///var/www/nord-pieces-menager',
+      },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
         '/usr/share/applications/extras-my-weather-indicator.desktop',
@@ -34,4 +41,27 @@
         '/usr/share/applications/tilda.desktop',
         '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
       ]
+    }
+    - {
+      role: "dev",
+      root_path: "{{ ansible_env.HOME }}/www",
+      repositories: [
+        'git@github.com:simondubois/budget.git',
+        'git@github.com:simondubois/c4media-test.git',
+        'git@github.com:simondubois/jsonresume-theme-paper.git',
+        'git@github.com:simondubois/photos.git',
+        'git@github.com:simondubois/project-installer.git',
+        'git@github.com:simondubois/simon.git',
+        'git@github.com:simondubois/ubuntu-installer.git',
+        'git@github.com:simondubois/unsplash-downloader.git',
+      ],
+    }
+    - {
+      role: "dev",
+      root_path: "/var/www",
+      repositories: [
+        'git@bitbucket.org:pimenteo/acces-serveurs.git',
+        'git@bitbucket.org:pimenteo/mysup.git',
+        'git@bitbucket.org:pimenteo/nord-pieces-menager.git',
+      ],
     }
