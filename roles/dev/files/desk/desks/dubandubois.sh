@@ -5,7 +5,7 @@ PRJ_PATH=$2
 
 # FTP to production server
 prod-browse () {
-    filezilla -c 0/dubandubois.com/$PRJ_NAME
+    filezilla -c 0/dubandubois.com/$PRJ_NAME &
 }
 
 # Open production version of website

@@ -1,9 +1,9 @@
 # tf.sh
 #
-# Description: personal website
+# Description: online envelope system money to keep a budget under control
 #
 
-PRJ_NAME=simon
+PRJ_NAME=budget
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 
 source ~/.desk/desks/web.sh $PRJ_NAME $PRJ_PATH
