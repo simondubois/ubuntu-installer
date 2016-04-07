@@ -24,25 +24,6 @@
       ],
     }
     - {
-      role: 'core',
-      nautilus_bookmarks: {
-        'file:///home/sel/www',
-        'afp://sdu@NAS.local/WebWork/ nas/webwork',
-        'afp://sdu@NAS.local/Infographie/ nas/infographie',
-        'file:///var/www/acces-serveurs',
-        'file:///var/www/mysup',
-        'file:///var/www/nord-pieces-menager',
-      },
-      startup_enabled: [
-        '/usr/share/applications/owncloud.desktop',
-        '/usr/share/applications/extras-my-weather-indicator.desktop',
-        '/usr/share/applications/indicator-sysmonitor.desktop',
-        '/usr/share/applications/thunderbird.desktop',
-        '/usr/share/applications/tilda.desktop',
-        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-      ]
-    }
-    - {
       role: "dev",
       root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
@@ -64,4 +45,23 @@
         'git@bitbucket.org:pimenteo/mysup.git',
         'git@bitbucket.org:pimenteo/nord-pieces-menager.git',
       ],
+    }
+    - {
+      role: 'core',
+      nautilus_bookmarks: {
+        'file:///home/sel/www',
+        'afp://sdu@NAS.local/WebWork/ nas/webwork',
+        'afp://sdu@NAS.local/Infographie/ nas/infographie',
+        'file:///var/www/acces-serveurs',
+        'file:///var/www/mysup',
+        'file:///var/www/nord-pieces-menager',
+      },
+      startup_enabled: [
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '/usr/share/applications/tilda.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+      ]
     }

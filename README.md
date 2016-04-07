@@ -14,10 +14,9 @@ CLI to set up my personal Ubuntu system
 | system | system wide configuration | none |
 | owncloud | owncloud sync setup | none |
 | web | web applications | none |
-| dev | development environment | none |
 | media | media applications | none |
 | desktop | desktop settings | - theme_in_use (Gtk theme to set as active)<br>- icons_in_use (icon theme to set as active)<br>- background_options (how background is resized)<br>- background_uri (path to background file)<br>- custom_compiz ( array of compiz settings)<br>- custom_unity ( array of unity settings)<br> |
-| media | media applications | none |
+| dev | development environment | none |
 | core | core settings | - startup_enabled (array of desktop file to launch on session start) |
 
 
