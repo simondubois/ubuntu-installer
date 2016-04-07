@@ -23,6 +23,20 @@
       ],
     }
     - {
+      role: "dev",
+      root_path: "{{ ansible_env.HOME }}/www",
+      repositories: [
+        'git@github.com:simondubois/budget.git',
+        'git@github.com:simondubois/c4media-test.git',
+        'git@github.com:simondubois/jsonresume-theme-paper.git',
+        'git@github.com:simondubois/photos.git',
+        'git@github.com:simondubois/project-installer.git',
+        'git@github.com:simondubois/simon.git',
+        'git@github.com:simondubois/ubuntu-installer.git',
+        'git@github.com:simondubois/unsplash-downloader.git',
+      ],
+    }
+    - {
       role: 'core',
       nautilus_bookmarks: {
         'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
@@ -37,18 +51,4 @@
         '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
         '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
       ]
-    }
-    - {
-      role: "dev",
-      root_path: "{{ ansible_env.HOME }}/www",
-      repositories: [
-        'git@github.com:simondubois/budget.git',
-        'git@github.com:simondubois/c4media-test.git',
-        'git@github.com:simondubois/jsonresume-theme-paper.git',
-        'git@github.com:simondubois/photos.git',
-        'git@github.com:simondubois/project-installer.git',
-        'git@github.com:simondubois/simon.git',
-        'git@github.com:simondubois/ubuntu-installer.git',
-        'git@github.com:simondubois/unsplash-downloader.git',
-      ],
     }
