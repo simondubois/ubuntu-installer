@@ -18,7 +18,7 @@
     src: "{{ link_source }}"
     dest: "{{ link_destination }}"
     state: link
-  when: "'git@github.com:simondubois/ubuntu-installer.git' in {{ repositories }}"
+  when: '"git@github.com:simondubois/ubuntu-installer.git" in repositories'
 
 - name: install projects
   command: "ansible-pull -U {{ installer_source }} -e \"git_repository={{ item }} git_destination={{ root_path }}/{{ item | basename | regex_replace('.git$', '') }}\" -d {{ installer_destination }}"
