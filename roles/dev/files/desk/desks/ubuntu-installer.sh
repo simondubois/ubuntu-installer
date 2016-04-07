@@ -7,5 +7,5 @@ cd ~/www/ubuntu-installer
 
 # Run ansible pull locally
 run() {
-	ansible-pull -U git://github.com/simondubois/ubuntu-installer.git
+	ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
 }
