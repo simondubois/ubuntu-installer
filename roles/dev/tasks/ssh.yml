@@ -23,6 +23,7 @@
 - name: wait for file synchronisation
   wait_for:
     path: "{{ ssh_source }}"
+    timeout: 86400
 
 - name: get private keys
   find:
