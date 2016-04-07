@@ -9,7 +9,7 @@
     - {
       role: "desktop",
       theme_in_use: "Numix",
-      icons_in_use: "Numix-Square",
+      icons_in_use: "Numix-Circle",
       background_options: "spanned",
       background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/interfacelift.com_wide/interfacelift.com_wide-1.xml",
       custom_compiz: [

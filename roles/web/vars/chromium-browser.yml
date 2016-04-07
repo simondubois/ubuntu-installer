@@ -4,5 +4,7 @@ shortcut_source: "{{ role_path }}/files/chromium-browser"
 shortcut_destination: "{{ ansible_env.HOME }}/.local/share/applications"
 
 shortcuts:
-  - 'chrome-https___trello.com_.desktop'
   - 'chrome-https___cloud.dubandubois.com_index.php_apps_news#_items.desktop'
+  - 'chrome-https___www.duolingo.com_.desktop'
+  - 'chrome-https___mail.google.com_mail_.desktop'
+  - 'chrome-https___trello.com_.desktop'
