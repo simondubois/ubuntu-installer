@@ -6,13 +6,9 @@
 PRJ_NAME=ubuntu-installer
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 
-cd $PRJ_PATH
+source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
-# Run ansible pull locally
-browse() {
-    xdg-open $PRJ_PATH
-}
-
+# Run ansible-pull
 run() {
 	ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
 }

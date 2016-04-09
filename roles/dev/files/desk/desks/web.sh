@@ -3,11 +3,6 @@
 PRJ_NAME=$1
 PRJ_PATH=$2
 
-# Browse development files
-dev-browse () {
-    xdg-open $PRJ_PATH
-}
-
 # Run development version
 dev-run () {
     xdg-open http://$PRJ_NAME.dev/ > /dev/null

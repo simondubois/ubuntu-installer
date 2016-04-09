@@ -6,33 +6,55 @@
 PRJ_NAME=project-installer
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 
-cd $PRJ_PATH
+source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
-# Run ansible pull locally
-browse() {
-    xdg-open $PRJ_PATH
+# List projects
+list() {
+    if [ -z "$1" ]; then
+        root=$HOME/www
+    else
+        root=$1
+    fi
+
+    paths=($(ls -d $root/*))
+    printf '%s\n' "${paths[@]}"
 }
 
-run() {
-    root=$HOME/www
-    path=$root/$1
-    paths=($(ls -d $root/*))
+# Execute git status on projects
+status() {
     if [ -z "$1" ]; then
-        echo "Available projects :"
-        printf '\tall (run all projects)\n'
-        printf '\t%s\n' "${paths[@]##*/}"
-    elif [ "$1" = "all" ]; then
+        root=$HOME/www
+    else
+        root=$1
+    fi
+
+    paths=($(ls -d $root/*))
+
+    for path in "${paths[@]}"
+    do :
+        echo -e "\n${BLUE}$path:${NC}"
+        git -C $path status
+    done
+}
+
+# Run ansible pull on projects
+run() {
+    if [ -z "$1" ]; then
+        root=$HOME/www
+    else
+        root=$1
+    fi
+
+    if [ -d "$root/.git" ]; then
+        url=`git -C $root config --get remote.origin.url`
+        ansible-pull -U https://github.com/simondubois/project-installer.git \
+            -e "git_repository=$url git_destination=$root" \
+            -d "/tmp/project-installer"
+    else
+        paths=($(list $root))
         for path in "${paths[@]}"
         do :
-            run ${path##*/}
+            run $path
         done
-    elif [ ! -d "$path" ]; then
-        echo "Path $path nonexistent."
-        run
-    else
-        url=`git -C $path config --get remote.origin.url`
-        ansible-pull -U https://github.com/simondubois/project-installer.git \
-            -e "git_repository=$url git_destination=$path" \
-            -d "/tmp/project-installer"
     fi
 }
