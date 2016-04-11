@@ -13,10 +13,10 @@ CLI to set up my personal Ubuntu system
 | --- | --- | --- |
 | system | system wide configuration | none |
 | owncloud | owncloud sync setup | none |
-| web | web applications | none |
+| web | web applications | - trello_username (username to use for landing page) |
 | media | media applications | none |
 | desktop | desktop settings | - theme_in_use (Gtk theme to set as active)<br>- icons_in_use (icon theme to set as active)<br>- background_options (how background is resized)<br>- background_uri (path to background file)<br>- custom_compiz ( array of compiz settings)<br>- custom_unity ( array of unity settings)<br> |
-| dev | development environment | none |
+| dev | development environment | - root_path (path where to glone projects)<br>- repositories (git repositories to clone into path) |
 | core | core settings | - startup_enabled (array of desktop file to launch on session start) |
 
 

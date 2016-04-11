@@ -4,7 +4,10 @@
   roles:
     - system
     - owncloud
-    - web
+    - {
+      role: "web",
+      trello_username: "simondubois",
+    }
     - media
     - {
       role: "desktop",

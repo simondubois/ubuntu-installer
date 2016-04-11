@@ -4,6 +4,6 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Trello
-Exec=/usr/bin/chromium-browser --app=https://trello.com/
+Exec=/usr/bin/chromium-browser --app={{ trello_username is defined ? "https://trello.com/{{ trello_username }}/cards" : "https://trello.com/"
 Icon=chrome-oflhioojkbelepjlnafgmgkkjhojphcg-Default
 StartupWMClass=trello.com

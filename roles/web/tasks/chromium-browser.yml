@@ -14,3 +14,8 @@
     dest: "{{ shortcut_destination }}/{{ item }}"
     state: link
   with_items: "{{ shortcuts }}"
+
+- name: copy trello
+  template:
+    src: "chromium-browser/chrome-https___trello.com_.desktop"
+    dest: "{{ shortcut_destination }}/chrome-https___trello.com_.desktop"
