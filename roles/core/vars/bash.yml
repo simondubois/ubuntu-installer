@@ -6,3 +6,7 @@ rc_destination: "{{ ansible_env.HOME }}/.bashrc"
 aliases_source: "{{ role_path }}/files/bash/.bash_aliases"
 
 aliases_destination: "{{ ansible_env.HOME }}/.bash_aliases"
+
+gitprompt_url: "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+
+gitprompt_path: "{{ ansible_env.HOME }}/.bash_gitprompt"

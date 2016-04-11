@@ -173,6 +173,7 @@ esac
 
 # CUSTOM
 
+source ~/.bash_gitprompt
 PS1='\[$(tput setaf 3)\]\u@\h\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 2)\]\w\[$(tput setaf 7)\]\[$(tput bold)\]$\[$(tput sgr0)\] '
 
 export EDITOR='nano'

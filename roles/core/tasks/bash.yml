@@ -19,6 +19,11 @@
     dest: "{{ aliases_destination }}"
     state: link
 
+- name: download gitprompt file
+  get_url:
+    url: "{{ gitprompt_url }}"
+    dest: "{{ gitprompt_path }}"
+
 - name: install undistract-me
   apt:
     name: undistract-me
