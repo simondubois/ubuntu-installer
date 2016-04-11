@@ -23,3 +23,4 @@
 - name: install projects
   command: "ansible-pull -U {{ installer_source }} -e \"git_repository={{ item }} git_destination={{ root_path }}/{{ item | basename | regex_replace('.git$', '') }}\" -d {{ installer_destination }}"
   with_items: "{{ repositories }}"
+  ignore_errors: yes
