@@ -173,14 +173,6 @@ esac
 
 # CUSTOM
 
-source ~/.bash_gitprompt
-PS1='\[$(tput setaf 3)\]\u@\h\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 2)\]\w\[$(tput setaf 7)\]\[$(tput bold)\]$\[$(tput sgr0)\] '
-
-export EDITOR='nano'
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-
 BLACK='\033[0;30m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -192,12 +184,24 @@ LIGHTGRAY='\033[0;37m'
 DARKGRAY='\033[1;30m'
 LIGHTRED='\033[1;31m'
 LIGHTGREEN='\033[1;32m'
-YELLOW='\033[1;33m'
+YELLOW='\[\033[1;33m\]'
 LIGHTBLUE='\033[1;34m'
 LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
+
+source ~/.bash_gitprompt
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWCOLORHINTS=true
+
+PS1="${ORANGE}\u@\h${WHITE}:${GREEN}\w${WHITE}\$${CYAN}$(__git_ps1)${NC} "
+
+export EDITOR='nano'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
 
 if [ -f /usr/share/undistract-me/long-running.bash ];
 then
