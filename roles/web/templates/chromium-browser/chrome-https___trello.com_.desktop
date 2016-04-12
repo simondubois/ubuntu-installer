@@ -4,6 +4,10 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Trello
-Exec=/usr/bin/chromium-browser --app={{ trello_username is defined | ternary(https://trello.com/{{ trello_username }}/cards, https://trello.com/) }}
+{% if trello_username is defined %}
+Exec=/usr/bin/chromium-browser --app=https://trello.com/{{ trello_username }}/cards
+{% else %}
+Exec=/usr/bin/chromium-browser --app=https://trello.com/
+{% endif %}
 Icon=chrome-oflhioojkbelepjlnafgmgkkjhojphcg-Default
 StartupWMClass=trello.com
