@@ -20,7 +20,7 @@
 
 - name: list sync folders
   command: "grep -oP 'localPath=\K(.*)' {{ config_destination }}"
-  register: "sync_folders"
+  register: sync_folders
 
 - debug:
   msg: "{{ sync_folders }}"
