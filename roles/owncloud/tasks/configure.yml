@@ -19,7 +19,7 @@
     force: no
 
 - name: list sync folders
-  command: "grep -oP 'localPath=\K(.*)' {{ config_destination }}"
+  command: grep -oP 'localPath=\K(.*)' "{{ config_destination }}"
   register: sync_folders
 
 - debug:
