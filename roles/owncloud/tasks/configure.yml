@@ -24,3 +24,9 @@
 
 - debug:
     msg: "{{ sync_folders }}"
+
+- name: create sync folders
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items: sync_folders.stdout_lines
