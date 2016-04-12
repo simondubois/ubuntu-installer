@@ -216,5 +216,5 @@ fi
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 if [ -n "$DESK_NAME" ]; then
-    PS1="${ORANGE}\342\227\262 $DESK_NAME@\h${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
+    PS1="${ORANGE}\u\342\227\262 $DESK_NAME${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
 fi
