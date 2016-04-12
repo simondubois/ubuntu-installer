@@ -23,4 +23,4 @@
   register: sync_folders
 
 - debug:
-  msg: "{{ sync_folders }}"
+    msg: "{{ sync_folders }}"
