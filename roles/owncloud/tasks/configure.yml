@@ -27,6 +27,6 @@
 
 - name: create sync folders
   file:
-    path: "{{ item }}"
+    path: "{{ item.decode }}"
     state: directory
   with_items: sync_folders.stdout_lines
