@@ -216,5 +216,5 @@ fi
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 if [ -n "$DESK_NAME" ]; then
-    PS1='\[$(tput setaf 3)\]\342\227\262 $DESK_NAME\[$(tput setaf 7)\]\[$(tput bold)\]:\[$(tput sgr0)\]\[$(tput setaf 2)\]\w\[$(tput setaf 7)\]\[$(tput bold)\]$\[$(tput sgr0)\] '
+    PS1="${ORANGE}\342\227\262 $DESK_NAME@\h${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
 fi
