@@ -12,3 +12,7 @@ source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
 
 PATH=$(npm bin):$PATH
 
+dev-restorephotos() {
+    rm $PRJ_PATH/storage/app/photos
+    php $PRJ_PATH/artisan import:photos ~/Pictures/Élie\ quotidien/
+}
