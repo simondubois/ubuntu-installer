@@ -11,7 +11,6 @@
   copy:
     src: "{{ system_source }}/{{ item }}"
     dest: "{{ destination }}/{{ item }}"
-    force: no
   with_items: "{{ disabled }}"
 
 - name: disable startup applications
@@ -25,7 +24,6 @@
   copy:
     src: "{{ item }}"
     dest: "{{ destination }}/{{ item | basename }}"
-    force: no
   with_items: "{{ startup_enabled|default([]) }}"
 
 - name: enable startup applications
