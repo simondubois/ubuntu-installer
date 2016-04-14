@@ -2,20 +2,20 @@
 
 - hosts: localhost
   roles:
-    - system
-    - owncloud
-    - {
-      role: "web",
-      trello_username: "delphineduban",
-    }
-    - media
+    # - system
+    # - owncloud
+    # - {
+    #   role: "web",
+    #   trello_username: "delphineduban",
+    # }
+    # - media
     - {
       role: "desktop",
       theme_in_use: "Numix",
       icons_in_use: "Numix-Circle",
       background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
       custom_unity: [
-        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://chrome-https___mail.google.com_mail_.desktop', 'application://chrome-https___trello.com_.desktop', 'chrome-https___www.duolingo.com_.desktop', unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://chrome-https___mail.google.com_mail_.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___www.duolingo.com_.desktop', unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
       ],
     }
     - {
