@@ -20,7 +20,7 @@ prod-ssh () {
 
 # Pull production server
 prod-pull () {
-  	ssh dubandubois.com "git --git-dir dubandubois.com/$PRJ_NAME/.git pull"
+  	ssh dubandubois.com "git --git-dir dubandubois.com/$PRJ_NAME/.git --work-tree dubandubois.com/$PRJ_NAME pull"
 }
 
 # Download production database

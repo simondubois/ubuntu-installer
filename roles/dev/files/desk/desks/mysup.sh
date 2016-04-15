@@ -36,7 +36,7 @@ www-run () {
 
 # Pull production server
 www-pull () {
-  	ssh $WWW_HOST "git --git-dir /home/webadmin/web/www.$WWW_HOST/.git pull"
+  	ssh $WWW_HOST "git --git-dir /home/webadmin/web/www.$WWW_HOST/.git --work-tree /home/webadmin/web/www.$WWW_HOST pull"
 }
 
 # Download production database
