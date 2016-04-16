@@ -173,28 +173,23 @@ esac
 
 # CUSTOM
 
-BLACK='\033[0;30m'
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHTGRAY='\033[0;37m'
-DARKGRAY='\033[1;30m'
-LIGHTRED='\033[1;31m'
-LIGHTGREEN='\033[1;32m'
-YELLOW='\[\033[1;33m\]'
-LIGHTBLUE='\033[1;34m'
-LIGHTPURPLE='\033[1;35m'
-LIGHTCYAN='\033[1;36m'
-WHITE='\033[1;37m'
-NC='\033[0m'
-
-source ~/.bash_gitprompt
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWCOLORHINTS=true
+BLACK='\[\e[30m\]'
+RED='\[\e[31m\]'
+GREEN='\[\e[32m\]'
+ORANGE='\[\e[33m\]'
+BLUE='\[\e[34m\]'
+PURPLE='\[\e[35m\]'
+CYAN='\[\e[36m\]'
+LIGHTGRAY='\[\e[37m\]'
+DARKGRAY='\[\e[30m\]'
+LIGHTRED='\[\e[31m\]'
+LIGHTGREEN='\[\e[32m\]'
+YELLOW='\[\e[33m\]'
+LIGHTBLUE='\[\e[34m\]'
+LIGHTPURPLE='\[\e[35m\]'
+LIGHTCYAN='\[\e[36m\]'
+WHITE='\[\e[37m\]'
+NC='\[\e[0m\]'
 
 PS1="${ORANGE}\u@\h${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
 
