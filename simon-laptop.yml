@@ -30,6 +30,7 @@
       root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
         'git@github.com:simondubois/budget.git',
+        'git@github.com:simondubois/budget-migrations.git',
         'git@github.com:simondubois/c4media-test.git',
         'git@github.com:simondubois/jsonresume-theme-paper.git',
         'git@github.com:simondubois/photos.git',
