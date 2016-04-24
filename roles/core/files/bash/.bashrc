@@ -173,25 +173,25 @@ esac
 
 # CUSTOM
 
-BLACK='\[\e[30m\]'
-RED='\[\e[31m\]'
-GREEN='\[\e[32m\]'
-ORANGE='\[\e[33m\]'
-BLUE='\[\e[34m\]'
-PURPLE='\[\e[35m\]'
-CYAN='\[\e[36m\]'
-LIGHTGRAY='\[\e[37m\]'
-DARKGRAY='\[\e[30m\]'
-LIGHTRED='\[\e[31m\]'
-LIGHTGREEN='\[\e[32m\]'
-YELLOW='\[\e[33m\]'
-LIGHTBLUE='\[\e[34m\]'
-LIGHTPURPLE='\[\e[35m\]'
-LIGHTCYAN='\[\e[36m\]'
-WHITE='\[\e[37m\]'
-NC='\[\e[0m\]'
+BLACK='\e[30m'
+RED='\e[31m'
+GREEN='\e[32m'
+ORANGE='\e[33m'
+BLUE='\e[34m'
+PURPLE='\e[35m'
+CYAN='\e[36m'
+LIGHTGRAY='\e[37m'
+DARKGRAY='\e[30m'
+LIGHTRED='\e[31m'
+LIGHTGREEN='\e[32m'
+YELLOW='\e[33m'
+LIGHTBLUE='\e[34m'
+LIGHTPURPLE='\e[35m'
+LIGHTCYAN='\e[36m'
+WHITE='\e[37m'
+NC='\e[0m'
 
-PS1="${ORANGE}\u@\h${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
+PS1="\[${ORANGE}\]\u@\h\[${WHITE}\]:\[${GREEN}\]\w\[${WHITE}\]\$\[${CYAN}\]\$(__git_ps1)\[${NC}\] "
 
 export EDITOR='nano'
 export LC_ALL=en_US.UTF-8
@@ -211,5 +211,5 @@ fi
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 if [ -n "$DESK_NAME" ]; then
-    PS1="${ORANGE}\u\342\227\262 $DESK_NAME${WHITE}:${GREEN}\w${WHITE}\$${CYAN}\$(__git_ps1)${NC} "
+    PS1="\[${ORANGE}\]\u\342\227\262 $DESK_NAME\[${WHITE}\]:\[${GREEN}\]\w\[${WHITE}\]\$\[${CYAN}\]\$(__git_ps1)\[${NC}\] "
 fi
