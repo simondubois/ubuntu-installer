@@ -1,0 +1,16 @@
+---
+
+- hosts: localhost
+  roles:
+    - system
+    - "web"
+    - media
+    - {
+      role: "desktop",
+      theme_in_use: "Numix",
+      icons_in_use: "Numix-Circle",
+      custom_unity: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }
+    - 'core'
