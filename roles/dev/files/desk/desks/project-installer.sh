@@ -10,10 +10,10 @@ source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
 # List projects
 list() {
-    if [ -z "$0" ]; then
+    if [ -z "$1" ]; then
         root=$HOME/www
     else
-        root=$0
+        root=$1
     fi
 
     paths=($(ls -d $root/*))
@@ -35,10 +35,10 @@ git-all() {
 
 # Run ansible pull on projects
 run() {
-    if [ -z "$0" ]; then
+    if [ -z "$1" ]; then
         root=$HOME/www
     else
-        root=$0
+        root=$1
     fi
 
     if [ -d "$root/.git" ]; then
