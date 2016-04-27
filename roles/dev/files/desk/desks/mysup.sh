@@ -19,6 +19,11 @@ dev-restoredb () {
 	mysql $PRJ_NAME < $PRJ_PATH/queries.sql
 }
 
+# Edit support spreadsheet
+dev-support () {
+	xdg-open "afp://sdu@NAS.local/WebWork/Support/formasup suivi maintenance.xlsx" &> /dev/null
+}
+
 # SSH to production server
 prod-ssh () {
     ssh $WWW_HOST
