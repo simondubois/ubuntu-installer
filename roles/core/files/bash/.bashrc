@@ -191,6 +191,10 @@ LIGHTCYAN='\e[36m'
 WHITE='\e[37m'
 NC='\e[0m'
 
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWCOLORHINTS=true
+
 PS1="\[${ORANGE}\]\u@\h\[${WHITE}\]:\[${GREEN}\]\w\[${WHITE}\]\$\[${CYAN}\]\$(__git_ps1)\[${NC}\] "
 
 export EDITOR='nano'
