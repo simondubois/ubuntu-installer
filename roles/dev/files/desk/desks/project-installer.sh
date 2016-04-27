@@ -10,39 +10,35 @@ source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
 # List projects
 list() {
-    if [ -z "$1" ]; then
+    if [ -z "$0" ]; then
         root=$HOME/www
     else
-        root=$1
+        root=$0
     fi
 
     paths=($(ls -d $root/*))
     printf '%s\n' "${paths[@]}"
 }
 
-# Execute git status on projects
-status() {
-    if [ -z "$1" ]; then
-        root=$HOME/www
-    else
-        root=$1
-    fi
+# Execute git command on projects
+git-all() {
+    root=$HOME/www
 
     paths=($(ls -d $root/*))
 
     for path in "${paths[@]}"
     do :
-        echo -e "\n${BLUE}$path:${NC}"
-        git -C $path status
+        echo -ne "\n${BLUE}\0342\0227\0262 $(basename $path)${NC}\n"
+        git -C $path $0
     done
 }
 
 # Run ansible pull on projects
 run() {
-    if [ -z "$1" ]; then
+    if [ -z "$0" ]; then
         root=$HOME/www
     else
-        root=$1
+        root=$0
     fi
 
     if [ -d "$root/.git" ]; then
