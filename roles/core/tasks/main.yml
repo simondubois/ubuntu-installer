@@ -4,6 +4,7 @@
 - include: bash.yml
 - include: calculator.yml
 - include: gparted.yml
+- include: libreoffice.yml
 - include: nautilus.yml
 - include: rar.yml
 - include: startup.yml

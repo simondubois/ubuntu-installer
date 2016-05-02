@@ -1,0 +1,16 @@
+---
+
+- include_vars: libreoffice.yml
+
+- name: add libreoffice ppa
+  apt_repository:
+    repo: "{{ ppa }}"
+  become: yes
+  become_user: root
+
+- name: update libreoffice
+  apt:
+    name: libreoffice
+    state: latest
+  become: yes
+  become_user: root
