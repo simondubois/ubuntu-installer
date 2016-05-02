@@ -6,7 +6,6 @@
     - owncloud
     - {
       role: "web",
-      trello_username: "delphineduban",
     }
     - media
     - {

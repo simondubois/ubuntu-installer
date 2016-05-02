@@ -10,4 +10,8 @@ Exec=/usr/bin/chromium-browser --app=https://trello.com/{{ trello_username }}/ca
 Exec=/usr/bin/chromium-browser --app=https://trello.com/
 {% endif %}
 Icon=chrome-oflhioojkbelepjlnafgmgkkjhojphcg-Default
-StartupWMClass=trello.com__simondubois_cards
+{% if trello_username is defined %}
+StartupWMClass=trello.com__{{ trello_username }}_cards
+{% else %}
+StartupWMClass=trello.com
+{% endif %}
