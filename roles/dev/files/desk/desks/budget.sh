@@ -11,3 +11,10 @@ source ~/.desk/desks/web.sh $PRJ_NAME $PRJ_PATH
 source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
 
 PATH=$(npm bin):$PATH
+
+# Restore local database
+dev-migratedb () {
+    dev-restoredb
+	php artisan migrate --seed
+}
+

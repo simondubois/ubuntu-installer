@@ -10,7 +10,6 @@ dev-run () {
 
 # Restore local database
 dev-restoredb () {
-    echo "DROP DATABASE \`$PRJ_NAME\`"
 	mysql -e "DROP DATABASE \`$PRJ_NAME\`"
 	mysql -e "CREATE DATABASE \`$PRJ_NAME\`"
 	mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
