@@ -44,6 +44,6 @@
 - name: create project files
   copy:
     src: "{{ config_source }}/template.sublime-project"
-    dest: "{{ root_path }}/{{ item | basename | regex_replace('.git$', '') }}/{{ item | basename | regex_replace('.git$', '') }}.sublime-project"
+    dest: "{{ root_path }}/{{ item.repository | basename | regex_replace('.git$', '') }}/{{ item.repository | basename | regex_replace('.git$', '') }}.sublime-project"
     force: no
   with_items: "{{ repositories }}"
