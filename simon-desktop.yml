@@ -30,24 +30,23 @@
       role: "dev",
       root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
-        'git@github.com:simondubois/budget.git',
-        'git@github.com:simondubois/budget-migrations.git',
-        'git@github.com:simondubois/c4media-test.git',
-        'git@github.com:simondubois/jsonresume-theme-paper.git',
-        'git@github.com:simondubois/photos.git',
-        'git@github.com:simondubois/project-installer.git',
-        'git@github.com:simondubois/simon.git',
-        'git@github.com:simondubois/ubuntu-installer.git',
-        'git@github.com:simondubois/unsplash-downloader.git',
+        { repository: 'git@github.com:simondubois/budget.git', version: 'v2' },
+        { repository: 'git@github.com:simondubois/c4media-test.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/jsonresume-theme-paper.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/photos.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/project-installer.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/simon.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/ubuntu-installer.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/unsplash-downloader.git', version: 'HEAD' },
       ],
     }
     - {
       role: "dev",
       root_path: "/var/www",
       repositories: [
-        'git@bitbucket.org:pimenteo/acces-serveurs.git',
-        'git@bitbucket.org:pimenteo/mysup.git',
-        'git@bitbucket.org:pimenteo/nord-pieces-menager.git',
+        { repository: 'git@bitbucket.org:pimenteo/acces-serveurs.git', version: 'HEAD'},
+        { repository: 'git@bitbucket.org:pimenteo/mysup.git', version: 'HEAD'},
+        { repository: 'git@bitbucket.org:pimenteo/nord-pieces-menager.git', version: 'HEAD'},
       ],
     }
     - {
