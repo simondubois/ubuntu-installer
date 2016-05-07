@@ -29,7 +29,7 @@
       role: "dev",
       root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
-        { repository: 'git@github.com:simondubois/budget.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/budget.git', version: 'v2' },
         { repository: 'git@github.com:simondubois/c4media-test.git', version: 'HEAD' },
         { repository: 'git@github.com:simondubois/jsonresume-theme-paper.git', version: 'HEAD' },
         { repository: 'git@github.com:simondubois/photos.git', version: 'HEAD' },
