@@ -11,3 +11,8 @@ source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 source ~/.desk/desks/web.sh $PRJ_NAME $PRJ_PATH
 
 PATH=$(npm bin):$PATH
+
+# Download full database
+dev-downloaddb () {
+    ssh recette.pimenteo.com "mysqldump npm_old" > $PRJ_PATH/storage/database.sql
+}
