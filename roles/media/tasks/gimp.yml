@@ -1,24 +1,7 @@
 ---
 
-- include_vars: gimp.yml
-
 - name: install gimp
   apt:
     name: gimp
   become: yes
   become_user: root
-
-- name: create gimp configuration directory
-  file:
-    path: "{{ config_directory }}"
-    state: directory
-
-- name: set gimp configuration
-  copy:
-    src: "{{ config_source }}"
-    dest: "{{ config_destination }}"
-
-- name: turn on gimp single-window-mode
-  lineinfile:
-    dest: "{{ config_destination }}"
-    line: "(single-window-mode yes)"

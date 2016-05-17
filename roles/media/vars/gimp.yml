@@ -1,7 +1,0 @@
-
-config_source: "/etc/gimp/2.0/sessionrc"
-
-config_directory: "{{ ansible_env.HOME }}/.gimp-2.8"
-
-config_destination: "{{ config_directory }}/sessionrc"
-
