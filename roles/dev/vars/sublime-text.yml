@@ -1,5 +1,5 @@
 
-available_version: 3103
+available_version: 3114
 
 download_url: https://download.sublimetext.com/sublime-text_build-{{ available_version }}_amd64.deb
 
