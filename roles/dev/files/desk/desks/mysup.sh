@@ -7,6 +7,7 @@ PRJ_NAME=mysup
 PRJ_PATH=/var/www/$PRJ_NAME
 
 WWW_HOST=$PRJ_NAME.fr
+DEMO_HOST=demo.$PRJ_NAME.fr
 
 source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 source ~/.desk/desks/web.sh $PRJ_NAME $PRJ_PATH
@@ -36,15 +37,30 @@ www-browse () {
 
 # Open production version of website
 www-run () {
-	xdg-open http://$WWW_HOST/ > /dev/null
+    xdg-open http://$WWW_HOST/ > /dev/null
 }
 
 # Pull production server
 www-pull () {
-  	ssh $WWW_HOST "git --git-dir /home/webadmin/web/www.$WWW_HOST/.git --work-tree /home/webadmin/web/www.$WWW_HOST pull"
+    ssh $WWW_HOST "git --git-dir /home/webadmin/web/www.$WWW_HOST/.git --work-tree /home/webadmin/web/www.$WWW_HOST pull"
 }
 
 # Download production database
 www-downloaddb () {
-	ssh $WWW_HOST "mysqldump $PRJ_NAME" > $PRJ_PATH/fuel/app/sql/lea_prod.sql
+    ssh $WWW_HOST "mysqldump $PRJ_NAME" > $PRJ_PATH/fuel/app/sql/lea_prod.sql
+}
+
+# FTP to demo server
+demo-browse () {
+    filezilla -c 0/pimenteo/$DEMO_HOST &
+}
+
+# Open production version of website
+demo-run () {
+	xdg-open http://$DEMO_HOST/ > /dev/null
+}
+
+# Pull production server
+demo-pull () {
+  	ssh $WWW_HOST "git --git-dir /home/webadmin/web/$DEMO_HOST/.git --work-tree /home/webadmin/web/$DEMO_HOST pull"
 }

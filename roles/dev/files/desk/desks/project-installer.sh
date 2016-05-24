@@ -28,8 +28,9 @@ git-all() {
 
     for path in "${paths[@]}"
     do :
-        echo -ne "\n${BLUE}\0342\0227\0262 $(basename $path)${NC}\n"
+        echo -ne "${BLUE}\0342\0227\0262 $(basename $path)${NC}\n"
         git -C $path $0
+        echo ""
     done
 }
 
