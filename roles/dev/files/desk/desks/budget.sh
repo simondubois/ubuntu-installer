@@ -15,6 +15,7 @@ PATH=$(npm bin):$PATH
 # Restore local database
 dev-migratedb () {
     dev-restoredb
+    php artisan accounts:delete 5
     php artisan users:delete -e 1
 	php artisan migrate --seed
 }
