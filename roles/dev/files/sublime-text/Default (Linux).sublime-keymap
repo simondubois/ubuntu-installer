@@ -1,4 +1,8 @@
 [
+
+    { "keys": ["ctrl+q"], "command": "noop" },
+    { "keys": ["ctrl+w"], "command": "noop" },
+
 	{ "keys": ["ctrl+alt+v"], "command": "run_macro_file", "args": {"file": "Packages/User/var_dump.sublime-macro"} },
     { "keys": ["ctrl+alt+d"], "command": "run_macro_file", "args": {"file": "Packages/User/die.sublime-macro"} },
 	{ "keys": ["ctrl+alt+c"], "command": "run_macro_file", "args": {"file": "Packages/User/console.log.sublime-macro"} },
