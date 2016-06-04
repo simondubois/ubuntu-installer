@@ -14,9 +14,9 @@ PATH=$(npm bin):$PATH
 
 # Restore local database
 dev-migratedb () {
+    replace "/*!40103 SET TIME_ZONE='+00:00' */;" "/*!40103 SET TIME_ZONE='-02:00' */;" -- "$PRJ_PATH/storage/database.sql"
     dev-restoredb
     php artisan accounts:delete 5
     php artisan users:delete -e 1
-	php artisan migrate --seed
+    php artisan migrate --seed
 }
-
