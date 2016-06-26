@@ -8,7 +8,7 @@ gsettings:
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'home', value: '<Primary><Alt>e' }
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'search', value: '<Primary><Alt>r' }
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'custom-keybindings', value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']" }
-  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'calculator', value: '<Primary><Alt>c' }
+  - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'calculator', value: '<Primary><Alt>b' }
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'www', value: '<Primary><Alt>i' }
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'email', value: '<Primary><Alt>m' }
   - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'screensaver', value: '' }
