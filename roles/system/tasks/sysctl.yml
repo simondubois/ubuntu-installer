@@ -1,0 +1,11 @@
+---
+
+- include_vars: sysctl.yml
+
+- name: increase number of inodes
+  lineinfile:
+    dest: "{{ path }}"
+    regexp: 'fs.inotify.max_user_watches='
+    line: 'fs.inotify.max_user_watches=524288'
+  become: yes
+  become_user: root
