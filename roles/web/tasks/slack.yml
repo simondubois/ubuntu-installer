@@ -3,7 +3,7 @@
 - include_vars: slack.yml
 
 - name: get slack version
-  shell: "dpkg-query --showformat='${Version}' --show slack || echo 0"
+  shell: "dpkg-query --showformat='${Version}' --show slack-desktop || echo 0"
   register: installed_version
   changed_when: false
 
