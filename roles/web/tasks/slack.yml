@@ -19,3 +19,11 @@
   when: installed_version.stdout != available_version
   become: yes
   become_user: root
+
+- name: replace application icon
+  lineinfile:
+    dest: "{{ shortcut_path }}"
+    regexp: '^Icon='
+    line: "Icon={{ shortcut_icon }}"
+  become: yes
+  become_user: root
