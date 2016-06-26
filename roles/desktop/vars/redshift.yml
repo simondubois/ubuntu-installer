@@ -1,0 +1,8 @@
+
+configuration_source: "{{ role_path }}/files/redshift/redshift.conf"
+
+configuration_destination: "{{ ansible_env.HOME }}/.config/redshift.conf"
+
+shortcut_source: "{{ role_path }}/files/redshift/redshift.desktop"
+
+shortcut_destination: "{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop"

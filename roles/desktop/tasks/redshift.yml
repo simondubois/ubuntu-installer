@@ -1,7 +1,21 @@
 ---
 
+- include_vars: redshift.yml
+
 - name: install redshift
   apt:
     name: redshift
   become: yes
   become_user: root
+
+- name: set redshift configuration
+  file:
+    src: "{{ configuration_source }}"
+    dest: "{{ configuration_destination }}"
+    state: link
+
+- name: copy shortcut
+  file:
+    src: "{{ shortcut_source }}"
+    dest: "{{ shortcut_destination }}"
+    state: link
