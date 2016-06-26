@@ -1,12 +1,12 @@
 ---
 
-- include: ssh.yml
-- include: project-installer.yml
-- include: desk.yml
-- include: filezilla.yml
-- include: git.yml
-- include: remarkable.yml
-- include: sublime-text.yml
-- include: tilda.yml
+# - include: ssh.yml
+# - include: project-installer.yml
+# - include: desk.yml
+# - include: filezilla.yml
+# - include: git.yml
+# - include: remarkable.yml
+# - include: sublime-text.yml
+# - include: tilda.yml
 - include: trash-cli.yml
-- include: virtualbox.yml
+# - include: virtualbox.yml
