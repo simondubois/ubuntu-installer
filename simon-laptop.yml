@@ -2,29 +2,29 @@
 
 - hosts: localhost
   roles:
-    # - system
-    # - owncloud
-    # - {
-    #   role: "web",
-    #   trello_username: "simondubois",
-    # }
-    # - media
-    # - {
-    #   role: "desktop",
-    #   theme_in_use: "Numix",
-    #   icons_in_use: "Numix-Circle",
-    #   background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
-    #   custom_compiz: [
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'class=Slack', 'name=trello.com']" },
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2, 2]' },
-    #     { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 1, 2]' },
-    #     { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
-    #     { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
-    #   ],
-    #   custom_unity: [
-    #     { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
-    #   ],
-    # }
+    - system
+    - owncloud
+    - {
+      role: "web",
+      trello_username: "simondubois",
+    }
+    - media
+    - {
+      role: "desktop",
+      theme_in_use: "Numix",
+      icons_in_use: "Numix-Circle",
+      background_uri: "file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml",
+      custom_compiz: [
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'class=Slack', 'name=trello.com']" },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2, 2]' },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 1, 2]' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
+      ],
+      custom_unity: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }
     - {
       role: "dev",
       root_path: "{{ ansible_env.HOME }}/www",
@@ -39,21 +39,21 @@
         { repository: 'git@github.com:simondubois/unsplash-downloader.git', version: 'HEAD' },
       ],
     }
-    # - {
-    #   role: 'core',
-    #   nautilus_bookmarks: {
-    #     'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
-    #     'file:///home/sel/www',
-    #   },
-    #   startup_enabled: [
-    #     '/usr/share/applications/owncloud.desktop',
-    #     '/usr/share/applications/extras-my-weather-indicator.desktop',
-    #     '/usr/share/applications/indicator-sysmonitor.desktop',
-    #     '/usr/share/applications/slack.desktop',
-    #     '/usr/share/applications/thunderbird.desktop',
-    #     '/usr/share/applications/tilda.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
-    #     '{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop',
-    #   ]
-    # }
+    - {
+      role: 'core',
+      nautilus_bookmarks: {
+        'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
+        'file:///home/sel/www',
+      },
+      startup_enabled: [
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/slack.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '/usr/share/applications/tilda.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/ddl.desktop',
+        '{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop',
+      ]
+    }
