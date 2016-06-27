@@ -5,6 +5,7 @@ gsettings:
   - { schema: 'org.compiz.put:/org/compiz/profiles/unity/plugins/put/', key: 'put-next-output-key', value: '<Super>oe' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'disable-show-desktop', value: 'true' }
   - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'launcher-capture-mouse', value: 'false' }
+  - { schema: 'org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/', key: 'launcher-hide-mode', value: '1' }
   - { schema: 'org.compiz.wall:/org/compiz/profiles/unity/plugins/wall/', key: 'miniscreen', value: 'false' }
   - { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'mode', value: '1' }
   - { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'multioutput-mode', value: '1' }
