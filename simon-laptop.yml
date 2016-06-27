@@ -40,6 +40,13 @@
       ],
     }
     - {
+      role: "dev",
+      root_path: "/var/www",
+      repositories: [
+        { repository: 'git@github.com:c4webbutveckling/wedeal.git', version: 'dev-bugfixes' },
+      ],
+    }
+    - {
       role: 'core',
       nautilus_bookmarks: {
         'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
