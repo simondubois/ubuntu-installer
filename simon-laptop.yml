@@ -52,6 +52,7 @@
       nautilus_bookmarks: {
         'file:///windows/Documents%20and%20Settings/Simon%20Dubois/Desktop Windows',
         'file:///home/sel/www',
+        'file:///var/www',
       },
       startup_enabled: [
         '/usr/share/applications/owncloud.desktop',
