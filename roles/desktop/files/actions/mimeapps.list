@@ -55,6 +55,8 @@ audio/x-vorbis=totem.desktop
 audio/x-xm=totem.desktop
 x-scheme-handler/mailto=thunderbird.desktop
 message/rfc822=thunderbird.desktop
+x-scheme-handler/about=chromium-browser.desktop
+x-scheme-handler/unknown=chromium-browser.desktop
 
 [Added Associations]
 text/html=chromium-browser.desktop;
