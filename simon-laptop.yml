@@ -45,7 +45,7 @@
       repositories: [
         { repository: 'git@github.com:c4webbutveckling/wedeal.git', version: 'dev-bugfixes' },
         { repository: 'git@github.com:c4webbutveckling/martenssons-kampanjsida2016.git', version: 'HEAD' },
-        { repository: 'git@github.com:c4webbutveckling/git@github.com:c4webbutveckling/exakta.git', version: 'HEAD' },
+        { repository: 'git@github.com:c4webbutveckling/exakta.git', version: 'HEAD' },
       ],
     }
     - {
