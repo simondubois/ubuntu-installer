@@ -12,5 +12,8 @@ dev-run () {
 dev-restoredb () {
 	mysql -e "DROP DATABASE \`$PRJ_NAME\`"
 	mysql -e "CREATE DATABASE \`$PRJ_NAME\`"
-	mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
+    if [ -f "$PRJ_PATH/storage/database.sql" ]
+    then
+    	mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
+    fi
 }

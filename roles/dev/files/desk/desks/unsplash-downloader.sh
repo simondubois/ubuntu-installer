@@ -9,7 +9,7 @@ PRJ_PATH="$HOME/www/$PRJ_NAME"
 source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
 PATH=$(npm bin):$PATH
-PATH=$PRJ_PATH/vendor/bin:$PATH
+PATH=$(composer config bin-dir --absolute):$PATH
 
 # Build phar file
 build() {
