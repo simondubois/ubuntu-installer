@@ -46,6 +46,7 @@
         { repository: 'git@github.com:c4webbutveckling/wedeal.git', version: 'dev-bugfixes' },
         { repository: 'git@github.com:c4webbutveckling/martenssons-kampanjsida2016.git', version: 'HEAD' },
         { repository: 'git@github.com:c4webbutveckling/exakta-addresspicker.git', version: 'HEAD' },
+        { repository: 'git@github.com:c4webbutveckling/schroder-besiktningsrapport.git', version: 'HEAD' },
       ],
     }
     - {
