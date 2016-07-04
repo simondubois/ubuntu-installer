@@ -11,8 +11,3 @@ source ~/.desk/desks/web.sh $PRJ_NAME $PRJ_PATH
 
 PATH=$(composer config bin-dir --absolute):$PATH
 PATH=$(npm bin):$PATH
-
-dev-migratedb () {
-    dev-restoredb
-    php artisan migrate --seed
-}

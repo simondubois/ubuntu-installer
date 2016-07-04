@@ -17,3 +17,9 @@ dev-restoredb () {
     	mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
     fi
 }
+
+# Restore & migrate local database
+dev-migratedb () {
+    dev-restoredb
+    php artisan migrate --seed
+}
