@@ -30,13 +30,13 @@
       root_path: "{{ ansible_env.HOME }}/www",
       repositories: [
         { repository: 'git@github.com:simondubois/budget.git', version: 'v2' },
-        { repository: 'git@github.com:simondubois/c4media-test.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/jsonresume-theme-paper.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/photos.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/project-installer.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/simon.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/ubuntu-installer.git', version: 'HEAD' },
-        { repository: 'git@github.com:simondubois/unsplash-downloader.git', version: 'HEAD' },
+        { repository: 'git@github.com:simondubois/c4media-test.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/jsonresume-theme-paper.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/photos.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/project-installer.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/simon.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/ubuntu-installer.git', version: 'master' },
+        { repository: 'git@github.com:simondubois/unsplash-downloader.git', version: 'master' },
       ],
     }
     - {
@@ -44,9 +44,9 @@
       root_path: "/var/www",
       repositories: [
         { repository: 'git@github.com:c4webbutveckling/wedeal.git', version: 'dev-bugfixes' },
-        { repository: 'git@github.com:c4webbutveckling/martenssons-kampanjsida2016.git', version: 'HEAD' },
-        { repository: 'git@github.com:c4webbutveckling/exakta-addresspicker.git', version: 'HEAD' },
-        { repository: 'git@github.com:c4webbutveckling/schroder-besiktningsrapport.git', version: 'HEAD' },
+        { repository: 'git@github.com:c4webbutveckling/martenssons-kampanjsida2016.git', version: 'master' },
+        { repository: 'git@github.com:c4webbutveckling/exakta-addresspicker.git', version: 'master' },
+        { repository: 'git@github.com:c4webbutveckling/schroder-besiktningsrapport.git', version: 'master' },
       ],
     }
     - {
