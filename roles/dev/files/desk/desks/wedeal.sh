@@ -15,3 +15,8 @@ PATH=$(npm bin):$PATH
 prod-downloaddb () {
     echo "Not implemented"
 }
+
+# Download staging database
+stag-downloaddb () {
+    ssh wedeal.se.cust.c4hosting.se "mysqldump wedeal_system" > "$PRJ_PATH/storage/database.sql"
+}
