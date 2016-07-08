@@ -19,4 +19,6 @@ prod-downloaddb () {
 # Download staging database
 stag-downloaddb () {
     ssh wedeal.se.cust.c4hosting.se "mysqldump wedeal_system" > "$PRJ_PATH/storage/database.sql"
+    rm "$PRJ_PATH/public/uploads"
+    scp -r wedeal.se.cust.c4hosting.se:/home/wedeal/project/public/uploads "$PRJ_PATH/public"
 }

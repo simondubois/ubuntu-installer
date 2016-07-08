@@ -8,23 +8,9 @@ PRJ_PATH="$HOME/www/$PRJ_NAME"
 
 source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
 
-# List projects
-list() {
-    if [ -z "$1" ]; then
-        root=$HOME/www
-    else
-        root=$1
-    fi
-
-    paths=($(ls -d $root/*))
-    printf '%s\n' "${paths[@]}"
-}
-
 # Execute git command on projects
 git-all() {
-    root=$HOME/www
-
-    paths=($(ls -d $root/*))
+    paths=($(ls -d $HOME/www/* /var/www/*))
 
     for path in "${paths[@]}"
     do :
