@@ -35,4 +35,4 @@ alias log='tail -f /var/log/apache2/error.log'
 blackfire-php() { (sudo php5dismod xdebug && sudo service php5-fpm restart; blackfire run $@; sudo php5enmod xdebug && sudo service php5-fpm restart); }
 
 alias projects-git='desk run project-installer git-all'
-alias projects-status='projects-git "status -s"'
+alias projects-status='projects-git "status -sb"'
