@@ -22,3 +22,10 @@ stag-downloaddb () {
     rm "$PRJ_PATH/public/uploads"
     scp -r wedeal.se.cust.c4hosting.se:/home/wedeal/project/public/uploads "$PRJ_PATH/public"
 }
+
+# Restore & migrate local database
+dev-migratedb () {
+    dev-restoredb
+    php artisan migrate --seed
+    php artisan images:detect-missing --fix
+}
