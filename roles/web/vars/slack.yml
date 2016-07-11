@@ -1,5 +1,5 @@
 
-available_version: 2.0.6
+available_version: 2.1.0
 
 download_url: https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ available_version }}-amd64.deb
 
