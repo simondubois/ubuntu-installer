@@ -15,6 +15,7 @@ PATH=$(npm bin):$PATH
 # Restore & migrate local database
 dev-migratedb () {
     rm "$PRJ_PATH/storage/app/pictures"
+    rm "$PRJ_PATH/storage/app/plans"
     dev-restoredb
     php artisan migrate --seed
     php artisan incidents:create --count=20

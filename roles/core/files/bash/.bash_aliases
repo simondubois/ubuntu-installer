@@ -19,6 +19,8 @@ alias s='subl'
 # Media handling
 #
 
+alias rss-update='ssh dubandubois.com "php-5.6 dubandubois.com/cloud/cron.php"'
+
 alias mp3bitratecheck='find . -name "*.mp3" -exec mp3info -r a -p "\"{}\"\t%r\n" "{}" \; | grep -v "12[0-9]."'
 alias mp3bitrateconvert='for f in *.mp3; do avconv -i "$f" -c:a libmp3lame -b:a 128k "${f%.*}2.mp3"; done'
 
