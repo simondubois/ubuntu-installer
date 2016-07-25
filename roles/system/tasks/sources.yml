@@ -9,6 +9,14 @@
   become: yes
   become_user: root
 
+- name: make source files readable
+  file:
+    path: /etc/apt/sources.list.d/
+    mode: a+r
+    recurse: yes
+  become: yes
+  become_user: root
+
 - name: enable package sources
   apt_repository:
     repo: "deb {{item}}"
