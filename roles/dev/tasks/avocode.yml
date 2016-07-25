@@ -12,6 +12,8 @@
     copy: no
     src: "{{ avocode_source }}"
     dest: "{{ avocode_destination | dirname }}"
+  become: yes
+  become_user: root
   when: avocode_destination_status.stat.isdir is not defined
 
 - name: create avocode shortcut
@@ -19,6 +21,8 @@
     src: "{{ shortcut_source }}"
     dest: "{{ shortcut_destination }}"
     force: no
+  become: yes
+  become_user: root
 
 - name: edit avocode execution path
   lineinfile:
