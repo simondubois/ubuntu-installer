@@ -2,6 +2,7 @@
 
 - include: ssh.yml
 - include: project-installer.yml
+- include: avocode.yml
 - include: desk.yml
 - include: filezilla.yml
 - include: git.yml

@@ -1,0 +1,37 @@
+---
+
+- include_vars: avocode.yml
+
+- name: get avocode destination status
+  stat:
+    path: "{{ avocode_destination }}"
+  register: avocode_destination_status
+
+- name: extract avocode
+  unarchive:
+    copy: no
+    src: "{{ avocode_source }}"
+    dest: "{{ avocode_destination }}"
+  when: avocode_destination_status.stat.isdir is not defined
+
+- name: create avocode shortcut
+  copy:
+    src: "{{ shortcut_source }}"
+    dest: "{{ shortcut_destination }}"
+    force: no
+
+- name: edit avocode execution path
+  lineinfile:
+    dest: "{{ shortcut_destination }}"
+    regexp: '^Exec='
+    line: "Exec={{ shortcut_destination | dirname }}/Avocode"
+  become: yes
+  become_user: root
+
+- name: edit avocode icon path
+  lineinfile:
+    dest: "{{ shortcut_destination }}"
+    regexp: '^Icon='
+    line: "Icon={{ shortcut_destination | dirname }}/avocode.png"
+  become: yes
+  become_user: root

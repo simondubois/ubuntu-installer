@@ -1,0 +1,8 @@
+
+avocode_source: https://media.avocode.com/download/avocode-app/2.8.4/avocode-app-linux-2.8.4.zip
+
+avocode_destination: /opt
+
+shortcut_source: "{{ avocode_destination }}/Avocode-linux-x64/avocode.desktop.in"
+
+shortcut_destination: "/usr/share/applications/avocode.desktop"
