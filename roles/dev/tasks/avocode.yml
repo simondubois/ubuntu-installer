@@ -11,7 +11,7 @@
   unarchive:
     copy: no
     src: "{{ avocode_source }}"
-    dest: "{{ avocode_destination }}"
+    dest: "{{ avocode_destination | dirname }}"
   when: avocode_destination_status.stat.isdir is not defined
 
 - name: create avocode shortcut
@@ -24,7 +24,7 @@
   lineinfile:
     dest: "{{ shortcut_destination }}"
     regexp: '^Exec='
-    line: "Exec={{ shortcut_destination | dirname }}/Avocode"
+    line: "Exec={{ avocode_destination }}/Avocode"
   become: yes
   become_user: root
 
@@ -32,6 +32,6 @@
   lineinfile:
     dest: "{{ shortcut_destination }}"
     regexp: '^Icon='
-    line: "Icon={{ shortcut_destination | dirname }}/avocode.png"
+    line: "Icon={{ shortcut_destination }}/avocode.png"
   become: yes
   become_user: root
