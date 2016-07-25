@@ -41,9 +41,3 @@
     force: yes
   become: yes
   become_user: root
-
-- name: autoremove sources
-  apt:
-    autoremove: yes
-  become: yes
-  become_user: root
