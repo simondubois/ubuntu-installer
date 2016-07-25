@@ -28,6 +28,7 @@
 
 - name: update sources
   apt:
+    autoremove: yes
     update_cache: yes
     upgrade: dist
     force: yes
