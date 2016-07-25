@@ -28,4 +28,10 @@ dev-migratedb () {
     dev-restoredb
     php artisan migrate --seed
     php artisan images:detect-missing --fix
+    php artisan classifications:detect-missing --fix
+}
+
+# Scan webpages
+dev-scanpages () {
+    /var/www/http-status-check/vendor/bin/http-status-check scan http://wedeal.dev
 }
