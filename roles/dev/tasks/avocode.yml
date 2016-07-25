@@ -12,6 +12,7 @@
     copy: no
     src: "{{ avocode_source }}"
     dest: "{{ avocode_destination | dirname }}"
+    validate_certs: no
   when: avocode_destination_status.stat.isdir is not defined
 
 - name: create avocode shortcut
