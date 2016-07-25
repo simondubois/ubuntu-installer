@@ -28,9 +28,14 @@
 
 - name: update sources
   apt:
-    autoremove: yes
     update_cache: yes
     upgrade: dist
     force: yes
+  become: yes
+  become_user: root
+
+- name: autoremove sources
+  apt:
+    autoremove: yes
   become: yes
   become_user: root
