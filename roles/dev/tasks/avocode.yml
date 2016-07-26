@@ -36,6 +36,6 @@
   lineinfile:
     dest: "{{ shortcut_destination }}"
     regexp: '^Icon='
-    line: "Icon={{ shortcut_destination }}/avocode.png"
+    line: "Icon={{ avocode_destination }}/avocode.png"
   become: yes
   become_user: root
