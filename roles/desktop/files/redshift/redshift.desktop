@@ -1,7 +1,8 @@
 [Desktop Entry]
+Name=Redshift
 Type=Application
 Exec=redshift
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name=Plowshare
+Icon=redshift

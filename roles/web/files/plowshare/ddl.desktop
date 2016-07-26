@@ -1,7 +1,8 @@
 [Desktop Entry]
+Name=Plowshare
 Type=Application
 Exec=bash -c "sleep 30 && ddl start"
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name=Plowshare
+Icon=jdownloader
