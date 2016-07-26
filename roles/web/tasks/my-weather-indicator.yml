@@ -24,3 +24,11 @@
     src: "{{ config_source }}"
     dest: "{{ config_destination }}"
     state: link
+
+- name: edit my-weather-indicator icon path
+  lineinfile:
+    dest: "/usr/share/applications/extras-my-weather-indicator.desktop"
+    regexp: '^Icon='
+    line: "Icon=indicator-weather"
+  become: yes
+  become_user: root

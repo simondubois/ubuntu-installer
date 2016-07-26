@@ -30,3 +30,11 @@
     src: "{{ config_source }}"
     dest: "{{ config_destination }}"
     state: link
+
+- name: edit remarkable icon path
+  lineinfile:
+    dest: "/usr/share/applications/remarkable.desktop"
+    regexp: '^Icon='
+    line: "Icon=remarkable"
+  become: yes
+  become_user: root

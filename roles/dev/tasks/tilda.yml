@@ -18,3 +18,11 @@
     src: "{{ config_source }}"
     dest: "{{ config_destination }}"
     state: link
+
+- name: edit tilda icon path
+  lineinfile:
+    dest: "/usr/share/applications/tilda.desktop"
+    regexp: '^Icon='
+    line: "Icon=utilities-terminal"
+  become: yes
+  become_user: root
