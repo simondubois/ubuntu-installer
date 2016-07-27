@@ -13,6 +13,8 @@ PATH=$(npm bin):$PATH
 
 # Download production database
 prod-downloaddb () {
-    mkdir "$PRJ_PATH/storage"
+    mkdir -p "$PRJ_PATH/storage"
     ssh tjornarpsbuss.se "mysqldump tjornarp_butik5" > "$PRJ_PATH/storage/database.sql"
+    rm "$PRJ_PATH/uploads"
+    scp -r tjornarpsbuss.se:/home/tjornarpsbuss/public_html/uploads "$PRJ_PATH"
 }
