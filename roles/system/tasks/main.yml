@@ -3,6 +3,7 @@
 - include: sources.yml
 - include: locales.yml
 - include: oneplusone.yml
+- include: powertop.yml
 - include: startup.yml
 - include: sysctl.yml
 - include: tlp.yml

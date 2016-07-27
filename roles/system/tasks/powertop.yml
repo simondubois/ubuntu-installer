@@ -1,0 +1,22 @@
+---
+
+- name: install powertop
+  apt:
+    name: powertop
+  become: yes
+  become_user: root
+  register: install_powertop
+
+- name: calibrate powertop
+  command: powertop --calibrate
+  become: yes
+  become_user: root
+  when: install_powertop.changed
+
+- name: autostart powertop
+  lineinfile:
+    dest: /etc/rc.local
+    line: "powertop --auto-tune"
+    insertbefore: "^exit 0$"
+  become: yes
+  become_user: root
