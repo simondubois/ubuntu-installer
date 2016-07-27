@@ -32,6 +32,11 @@ dev-migratedb () {
 }
 
 # Scan webpages
+stag-scanpages () {
+    /var/www/http-status-check/vendor/bin/http-status-check scan http://wedeal.se.cust.c4hosting.se/
+}
+
+# Scan webpages
 dev-scanpages () {
     /var/www/http-status-check/vendor/bin/http-status-check scan http://wedeal.dev
 }
