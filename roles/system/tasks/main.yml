@@ -5,3 +5,4 @@
 - include: oneplusone.yml
 - include: startup.yml
 - include: sysctl.yml
+- include: tlp.yml

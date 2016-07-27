@@ -1,0 +1,14 @@
+---
+
+- name: install tlp
+  apt:
+    name: tlp
+  become: yes
+  become_user: root
+  register: install_tlp
+
+- name: start tlp
+  command: tlp start
+  become: yes
+  become_user: root
+  when: install_tlp.changed
