@@ -48,6 +48,7 @@
         { repository: 'git@github.com:c4webbutveckling/exakta-addresspicker.git', version: 'master' },
         { repository: 'git@github.com:c4webbutveckling/schroder-besiktningsrapport.git', version: 'master' },
         { repository: 'git@github.com:c4webbutveckling/nallebudet.git', version: 'master' },
+        { repository: 'git@github.com:c4webbutveckling/ebutik.git', version: 'theme-tjornarps' },
       ],
     }
     - {
