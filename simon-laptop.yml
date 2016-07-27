@@ -47,7 +47,7 @@
         { repository: 'git@github.com:c4webbutveckling/martenssons-kampanjsida2016.git', version: 'master' },
         { repository: 'git@github.com:c4webbutveckling/exakta-addresspicker.git', version: 'master' },
         { repository: 'git@github.com:c4webbutveckling/schroder-besiktningsrapport.git', version: 'master' },
-        { repository: 'git@github.com:c4webbutveckling/nallebudet.git', version: 'dev-orderfrontend' },
+        { repository: 'git@github.com:c4webbutveckling/nallebudet.git', version: 'master' },
       ],
     }
     - {
