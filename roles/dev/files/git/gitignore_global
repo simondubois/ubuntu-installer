@@ -2,3 +2,4 @@
 # sublime-text
 *.sublime-project
 *.sublime-workspace
+/storage/database.sql
