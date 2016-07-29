@@ -19,10 +19,17 @@
     path: "{{ gw2_path }}"
     state: directory
 
+- name: check setup
+  stat:
+    path: "{{ gw2_path }}/setup.exe"
+  register: setup_file
+
 - name: download gw2
   get_url:
     url: "{{ gw2_url }}"
     dest: "{{ gw2_path }}/setup.exe"
+  when: setup_file.stat.exists == False
 
 - name: install gw2
   shell: "wine explorer /desktop=gw2,1024x768 {{ gw2_path }}/setup.exe -dx9single &"
+  when: setup_file.stat.exists == False
