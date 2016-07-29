@@ -3,4 +3,4 @@ wine_ppa: ppa:ubuntu-wine/ppa
 
 gw2_url: https://account.arena.net/content/download/gw2-win64
 
-gw2_tmp: "{{ ansible_env.HOME }}/.gw2"
+gw2_path: "{{ ansible_env.HOME }}/.gw2"
