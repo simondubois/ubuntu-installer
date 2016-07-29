@@ -25,4 +25,4 @@
     dest: "{{ gw2_path }}/setup.exe"
 
 - name: install gw2
-  command: "wine explorer /desktop=gw2,1024x768 {{ gw2_path }}/setup.exe -dx9single"
+  shell: "wine explorer /desktop=gw2,1024x768 {{ gw2_path }}/setup.exe -dx9single &"
