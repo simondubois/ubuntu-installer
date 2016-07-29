@@ -14,10 +14,15 @@
   become: yes
   become_user: root
 
+- name: create directory
+    file:
+    path: "{{ gw2_path }}"
+    state: directory
+
 - name: download gw2
   get_url:
     url: "{{ gw2_url }}"
-    dest: "{{ gw2_tmp }}"
+    dest: "{{ gw2_path }}/setup.exe"
 
 - name: install gw2
-  command: "wine {{ gw2_tmp }}  -dx9single"
+  command: "wine explorer /desktop=gw2,1024x768 {{ gw2_path }}/setup.exe -dx9single"
