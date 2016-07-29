@@ -15,7 +15,7 @@
   become_user: root
 
 - name: create directory
-    file:
+  file:
     path: "{{ gw2_path }}"
     state: directory
 
