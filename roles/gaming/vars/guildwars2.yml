@@ -1,0 +1,6 @@
+
+wine_ppa: ppa:ubuntu-wine/ppa
+
+gw2_url: https://account.arena.net/content/download/gw2-win64
+
+gw2_tmp: /tmp/gw2.exe

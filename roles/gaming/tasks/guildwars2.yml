@@ -1,0 +1,23 @@
+---
+
+- include_vars: guildwars2.yml
+
+- name: add wine ppa
+  apt_repository:
+    repo: "{{ wine_ppa }}"
+  become: yes
+  become_user: root
+
+- name: install wine
+  apt:
+    name: wine
+  become: yes
+  become_user: root
+
+- name: download gw2
+  get_url:
+    url: "{{ gw2_url }}"
+    dest: "{{ gw2_tmp }}"
+
+- name: install gw2
+  command: "wine {{ gw2_tmp }}  -dx9single"
