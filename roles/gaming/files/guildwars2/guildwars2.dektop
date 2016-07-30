@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Guild Wars 2
+Type=Game
+Exec=WINEDEBUG="-all" wine explorer /desktop=gw2,1920x1200 $HOME/.gw2/setup.exe -dx9single -autologin -maploadinfo
+Hidden=false
+NoDisplay=false
+Icon=$HOME/.gw2/icon.png
