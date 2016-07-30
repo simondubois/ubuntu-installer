@@ -29,6 +29,9 @@
   file:
     path: "{{ gw2_path }}"
     state: directory
+    mode: 0777
+  become: yes
+  become_user: root
 
 - name: check setup
   stat:
