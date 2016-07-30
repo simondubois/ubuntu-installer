@@ -13,17 +13,17 @@
     name: wine
   become: yes
   become_user: root
+  register: install_wine
 
 - name: install winetricks
   apt:
     name: winetricks
   become: yes
   become_user: root
-  register: install_winetricks
 
 - name: install d3dx9
   command: winetricks d3dx9
-  when: install_winetricks.changed
+#  when: install_wine.changed
 
 - name: create directory
   file:
