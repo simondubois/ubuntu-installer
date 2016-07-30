@@ -14,6 +14,17 @@
   become: yes
   become_user: root
 
+- name: install winetricks
+  apt:
+    name: winetricks
+  become: yes
+  become_user: root
+  register: install_winetricks
+
+- name: install d3dx9
+  command: winetricks d3dx9
+  when: install_winetricks.changed
+
 - name: create directory
   file:
     path: "{{ gw2_path }}"
