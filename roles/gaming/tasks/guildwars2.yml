@@ -44,3 +44,15 @@
 - name: install gw2
   shell: "wine explorer /desktop=gw2,1024x768 {{ gw2_path }}/setup.exe -dx9single &"
   when: setup_file.stat.exists == False
+
+- name: copy icon
+  file:
+    src: "{{ icon_source }}"
+    dest: "{{ icon_destination }}"
+    state: link
+
+- name: copy shortcut
+  file:
+    src: "{{ shortcut_source }}"
+    dest: "{{ shortcut_destination }}"
+    state: link
