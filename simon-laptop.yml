@@ -2,7 +2,6 @@
 
 - hosts: localhost
   roles:
-    - gaming
     - system
     - owncloud
     - {
@@ -71,3 +70,4 @@
         '{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop',
       ]
     }
+    - gaming

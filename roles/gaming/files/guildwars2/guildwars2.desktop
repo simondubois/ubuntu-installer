@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Guild Wars 2
 Type=Application
-Exec=WINEDEBUG="-all" wine explorer /desktop=gw2,1920x1200 /opt/gw2/setup.exe -dx9single -autologin -maploadinfo
+Exec=env WINEDEBUG="-all" wine explorer /desktop=gw2,1920x1200 /opt/gw2/setup.exe -dx9single -autologin -maploadinfo
 Hidden=false
 NoDisplay=false
 Icon=/opt/gw2/guildwars2.png
