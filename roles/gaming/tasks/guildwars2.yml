@@ -23,7 +23,7 @@
 
 - name: install d3dx9
   command: winetricks d3dx9
-#  when: install_wine.changed
+  when: install_wine.changed
 
 - name: create directory
   file:
