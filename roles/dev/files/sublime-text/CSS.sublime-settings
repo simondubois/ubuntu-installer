@@ -3,6 +3,7 @@
 	[
 		"css.erb",
 		"css.liquid",
-		"less"
+		"less",
+		"scss"
 	]
 }
