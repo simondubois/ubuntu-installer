@@ -14,6 +14,7 @@ PATH=$(npm bin):$PATH
 
 # Restore & migrate local database
 dev-migratedb () {
+    rm $PRJ_PATH/public/pictures/*.jpg
     dev-restoredb
     php artisan migrate --seed
 }
