@@ -23,3 +23,8 @@ dev-migratedb () {
     dev-restoredb
     php artisan migrate --seed
 }
+
+# Scan dev website
+dev-scan () {
+    http-status-check scan http://$PRJ_NAME.dev/
+}

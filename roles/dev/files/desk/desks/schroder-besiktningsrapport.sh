@@ -20,3 +20,12 @@ dev-migratedb () {
     php artisan migrate --seed
     php artisan incidents:create --count=20
 }
+
+# Download staging database
+prod-downloaddb () {
+    ssh schroderst.se "mysqldump schroder_besiktningsrapport" > "$PRJ_PATH/storage/database.sql"
+    rm "$PRJ_PATH/storage/app/pictures"
+    rm "$PRJ_PATH/storage/app/plans"
+    scp -r schroderst.se:/home/schroder/besiktningsrapport/storage/app/pictures "$PRJ_PATH/storage/app"
+    scp -r schroderst.se:/home/schroder/besiktningsrapport/storage/app/plans "$PRJ_PATH/storage/app"
+}

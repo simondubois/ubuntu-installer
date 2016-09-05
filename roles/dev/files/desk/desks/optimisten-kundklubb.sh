@@ -16,5 +16,16 @@ PATH=$(npm bin):$PATH
 dev-migratedb () {
     rm $PRJ_PATH/public/pictures/*.jpg
     dev-restoredb
-    php artisan migrate --seed
+    php ./artisan migrate --seed
+}
+
+# SSH to production server
+stag-ssh () {
+    ssh optimisten.se.cust.c4hosting.se
+}
+
+# Pull production server
+stag-migratedb () {
+    ssh optimisten.se.cust.c4hosting.se "rm $PRJ_NAME/public/pictures/*.jpg"
+    ssh optimisten.se.cust.c4hosting.se "php $PRJ_NAME/artisan migrate:refresh --seed"
 }
