@@ -1,0 +1,9 @@
+---
+
+- name: inotify inodes
+  lineinfile:
+    dest: '/etc/sysctl.conf'
+    regexp: 'fs.inotify.max_user_watches='
+    line: 'fs.inotify.max_user_watches=524288'
+  become: yes
+  become_user: root

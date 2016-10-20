@@ -1,0 +1,15 @@
+---
+
+- hosts: localhost
+  roles:
+
+    - sources
+    - languages
+
+    - inotify
+    - devices
+
+    - tlp
+    - powertop
+
+    - startup

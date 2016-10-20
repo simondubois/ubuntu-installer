@@ -1,0 +1,33 @@
+---
+
+- name: uninstall laptop-mode-tools
+  apt:
+    name: laptop-mode-tools
+    state: absent
+  become: yes
+  become_user: root
+
+- name: add tlp ppa
+  apt_repository:
+    repo: ppa:linrunner/tlp
+  become: yes
+  become_user: root
+
+- name: install tlp
+  apt:
+    name: tlp
+  become: yes
+  become_user: root
+  register: install_tlp
+
+- name: install tlp-rdw
+  apt:
+    name: tlp-rdw
+  become: yes
+  become_user: root
+
+- name: start tlp
+  command: tlp start
+  become: yes
+  become_user: root
+  when: install_tlp.changed

@@ -1,0 +1,11 @@
+---
+
+- name: show startup
+  lineinfile:
+    dest: "{{ item }}"
+    regexp: '^NoDisplay=true$'
+    line: 'NoDisplay=false'
+  with_fileglob:
+    - '/etc/xdg/autostart/*'
+  become: yes
+  become_user: root

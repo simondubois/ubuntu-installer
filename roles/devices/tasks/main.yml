@@ -1,0 +1,16 @@
+---
+
+- name: add udev rules
+  lineinfile:
+    dest: '/lib/udev/rules.d/69-libmtp.rules'
+    line: "{{ item }}"
+  with_items:
+    - 'ATTR{idVendor}=="05c6", ATTR{idProduct}=="9039", SYMLINK+="libmtp-%k", MODE="660", GROUP="audio", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"'
+    - 'ATTR{idVendor}=="05c6", ATTR{idProduct}=="f003", SYMLINK+="libmtp-%k", MODE="660", GROUP="audio", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"'
+  become: yes
+  become_user: root
+
+- name: apply udev rules
+  command: udevadm control --reload-rules
+  become: yes
+  become_user: root
