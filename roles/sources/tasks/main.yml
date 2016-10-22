@@ -87,11 +87,11 @@
   become_user: root
 
 - name: autoremove packages
-    command: apt-get -y autoremove --purge
+  command: 'apt-get -y autoremove --purge'
   become: yes
   become_user: root
 
 - name: clean packages
-    command: apt-get -y clean
+  command: 'apt-get -y clean'
   become: yes
   become_user: root
