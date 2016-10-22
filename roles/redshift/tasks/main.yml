@@ -1,0 +1,7 @@
+---
+
+- name: install redshift
+  apt:
+    name: redshift-gtk
+  become: yes
+  become_user: root

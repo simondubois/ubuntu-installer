@@ -1,0 +1,41 @@
+---
+
+- name: install python-appindicator
+  apt:
+    name: python-appindicator
+  become: yes
+  become_user: root
+
+- name: download script
+  get_url:
+    url: 'https://raw.githubusercontent.com/C14L/textlines-indicator/master/textlines.py'
+    dest: '/usr/local/bin/textlines'
+  become: yes
+  become_user: root
+
+- name: set mode
+  file:
+    path: '/usr/local/bin/textlines'
+    mode: a+x
+  become: yes
+  become_user: root
+
+- name: download icon
+  get_url:
+    url: 'https://raw.githubusercontent.com/C14L/textlines-indicator/master/textlines16x16.png'
+    dest: '/usr/local/bin/textlines16x16.png'
+  become: yes
+  become_user: root
+
+- name: copy configuration
+  file:
+    src: "{{ ansible_env.HOME }}/Documents/Ubuntu/.textlines"
+    dest: "{{ ansible_env.HOME }}/.textlines"
+    state: link
+    force: yes
+
+- name: copy shortcut
+  file:
+    src: "{{ role_path }}/files/textlines-indicator.desktop"
+    dest: "{{ ansible_env.HOME }}/.local/share/applications/textlines-indicator.desktop"
+    state: link

@@ -1,0 +1,15 @@
+---
+
+- name: gsettings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'com.canonical.indicator.keyboard', key: 'visible', value: 'false' }
+    - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source', value: "['']" }
+    - { schema: 'org.gnome.desktop.wm.keybindings', key: 'switch-input-source-backward', value: "['']" }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'logout', value: '' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'home', value: '<Primary><Alt>e' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'search', value: '<Primary><Alt>r' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'calculator', value: '<Primary><Alt>b' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'www', value: '<Primary><Alt>i' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'email', value: '<Primary><Alt>m' }
+    - { schema: 'org.gnome.settings-daemon.plugins.media-keys', key: 'screensaver', value: '' }

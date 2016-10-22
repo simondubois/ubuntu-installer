@@ -57,3 +57,39 @@
     - totem
 
     - owncloud
+
+    - autorun
+    - {
+      role: 'wallpaper',
+      uri: 'file://{{ ansible_env.HOME }}/Pictures/wallpapers/unsplash.com/unsplash.com-1.xml',
+    }
+    - {
+      role: 'gtk',
+      theme: 'Numix',
+    }
+    - {
+      role: 'unity',
+      settings: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }
+    - {
+      role: 'compiz',
+      settings: [
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'class=Slack', 'name=trello.com']" },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-x-values', value: '[2, 2, 2]' },
+        { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-y-values', value: '[1, 1, 2]' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'mode', value: '2' },
+        { schema: 'org.compiz.resize:/org/compiz/profiles/unity/plugins/resize/', key: 'resize-from-center', value: 'true' },
+      ],
+    }
+    - datetime
+    - {
+      role: 'icons',
+      theme: 'Numix-Circle',
+    }
+    - indicator-sysmonitor
+    - textlines-indicator
+    - keybindings
+    - notifications
+    - redshift

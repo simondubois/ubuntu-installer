@@ -1,0 +1,26 @@
+---
+
+- name: add ppa
+  apt_repository:
+    repo: 'ppa:leolik/leolik'
+  become: yes
+  become_user: root
+
+- name: upgrade libnotify
+  apt:
+    upgrade: dist
+  become: yes
+  become_user: root
+  register: upgrade_libnotify
+
+- name: set configuration
+  file:
+    src: "{{ role_path }}/files/.notify-osd"
+    dest: "{{ ansible_env.HOME }}/.notify-osd"
+    state: link
+  when: upgrade_libnotify.changed
+
+- name: restart libnotify
+  command: pkill notify-osd
+  ignore_errors: yes
+  when: upgrade_libnotify.changed

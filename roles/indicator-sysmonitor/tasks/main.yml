@@ -1,0 +1,19 @@
+---
+
+- name: add ppa
+  apt_repository:
+    repo: 'ppa:fossfreedom/indicator-sysmonitor'
+  become: yes
+  become_user: root
+
+- name: install indicator-sysmonitor
+  apt:
+    name: indicator-sysmonitor
+  become: yes
+  become_user: root
+
+- name: set configuration
+  file:
+    src: "{{ role_path }}/files/.indicator-sysmonitor.json"
+    dest: "{{ ansible_env.HOME }}/.indicator-sysmonitor.json"
+    state: link

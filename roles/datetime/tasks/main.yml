@@ -1,0 +1,13 @@
+---
+
+- name: set settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'com.canonical.indicator.datetime', key: 'locations', value: '@as []' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-day', value: 'true' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'timezone-name', value: 'Europe/Paris France' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-seconds', value: 'true' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-date', value: 'true' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-week-numbers', value: 'true' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-locations', value: 'true' }
+    - { schema: 'com.canonical.indicator.datetime', key: 'show-year', value: 'true' }

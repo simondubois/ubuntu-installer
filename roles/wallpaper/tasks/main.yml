@@ -1,0 +1,27 @@
+---
+
+- name: list slideshows
+  find:
+    path: "{{ ansible_env.HOME }}/Pictures/wallpapers"
+    pattern: "slideshowBuilder.py"
+    recurse: yes
+  register: slideshow_list
+
+- name: build slideshows
+  shell: cd "{{ item.path | dirname }}" && python "{{ item.path | basename }}"
+  with_items: "{{ slideshow_list.files }}"
+  become: yes
+  become_user: root
+
+- name: set uri
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'org.gnome.desktop.background', key: 'picture-uri', value: "{{ uri }}" }
+  when: uri is defined
+
+- name: set options
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'org.gnome.desktop.background', key: 'picture-options', value: "{{ options }}" }
+  when: options is defined
+

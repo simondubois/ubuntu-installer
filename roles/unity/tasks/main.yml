@@ -1,0 +1,16 @@
+---
+
+- name: set core settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+  - { schema: 'com.canonical.Unity', key: 'double-click-activate', value: 'false' }
+  - { schema: 'com.canonical.Unity.Lenses', key: 'remote-content-search', value: 'none' }
+  - { schema: 'com.canonical.Unity.Lenses', key: 'always-search', value: "['applications.scope', 'files.scope']" }
+  - { schema: 'com.canonical.unity.webapps', key: 'integration-allowed', value: 'false' }
+  - { schema: 'com.canonical.unity.webapps', key: 'preauthorized-domains', value: '[]' }
+  - { schema: 'com.canonical.indicator.bluetooth', key: 'visible', value: 'false' }
+  - { schema: 'com.canonical.desktop.interface', key: 'scrollbar-mode', value: 'normal' }
+
+- name: set custom settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items: "{{ settings|default([]) }}"
