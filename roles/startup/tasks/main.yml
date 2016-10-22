@@ -20,6 +20,7 @@
     dest: "{{ item }}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
+    backrefs: true
   with_fileglob:
     - '{{ autostart_system_path }}/*'
   become: yes
@@ -27,18 +28,18 @@
 
 - name: create directory
   file:
-    path: "{{ autostart_path }}"
+    path: "{{ autostart_user_path }}"
     state: directory
 
 - name: copy applications
   copy:
     src: "{{ autostart_system_path }}/{{ item }}"
-    dest: "{{ autostart_path }}/{{ item }}"
+    dest: "{{ autostart_user_path }}/{{ item }}"
   with_items: "{{ autostart_disable }}"
 
 - name: disable applications
   lineinfile:
-    dest: "{{ autostart_path }}/{{ item }}"
+    dest: "{{ autostart_user_path }}/{{ item }}"
     regexp: '^X-GNOME-Autostart-enabled=true$'
     line: 'X-GNOME-Autostart-enabled=false'
   with_items: "{{ autostart_disable }}"
@@ -46,11 +47,11 @@
 - name: copy applications
   copy:
     src: "{{ item }}"
-    dest: "{{ autostart_path }}/{{ item | basename }}"
+    dest: "{{ autostart_user_path }}/{{ item | basename }}"
   with_items: "{{ enable|default([]) }}"
 
 - name: enable applications
   lineinfile:
-    dest: "{{ autostart_path }}/{{ item | basename }}"
+    dest: "{{ autostart_user_path }}/{{ item | basename }}"
     line: 'X-GNOME-Autostart-enabled=true'
   with_items: "{{ enable|default([]) }}"

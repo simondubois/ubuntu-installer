@@ -1,11 +1,17 @@
 ---
 
+- name: check default source file
+  stat:
+    path: /etc/apt/sources.list
+  register: source_file
+
 - name: empty default source file
   copy:
     dest: /etc/apt/sources.list
     content: ''
   become: yes
   become_user: root
+  when: source_file.stat.size == 0
 
 - name: set source files mode
   file:

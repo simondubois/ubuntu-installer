@@ -9,8 +9,10 @@
     - 'ATTR{idVendor}=="05c6", ATTR{idProduct}=="f003", SYMLINK+="libmtp-%k", MODE="660", GROUP="audio", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"'
   become: yes
   become_user: root
+  register: add_udev
 
 - name: apply udev rules
   command: udevadm control --reload-rules
   become: yes
   become_user: root
+  when: add_udev.changed
