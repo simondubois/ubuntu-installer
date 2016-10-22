@@ -1,0 +1,66 @@
+---
+
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+  become: yes
+  become_user: root
+
+- name: install ca-certificates
+  apt:
+    name: ca-certificates
+  become: yes
+  become_user: root
+
+- name: add keyserver
+  apt_key:
+    keyserver: 'hkp://p80.pool.sks-keyservers.net:80'
+    id: 58118E89F3A912897C070ADBF76221572C52609D
+  become: yes
+  become_user: root
+
+- name: add ppa
+  apt_repository:
+    repo: "deb https://apt.dockerproject.org/repo ubuntu-{{ansible_distribution_release}} main"
+  become: yes
+  become_user: root
+
+- name: install linux-image-extra distribution
+  apt:
+    name: "linux-image-extra-{{ansible_kernel}}"
+  become: yes
+  become_user: root
+
+- name: install linux-image-extra virtual
+  apt:
+    name: linux-image-extra-virtual
+  become: yes
+  become_user: root
+
+- name: install docker-engine
+  apt:
+    name: docker-engine
+  become: yes
+  become_user: root
+
+- name: enable docker-engine
+  service:
+    name: docker
+    enabled: yes
+  become: yes
+  become_user: root
+
+- name: create group
+  group:
+    name: docker
+    state: present
+  become: yes
+  become_user: root
+
+- name: add user
+  user:
+    name: "{{ ansible_env.USER }}"
+    groups: docker
+    append: yes
+  become: yes
+  become_user: root
