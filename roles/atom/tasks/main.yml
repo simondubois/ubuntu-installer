@@ -1,0 +1,13 @@
+---
+
+- name: add atom ppa
+  apt_repository:
+    repo: 'ppa:webupd8team/atom'
+  become: yes
+  become_user: root
+
+- name: install atom
+  apt:
+    name: atom
+  become: yes
+  become_user: root

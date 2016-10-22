@@ -1,0 +1,23 @@
+---
+
+- name: install desk
+  get_url:
+    url: "https://raw.githubusercontent.com/jamesob/desk/master/desk"
+    dest: "/usr/local/bin/desk"
+    mode: 0777
+  become: yes
+  become_user: root
+
+- name: install completion
+  get_url:
+    url: "https://raw.githubusercontent.com/jamesob/desk/master/shell_plugins/bash/desk"
+    dest: "/usr/share/bash-completion/completions/desk"
+  become: yes
+  become_user: root
+
+- name: set configuration
+  file:
+    src: "{{ role_path }}/files"
+    dest: "{{ ansible_env.HOME }}/.desk"
+    state: link
+    force: yes

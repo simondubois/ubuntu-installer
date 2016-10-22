@@ -1,0 +1,11 @@
+---
+
+- name: install virtualbox
+  apt:
+    name: virtualbox
+  become: yes
+  become_user: root
+
+- name: set virtualbox machine folder
+  command: VBoxManage setproperty machinefolder "{{ ansible_env.HOME }}/.VirtualBox VMs"
+  changed_when: false

@@ -1,0 +1,15 @@
+---
+
+- name: install trash-cli
+  apt:
+    name: trash-cli
+  become: yes
+  become_user: root
+
+- name: create .Trash dir
+  file:
+    path: /.Trash
+    state: directory
+    mode: 1667
+  become: yes
+  become_user: root

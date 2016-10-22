@@ -1,0 +1,27 @@
+---
+
+- name: install tilda
+  apt:
+    name: tilda
+  become: yes
+  become_user: root
+
+- name: create directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config/tilda"
+    state: directory
+
+- name: set configuration
+  file:
+    src: "{{ role_path }}/files/config_0"
+    dest: "{{ ansible_env.HOME }}/.config/tilda/config_0"
+    state: link
+    force: true
+
+- name: edit icon path
+  lineinfile:
+    dest: "/usr/share/applications/tilda.desktop"
+    regexp: '^Icon='
+    line: "Icon=utilities-terminal"
+  become: yes
+  become_user: root

@@ -1,0 +1,44 @@
+---
+
+- name: set facts
+  set_fact:
+    avocode_version: "2.8.4"
+    avocode_destination: /opt/Avocode-linux-x64
+
+- name: get status
+  stat:
+    path: "{{ avocode_destination }}"
+  register: avocode_status
+
+- name: install avocode
+  unarchive:
+    copy: no
+    src: "http://media.avocode.com/download/avocode-app/{{ avocode_version }}/avocode-app-linux-{{ avocode_version }}.zip"
+    dest: "{{ avocode_destination | dirname }}"
+  become: yes
+  become_user: root
+  when: avocode_status.stat.isdir is not defined
+
+- name: create shortcut
+  file:
+    src: "{{ avocode_destination }}/avocode.desktop.in"
+    dest: "/usr/share/applications/avocode.desktop"
+    state: link
+  become: yes
+  become_user: root
+
+- name: fix execution path
+  lineinfile:
+    dest: "{{ avocode_destination }}/avocode.desktop.in"
+    regexp: '^Exec='
+    line: "Exec={{ avocode_destination }}/Avocode"
+  become: yes
+  become_user: root
+
+- name: fix icon path
+  lineinfile:
+    dest: "{{ avocode_destination }}/avocode.desktop.in"
+    regexp: '^Icon='
+    line: "Icon={{ avocode_destination }}/avocode.png"
+  become: yes
+  become_user: root

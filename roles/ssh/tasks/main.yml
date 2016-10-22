@@ -1,0 +1,41 @@
+---
+
+- name: copy config
+  file:
+    src: "{{ ansible_env.HOME }}/Documents/ubuntu/.ssh"
+    dest: "{{ ansible_env.HOME }}/.ssh"
+    state: link
+    force: yes
+
+- name: wait synchronisation
+  wait_for:
+    path: "{{ ansible_env.HOME }}/.ssh/keys"
+    timeout: 86400
+
+- name: get private keys
+  find:
+    path: "{{ ansible_env.HOME }}/.ssh/keys"
+    pattern: "*_rsa"
+  register: private_keys
+
+- name: chmod private keys
+  file:
+    path: "{{ item.path }}"
+    mode: 0600
+  with_items: "{{ private_keys.files }}"
+  become: yes
+  become_user: root
+
+- name: get public keys
+  find:
+    path: "{{ ansible_env.HOME }}/.ssh/keys"
+    pattern: "*_rsa.pub"
+  register: public_keys
+
+- name: chmod public keys
+  file:
+    path: "{{ item.path }}"
+    mode: 0644
+  with_items: "{{ public_keys.files }}"
+  become: yes
+  become_user: root

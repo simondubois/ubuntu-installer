@@ -23,3 +23,13 @@
     - { schema: 'org.gnome.nautilus.icon-view', key: 'default-zoom-level', value: 'larger' }
     - { schema: 'org.gnome.nautilus.list-view', key: 'use-tree-view', value: 'true' }
     - { schema: 'org.gnome.nautilus.preferences', key: 'thumbnail-limit', value: '104857600' }
+
+- name: create folders
+  file:
+    path: "{{ item.path }}"
+    state: directory
+  with_items: "{{ folders|default([]) }}"
+
+- name: customize folder
+  command: "gvfs-set-attribute '{{ item.path }}' metadata::custom-icon-name {{ item.icon }}"
+  with_items: "{{ folders|default([]) }}"
