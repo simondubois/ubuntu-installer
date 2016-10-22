@@ -92,7 +92,7 @@
     - tilda
     - trash-cli
     - virtualbox
-    # - ssh
+    - ssh
 
     - {
       role: 'unity',

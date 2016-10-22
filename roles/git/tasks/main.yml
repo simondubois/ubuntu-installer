@@ -1,17 +1,29 @@
 ---
 
 - name: set global user email
-  command: git config --global user.email "simon@dubandubois.com"
+  git_config:
+    name: user.email
+    value: "simon@dubandubois.com"
+    scope: global
   changed_when: false
 
 - name: set global user name
-  command: git config --global user.name "Simon Dubois"
+  git_config:
+    name: user.name
+    value: "Simon Dubois"
+    scope: global
   changed_when: false
 
 - name: set global push default
-  command: git config --global push.default "simple"
+  git_config:
+    name: push.default
+    value: "simple"
+    scope: global
   changed_when: false
 
 - name: set global core excludesfile
-  command: git config --global core.excludesfile "{{ role_path }}/files/gitignore_global"
+  git_config:
+    name: core.excludesfile
+    value: "{{ role_path }}/files/gitignore_global"
+    scope: global
   changed_when: false
