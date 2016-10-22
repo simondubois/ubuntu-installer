@@ -85,3 +85,9 @@
     force: yes
   become: yes
   become_user: root
+
+- name: autoremove packages
+  apt:
+    autoremove: yes
+  become: yes
+  become_user: root
