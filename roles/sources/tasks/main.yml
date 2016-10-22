@@ -13,7 +13,7 @@
     content: ''
   become: yes
   become_user: root
-  when: "{{ source_file.stat.exists == False OR source_file.stat.size > 0 }}"
+  when: "{{ source_file.stat.exists == False or source_file.stat.size > 0 }}"
 
 - name: set source files mode
   file:
