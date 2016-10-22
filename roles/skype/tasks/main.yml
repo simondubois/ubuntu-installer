@@ -1,0 +1,7 @@
+---
+
+- name: install skype
+  apt:
+    name: skype
+  become: yes
+  become_user: root

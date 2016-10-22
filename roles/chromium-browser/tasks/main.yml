@@ -1,0 +1,27 @@
+---
+
+- name: install chromium-browser
+  apt:
+    name: chromium-browser
+  become: yes
+  become_user: root
+
+- name: install adobe-flashplugin
+  apt:
+    name: adobe-flashplugin
+  become: yes
+  become_user: root
+
+- name: copy shortcuts
+  file:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.local/share/applications/{{ item }}"
+    state: link
+  with_items:
+    - 'chrome-https___www.duolingo.com_.desktop'
+    - 'chrome-https___mail.google.com_mail_.desktop'
+
+- name: copy trello
+  template:
+    src: "chrome-https___trello.com_.desktop"
+    dest: "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop"

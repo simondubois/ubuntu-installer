@@ -1,0 +1,117 @@
+#!/bin/bash
+
+color_default="\\033[0;39m"
+color_green="\\033[1;32m"
+color_yellow="\\033[1;33m"
+
+download_dest="$HOME/Downloads/"
+download_list="$HOME/Documents/web/downloads.txt"
+download_logs='/tmp/ddl.log'
+screen_comman="plowdown --min-space 100M -o $download_dest -m $download_list"
+screen_config="/tmp/screenrc.$$"
+session_name='ddl'
+notify_comma="notify-send --icon=folder-download DirectDownload"
+
+is_running() {
+    screen -list | grep -q $session_name
+    if [ $? -eq 0 ] ; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+case $1 in
+
+    autostart)
+        if is_running ; then
+            $notify_comma  "$0 already running"
+            echo "$(date +"%F %T") : already running" >> $download_logs
+        else
+            $0 start
+            $notify_comma "Started"
+        fi
+    shift
+    ;;
+
+    start)
+        if is_running ; then
+            echo "$0 already running"
+            echo "$(date +"%F %T") : already running" >> $download_logs
+        else
+            mkdir -p $download_dest
+
+            echo logfile "$download_logs" > "$screen_config"
+
+            screen -dmL -S "$session_name" -c "$screen_config" $screen_comman
+            echo "$0 started"
+            echo "$(date +"%F %T") : started" >> $download_logs
+        fi
+    shift
+    ;;
+
+    status)
+        if is_running ; then
+            echo "Running"
+        else
+            echo "Stopped"
+        fi
+    shift
+    ;;
+
+    log)
+        $0 status
+        touch $download_logs
+        if is_running ; then
+            tail -f $download_logs
+        else
+            tail $download_logs
+        fi
+        echo ""
+    shift
+    ;;
+
+    edit)
+        subl $download_list
+    shift
+    ;;
+
+    test)
+        plowprobe $download_list
+    shift
+    ;;
+
+    restart)
+        $0 stop
+        $0 start
+    shift
+    ;;
+
+    stop)
+        if is_running ; then
+            screen -S $session_name -X quit
+            echo "$0 stopped"
+            echo "$(date +"%F %T") : stopped" >> $download_logs
+        else
+            echo "$0 not running"
+            echo "$(date +"%F %T") : not running" >> $download_logs
+        fi
+    shift
+    ;;
+
+    *)
+        echo -e "$color_yellow""Usage:""$color_default"
+        echo " ddl argument"
+        echo ""
+        echo -e "$color_yellow""Available arguments:""$color_default"
+        echo -e " $color_green""autostart"$color_default"\tStart downloads in background with desktop notification"
+        echo -e " $color_green""start"$color_default"\t\tStart downloads in background"
+        echo -e " $color_green""status"$color_default"\t\tPrint running status"
+        echo -e " $color_green""log"$color_default"\t\tPrint logs"
+        echo -e " $color_green""edit"$color_default"\t\tEdit download list"
+        echo -e " $color_green""test"$color_default"\t\tCheck download link validity"
+        echo -e " $color_green""restart"$color_default"\t\Restart downloads"
+        echo -e " $color_green""stop"$color_default"\t\tStop downloads"
+    ;;
+
+esac;

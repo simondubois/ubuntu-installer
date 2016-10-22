@@ -68,12 +68,6 @@
       theme: 'Numix',
     }
     - {
-      role: 'unity',
-      settings: [
-        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
-      ],
-    }
-    - {
       role: 'compiz',
       settings: [
         { schema: 'org.compiz.place:/org/compiz/profiles/unity/plugins/place/', key: 'viewport-matches', value: "['class=Thunderbird', 'class=Slack', 'name=trello.com']" },
@@ -93,3 +87,19 @@
     - keybindings
     - notifications
     - redshift
+
+    - my-weather-indicator
+    - slack
+    - skype
+    - plowshare
+    - {
+      role: "chromium-browser",
+      trello_username: "simondubois",
+    }
+
+    - {
+      role: 'unity',
+      settings: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }

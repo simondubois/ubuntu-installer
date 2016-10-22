@@ -1,0 +1,32 @@
+---
+
+- name: add ppa
+  apt_repository:
+    repo: 'ppa:atareao/atareao'
+  become: yes
+  become_user: root
+
+- name: install my-weather-indicator
+  apt:
+    name: my-weather-indicator
+  become: yes
+  become_user: root
+
+- name: create directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config/my-weather-indicator"
+    state: directory
+
+- name: set configuration
+  file:
+    src: "{{ role_path }}/files/my-weather-indicator.conf"
+    dest: "{{ ansible_env.HOME }}/.config/my-weather-indicator/my-weather-indicator.conf"
+    state: link
+
+- name: fix icon
+  lineinfile:
+    dest: "/usr/share/applications/extras-my-weather-indicator.desktop"
+    regexp: '^Icon ?='
+    line: "Icon=indicator-weather"
+  become: yes
+  become_user: root

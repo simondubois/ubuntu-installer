@@ -1,0 +1,28 @@
+---
+
+- name: install plowshare
+  apt:
+    name: plowshare
+  become: yes
+  become_user: root
+
+- name: install plowshare-modules
+  apt:
+    name: plowshare-modules
+  become: yes
+  become_user: root
+
+- name: install screen
+  apt:
+    name: screen
+  become: yes
+  become_user: root
+
+- name: install ddl script
+  file:
+    src: "{{ role_path }}/files/ddl"
+    dest: "/usr/local/bin/ddl"
+    mode: a+x
+    state: link
+  become: yes
+  become_user: root

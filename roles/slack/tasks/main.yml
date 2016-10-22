@@ -1,0 +1,25 @@
+---
+
+- name: set facts
+  set_fact:
+    version: 2.2.1
+
+- name: get slack version
+  shell: "dpkg-query --showformat='${Version}' --show slack-desktop || echo 0"
+  register: installed_version
+  changed_when: false
+
+- name: install slack
+  apt:
+    deb: "https://downloads.slack-edge.com/linux_releases/slack-desktop-{{ version }}-amd64.deb"
+  when: installed_version.stdout != version
+  become: yes
+  become_user: root
+
+- name: replace application icon
+  lineinfile:
+    dest: '/usr/share/applications/slack.desktop'
+    regexp: '^Icon='
+    line: "Icon=slack"
+  become: yes
+  become_user: root
