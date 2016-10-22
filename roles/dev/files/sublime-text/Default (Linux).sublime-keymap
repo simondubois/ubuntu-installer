@@ -9,6 +9,7 @@
 
     { "keys": ["f1"], "command": "goto_documentation" },
     { "keys": ["f2"], "command": "goto_definition" },
+    { "keys": ["f4"], "command": "reveal_in_side_bar"},
 
     { "keys": ["ctrl+œ"], "command": "focus_neighboring_group" },
 

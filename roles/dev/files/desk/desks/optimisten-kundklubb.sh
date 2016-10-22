@@ -16,7 +16,7 @@ PATH=$(npm bin):$PATH
 dev-migratedb () {
     rm $PRJ_PATH/public/pictures/*.jpg
     dev-restoredb
-    php ./artisan migrate --seed
+    php ./artisan -vvv migrate --seed
 }
 
 # SSH to production server

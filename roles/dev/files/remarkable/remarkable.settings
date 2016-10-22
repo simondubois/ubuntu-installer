@@ -1,1 +1,1 @@
-{'toolbar': True, 'css': '', 'live-preview': True, 'nightmode': True, 'statusbar': False, 'font': 'Ubuntu Mono 12', 'style': 'github', 'word-wrap': True}
+{'nightmode': True, 'statusbar': False, 'font': 'Ubuntu Mono 12', 'style': 'github', 'live-preview': True, 'word-wrap': True, 'css': '', 'toolbar': True}
