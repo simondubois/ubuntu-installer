@@ -92,24 +92,25 @@
     - tilda
     - trash-cli
     - virtualbox
-    - ssh
+    # - ssh
 
     - {
       role: 'unity',
       settings: [
-        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://sublime_text.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://slack.desktop', 'application://atom.desktop', 'application://gnome-terminal.desktop', 'application://chrome-https___trello.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
       ],
     }
     - {
       role: startup,
-      # enable: [
-      #   '/usr/share/applications/owncloud.desktop',
-      #   '/usr/share/applications/extras-my-weather-indicator.desktop',
-      #   '/usr/share/applications/indicator-sysmonitor.desktop',
-      #   '/usr/share/applications/slack.desktop',
-      #   '/usr/share/applications/thunderbird.desktop',
-      #   '/usr/share/applications/tilda.desktop',
-      #   "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop",
-      #   "{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop",
-      # ],
+      enable: [
+        '/usr/share/applications/extras-my-weather-indicator.desktop',
+        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/redshift-gtk.desktop',
+        '/usr/share/applications/slack.desktop',
+        '/usr/share/applications/thunderbird.desktop',
+        '/usr/share/applications/tilda.desktop',
+        "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop",
+        "{{ ansible_env.HOME }}/.local/share/applications/textlines-indicator.desktop",
+      ],
     }
