@@ -5,4 +5,4 @@ Exec=textlines
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Icon=view-sidebar-symbolic
+Icon=edit-paste

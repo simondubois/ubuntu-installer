@@ -20,10 +20,11 @@
   become: yes
   become_user: root
 
-- name: download icon
-  get_url:
-    url: 'https://raw.githubusercontent.com/C14L/textlines-indicator/master/textlines16x16.png'
+- name: set icon
+  file:
+    src: "/usr/share/icons/Numix/scalable/actions/edit-paste-symbolic.svg"
     dest: '/usr/local/bin/textlines16x16.png'
+    state: link
   become: yes
   become_user: root
 
