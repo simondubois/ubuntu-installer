@@ -3,6 +3,8 @@
 - name: check default source file
   stat:
     path: /etc/apt/sources.list
+  become: yes
+  become_user: root
   register: source_file
 
 - name: empty default source file
@@ -11,7 +13,7 @@
     content: ''
   become: yes
   become_user: root
-  when: source_file.stat.exists == False OR source_file.stat.size == 0
+  when: "{{ source_file.stat.exists == False OR source_file.stat.size > 0 }}"
 
 - name: set source files mode
   file:
