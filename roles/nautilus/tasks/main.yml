@@ -11,12 +11,6 @@
   become: yes
   become_user: root
 
-- name: install nautilus-open-terminal
-  apt:
-    name: nautilus-open-terminal
-  become: yes
-  become_user: root
-
 - name: add bookmarks
   lineinfile:
     dest: "{{ ansible_env.HOME }}/.config/gtk-3.0/bookmarks"
