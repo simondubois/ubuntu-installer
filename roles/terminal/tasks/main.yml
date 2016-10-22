@@ -35,8 +35,13 @@
   become_user: root
 
 - name: set settings
-  command: gconftool -s "{{ item.key }}" -t "{{ item.type }}" "{{ item.value }}"
+  command: dconf write "{{ item.path }}" "{{ item.value }}"
   with_items:
-    - { key: '/apps/gnome-terminal/profiles/Default/background_type', type: 'string', value: 'transparent' }
-    - { key: '/apps/gnome-terminal/profiles/Default/background_darkness', type: 'float', value: '0.85' }
-    - { key: '/apps/gnome-terminal/profiles/Default/scrollback_unlimited', type: 'bool', value: 'true' }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/audible-bell', value: 'false' }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color', value: "'rgb(21,21,21)'" }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-transparency-percent', value: '25' }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color', value: "'rgb(161,176,184)'" }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/palette', value: "['rgb(37,37,37)', 'rgb(255,68,62)', 'rgb(195,216,44)', 'rgb(255,193,53)', 'rgb(66,165,245)', 'rgb(216,27,96)', 'rgb(0,172,193)', 'rgb(245,245,245)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']" }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/scrollback-unlimited', value: 'true' }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors', value: 'false' }
+    - { path: '/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-transparent-background', value: 'true' }

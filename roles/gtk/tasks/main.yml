@@ -1,6 +1,6 @@
 ---
 
-- name: add ppa
+- name: add numix ppa
   apt_repository:
     repo: 'ppa:numix/ppa'
   become: yes
@@ -13,6 +13,20 @@
   become: yes
   become_user: root
   when: "theme == 'Numix'"
+
+- name: add paper ppa
+  apt_repository:
+    repo: 'ppa:snwh/pulp'
+  become: yes
+  become_user: root
+  when: "theme == 'Paper'"
+
+- name: install paper-gtk-theme
+  apt:
+    name: paper-gtk-theme
+  become: yes
+  become_user: root
+  when: "theme == 'Paper'"
 
 - name: set settings
   command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"

@@ -1,0 +1,20 @@
+---
+
+- name: add paper ppa
+  apt_repository:
+    repo: 'ppa:snwh/pulp'
+  become: yes
+  become_user: root
+  when: "theme == 'Paper'"
+
+- name: install paper-cursor-theme
+  apt:
+    name: paper-cursor-theme
+  become: yes
+  become_user: root
+  when: "theme == 'Paper'"
+
+- name: set settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'org.gnome.desktop.interface', key: 'cursor-theme', value: "{{ theme }}" }
