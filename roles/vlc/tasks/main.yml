@@ -1,0 +1,7 @@
+---
+
+- name: install vlc
+  apt:
+    name: vlc
+  become: yes
+  become_user: root

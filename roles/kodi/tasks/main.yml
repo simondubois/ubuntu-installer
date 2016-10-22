@@ -1,0 +1,26 @@
+---
+
+- name: add kodi ppa
+  apt_repository:
+    repo: 'ppa:team-xbmc/ppa'
+  become: yes
+  become_user: root
+
+- name: install kodi
+  apt:
+    name: kodi
+  become: yes
+  become_user: root
+
+- name: add flirc ppa
+  apt_repository:
+    repo: deb http://apt.flirc.tv/arch/x64 binary/
+  become: yes
+  become_user: root
+
+- name: install flirc
+  apt:
+    name: flirc
+    force: yes
+  become: yes
+  become_user: root

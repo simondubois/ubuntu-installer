@@ -1,0 +1,7 @@
+---
+
+- name: install easytag
+  apt:
+    name: easytag
+  become: yes
+  become_user: root

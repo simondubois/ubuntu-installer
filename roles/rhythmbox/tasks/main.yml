@@ -1,0 +1,12 @@
+---
+
+- name: set settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'org.gnome.rhythmbox.encoding-settings:/org/gnome/rhythmbox/library/encoding/', key: 'media-type', value: 'audio/mpeg' }
+    - { schema: 'org.gnome.rhythmbox.encoding-settings:/org/gnome/rhythmbox/library/encoding/', key: 'media-type-presets', value: "{'audio/x-vorbis': 'Ubuntu', 'audio/mpeg': 'rhythmbox-custom-settings-cbr'}" }
+    - { schema: 'org.gnome.rhythmbox.sources', key: 'browser-views', value: 'genres-artists-albums' }
+    - { schema: 'org.gnome.rhythmbox.sources', key: 'visible-columns', value: "['post-time', 'artist', 'duration', 'date', 'genre', 'track-number', 'album']" }
+    - { schema: 'org.gnome.rhythmbox.rhythmdb', key: 'locations', value: "['file://{{ ansible_env.HOME }}/Music']" }
+    - { schema: 'org.gnome.rhythmbox.plugins', key: 'active-plugins', value: "['rb', 'mpris', 'power-manager', 'generic-player', 'dbus-media-server', 'cd-recorder', 'iradio', 'notification', 'ipod', 'mtpdevice', 'audiocd', 'mmkeys']" }
+    - { schema: 'org.gnome.rhythmbox.plugins', key: 'seen-plugins', value: "['rb', 'rbzeitgeist', 'mpris', 'fmradio', 'lyrics', 'dbus-media-server', 'artsearch', 'cd-recorder', 'audioscrobbler', 'sendto', 'notification', 'ipod', 'im-status', 'mtpdevice', 'pythonconsole', 'magnatune', 'daap', 'rblirc', 'replaygain']" }
