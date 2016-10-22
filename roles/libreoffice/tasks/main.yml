@@ -1,0 +1,14 @@
+---
+
+- name: add ppa
+  apt_repository:
+    repo: 'ppa:libreoffice/ppa'
+  become: yes
+  become_user: root
+
+- name: update libreoffice
+  apt:
+    name: libreoffice
+    state: latest
+  become: yes
+  become_user: root

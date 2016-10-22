@@ -1,0 +1,42 @@
+---
+
+- name: check bashrc
+  stat:
+    path: "{{ ansible_env.HOME }}/.bashrc"
+  register: bashrc_file
+
+- name: delete bashrc
+  file:
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    state: absent
+  when: bashrc_file.stat.isreg
+
+- name: link bashrc
+  file:
+    src: "{{ role_path }}/files/.bashrc"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    state: link
+
+- name: copy aliases
+  file:
+    src: "{{ role_path }}/files/.bash_aliases"
+    dest: "{{ ansible_env.HOME }}/.bash_aliases"
+    state: link
+
+- name: download gitprompt
+  get_url:
+    url: "https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+    dest: "{{ ansible_env.HOME }}/.bash_gitprompt"
+
+- name: install undistract-me
+  apt:
+    name: undistract-me
+  become: yes
+  become_user: root
+
+- name: set settings
+  command: gconftool -s "{{ item.key }}" -t "{{ item.type }}" "{{ item.value }}"
+  with_items:
+    - { key: '/apps/gnome-terminal/profiles/Default/background_type', type: 'string', value: 'transparent' }
+    - { key: '/apps/gnome-terminal/profiles/Default/background_darkness', type: 'float', value: '0.85' }
+    - { key: '/apps/gnome-terminal/profiles/Default/scrollback_unlimited', type: 'bool', value: 'true' }

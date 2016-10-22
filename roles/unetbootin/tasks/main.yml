@@ -1,0 +1,7 @@
+---
+
+- name: install unetbootin
+  apt:
+    name: unetbootin
+  become: yes
+  become_user: root

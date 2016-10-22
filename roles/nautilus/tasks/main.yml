@@ -1,0 +1,30 @@
+---
+
+- name: remove Examples
+  file:
+    dest: "{{ ansible_env.HOME }}/examples.desktop"
+    state: absent
+
+- name: install nautilus-image-converter
+  apt:
+    name: nautilus-image-converter
+  become: yes
+  become_user: root
+
+- name: install nautilus-open-terminal
+  apt:
+    name: nautilus-open-terminal
+  become: yes
+  become_user: root
+
+- name: add bookmarks
+  lineinfile:
+    dest: "{{ ansible_env.HOME }}/.config/gtk-3.0/bookmarks"
+    line: "{{ item }}"
+  with_items: "{{ bookmarks|default([]) }}"
+
+- name: set settings
+  command: gsettings set "{{ item.schema }}" "{{ item.key }}" "{{ item.value }}"
+  with_items:
+    - { schema: 'org.gnome.nautilus.icon-view', key: 'default-zoom-level', value: 'larger' }
+    - { schema: 'org.gnome.nautilus.list-view', key: 'use-tree-view', value: 'true' }

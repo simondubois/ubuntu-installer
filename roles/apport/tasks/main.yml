@@ -1,0 +1,9 @@
+---
+
+- name: disable apport
+  lineinfile:
+    dest: '/etc/default/apport'
+    regexp: '^enabled=1$'
+    line: 'enabled=0'
+  become: yes
+  become_user: root

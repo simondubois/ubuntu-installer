@@ -1,11 +1,56 @@
 ---
 
-- name: show startup
+- name: set facts
+  set_fact:
+    autostart_system_path: "/etc/xdg/autostart"
+    autostart_user_path: "{{ ansible_env.HOME }}/.config/autostart"
+    autostart_disable:
+      - a11y-profile-manager-indicator-autostart.desktop
+      - deja-dup-monitor.desktop
+      - gnome-software-service.desktop
+      - gnome-user-share-obexpush.desktop
+      # - indicator-bluetooth.desktop
+      - onboard-autostart.desktop
+      - orca-autostart.desktop
+      - update-notifier.desktop
+      - vino-server.desktop
+
+- name: show applications
   lineinfile:
     dest: "{{ item }}"
     regexp: '^NoDisplay=true$'
     line: 'NoDisplay=false'
   with_fileglob:
-    - '/etc/xdg/autostart/*'
+    - '{{ autostart_system_path }}/*'
   become: yes
   become_user: root
+
+- name: create directory
+  file:
+    path: "{{ autostart_path }}"
+    state: directory
+
+- name: copy applications
+  copy:
+    src: "{{ autostart_system_path }}/{{ item }}"
+    dest: "{{ autostart_path }}/{{ item }}"
+  with_items: "{{ autostart_disable }}"
+
+- name: disable applications
+  lineinfile:
+    dest: "{{ autostart_path }}/{{ item }}"
+    regexp: '^X-GNOME-Autostart-enabled=true$'
+    line: 'X-GNOME-Autostart-enabled=false'
+  with_items: "{{ autostart_disable }}"
+
+- name: copy applications
+  copy:
+    src: "{{ item }}"
+    dest: "{{ autostart_path }}/{{ item | basename }}"
+  with_items: "{{ enable|default([]) }}"
+
+- name: enable applications
+  lineinfile:
+    dest: "{{ autostart_path }}/{{ item | basename }}"
+    line: 'X-GNOME-Autostart-enabled=true'
+  with_items: "{{ enable|default([]) }}"

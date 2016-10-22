@@ -12,4 +12,31 @@
     - tlp
     - powertop
 
-    - startup
+    - {
+      role: startup,
+      # enable: [
+      #   '/usr/share/applications/owncloud.desktop',
+      #   '/usr/share/applications/extras-my-weather-indicator.desktop',
+      #   '/usr/share/applications/indicator-sysmonitor.desktop',
+      #   '/usr/share/applications/slack.desktop',
+      #   '/usr/share/applications/thunderbird.desktop',
+      #   '/usr/share/applications/tilda.desktop',
+      #   "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop",
+      #   "{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop",
+      # ],
+    },
+
+    - apport
+    - calculator
+    - gparted
+    - libreoffice
+    - {
+      role: 'nautilus',
+      bookmarks: [
+        'file:///home/sel/www ~/www',
+        'file:///var/www /var/www',
+      ],
+    },
+    - rar
+    - terminal
+    - unetbootin
