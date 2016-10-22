@@ -24,7 +24,7 @@
       #   "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop",
       #   "{{ ansible_env.HOME }}/.local/share/applications/redshift.desktop",
       # ],
-    },
+    }
 
     - apport
     - calculator
@@ -36,7 +36,7 @@
         'file:///home/sel/www ~/www',
         'file:///var/www /var/www',
       ],
-    },
+    }
     - rar
     - terminal
     - unetbootin
