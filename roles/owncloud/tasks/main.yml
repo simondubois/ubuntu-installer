@@ -1,0 +1,60 @@
+---
+
+- name: set facts
+  set_fact:
+    owncloud_config_path: "{{ ansible_env.HOME }}/.local/share/data/ownCloud"
+
+- name: add keyserver
+  apt_key:
+      url: 'http://download.opensuse.org/repositories/isv:ownCloud:desktop/Ubuntu_{{ ansible_distribution_version }}/Release.key'
+  become: yes
+  become_user: root
+
+- name: add ppa
+  apt_repository:
+    repo: 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Ubuntu_{{ ansible_distribution_version }}/ /'
+  become: yes
+  become_user: root
+
+- name: install owncloud-client
+  apt:
+    name: owncloud-client
+  become: yes
+  become_user: root
+
+- name: install owncloud-client-nautilus
+  apt:
+    name: owncloud-client-nautilus
+  become: yes
+  become_user: root
+
+- name: create directory
+  file:
+    path: "{{ owncloud_config_path }}"
+    state: directory
+
+- name: copy configuration
+  copy:
+    src: "{{ ansible_hostname }}.cfg"
+    dest: '{{ owncloud_config_path }}/owncloud.cfg'
+    force: no
+
+- name: list sync folders
+  command: grep -oP 'localPath=\K(.*)' '{{ owncloud_config_path }}/owncloud.cfg'
+  register: sync_folders
+
+- name: create sync folders
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items: sync_folders.stdout_lines
+
+- name: check if owncloud is running
+  command: pidof owncloud
+  changed_when: false
+  ignore_errors: yes
+  register: owncloud_is_running
+
+- name: start owncloud
+  shell: nohup owncloud &
+  when: owncloud_is_running.rc == 1
