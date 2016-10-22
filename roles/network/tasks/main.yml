@@ -1,0 +1,7 @@
+---
+
+- name: custom hosts
+  lineinfile:
+    dest: '/etc/hosts'
+    line: "{{ item.ip }} : {{ item.name }}"
+  with_items: "{{ hosts|default([]) }}"
