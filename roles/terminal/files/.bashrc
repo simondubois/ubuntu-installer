@@ -191,6 +191,8 @@ LIGHTCYAN='\e[36m'
 WHITE='\e[37m'
 NC='\e[0m'
 
+source ${HOME%/}/.bash_gitprompt
+
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWCOLORHINTS=true
@@ -215,5 +217,5 @@ fi
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 
 if [ -n "$DESK_NAME" ]; then
-    PS1="\[${ORANGE}\]\u\342\227\262 $DESK_NAME\[${WHITE}\]:\[${GREEN}\]\w\[${WHITE}\]\$\[${CYAN}\]\$(__git_ps1)\[${NC}\] "
+    PS1="\[${ORANGE}\]\342\227\262 $DESK_NAME\[${WHITE}\]:\[${GREEN}\]\w\[${WHITE}\]\$\[${CYAN}\]\$(__git_ps1)\[${NC}\] "
 fi
