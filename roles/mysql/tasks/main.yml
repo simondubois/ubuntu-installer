@@ -1,0 +1,36 @@
+---
+
+- name: mysql container
+  docker:
+    image: mysql:5.5
+    name: mysql
+    state: started
+    restart_policy: always
+    hostname: mysql
+    env:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+
+- name: phpmyadmin container
+  docker:
+    image: phpmyadmin/phpmyadmin
+    name: phpmyadmin
+    state: started
+    restart_policy: always
+    links:
+    - "mysql:mysql"
+    ports:
+    - "8080:80"
+    volumes:
+    - "{{ role_path }}/files/phpmyadmin.inc.php:/www/config.user.inc.php"
+    env:
+      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      PMA_HOST: 'mysql'
+      PMA_USER: 'root'
+
+- name: install mysql-workbench
+  apt:
+    name: mysql-workbench
+  become: yes
+  become_user: root

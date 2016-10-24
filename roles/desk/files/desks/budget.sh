@@ -17,7 +17,8 @@ dev-deploy () {
     sed -i "/DB_DATABASE=/c\DB_DATABASE=$PRJ_NAME" .env
     sed -i "/DB_USERNAME=/c\DB_USERNAME=root" .env
     sed -i "/DB_PASSWORD=/c\DB_PASSWORD=" .env
-    php artisan migrate
+    sed -i "/CACHE_DRIVER=/c\CACHE_DRIVER=file" .env
+    sed -i "/SESSION_DRIVER=/c\SESSION_DRIVER=file" .env
     prod-downloaddb
     dev-migratedb
     npm install

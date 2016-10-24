@@ -19,7 +19,7 @@ if [ ! -f /.dockerenv ]; then
           -v $HOME/.bash_history_$PRJ_NAME:/home/docker/.bash_history_$PRJ_NAME \
           -v $HOME/.desk:/home/docker/.desk \
           -v $HOME/.ssh:/home/docker/.ssh \
-	  --link mysql:mysql \
+          --link mysql:mysql \
           --name $PRJ_NAME \
           simondubois/$DOCKER_IMAGE
     fi
@@ -34,21 +34,10 @@ if [ ! -f /.dockerenv ]; then
 fi
 
 # Configure environment
-PRJ_PATH=$PWD
+export PRJ_PATH=$PWD
+export PATH=$(npm bin):$PATH
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 export HISTFILE=$HOME/.bash_history_$PRJ_NAME
-export PATH=$(npm bin):$PATH
-cd $PRJ_PATH
-
-# Browse development files
-dev-browse () {
-    xdg-open $PRJ_PATH
-}
-
-# Run development version
-dev-run () {
-    xdg-open http://$PRJ_NAME.dev/ > /dev/null
-}
 
 # Restore local database
 dev-restoredb () {
@@ -68,5 +57,5 @@ dev-migratedb () {
 
 # Scan dev website
 dev-scan () {
-    http-status-check scan http://$PRJ_NAME.dev/
+    http-status-check scan http://localhost/
 }

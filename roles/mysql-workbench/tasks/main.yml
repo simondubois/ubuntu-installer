@@ -1,7 +1,0 @@
----
-
-- name: install mysql-workbench
-  apt:
-    name: mysql-workbench
-  become: yes
-  become_user: root

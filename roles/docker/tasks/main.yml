@@ -12,6 +12,12 @@
   become: yes
   become_user: root
 
+- name: install python-docker
+  apt:
+    name: python-docker
+  become: yes
+  become_user: root
+
 - name: add keyserver
   apt_key:
     keyserver: 'hkp://p80.pool.sks-keyservers.net:80'
