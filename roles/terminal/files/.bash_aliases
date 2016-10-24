@@ -11,7 +11,9 @@ alias rm='trash-put'
 
 alias nano='nano -u -c -w -T 4'
 alias n='nautilus'
-alias s='subl'
+
+alias mysql="mysql -h mysql -u root"
+alias mysqldump="mysqldump -h mysql -u root"
 
 
 

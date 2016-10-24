@@ -19,6 +19,7 @@ if [ ! -f /.dockerenv ]; then
           -v $HOME/.bash_history_$PRJ_NAME:/home/docker/.bash_history_$PRJ_NAME \
           -v $HOME/.desk:/home/docker/.desk \
           -v $HOME/.ssh:/home/docker/.ssh \
+	  --link mysql:mysql \
           --name $PRJ_NAME \
           simondubois/$DOCKER_IMAGE
     fi
