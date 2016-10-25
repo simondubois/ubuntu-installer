@@ -1,27 +1,41 @@
+#/bin/bash
 
 # Variables
 PRJ_NAME=$1
 PRJ_PATH=$2
 DOCKER_IMAGE=$3
 
-# Run docker
+# History file
+export HISTFILE=$HOME/.bash_history_$PRJ_NAME
+touch $HISTFILE
+
+# Run docker container
+declare -f dev-docker-run > /dev/null
+if [ $? -eq 1 ]; then
+    dev-docker-run () {
+        docker run -t -d \
+          -p 80:80 \
+          -v $PRJ_PATH:/var/www/html \
+          -v $HOME/.bashrc:/home/docker/.bashrc \
+          -v $HOME/.bash_aliases:/home/docker/.bash_aliases \
+          -v $HISTFILE:/home/docker/.bash_history_$PRJ_NAME \
+          -v $HOME/.desk:/home/docker/.desk \
+          -v $HOME/.ssh:/home/docker/.ssh \
+          --link mysql:mysql \
+          --name $PRJ_NAME \
+          simondubois/$DOCKER_IMAGE
+    }
+fi
+
+# If inside docker container
 if [ ! -f /.dockerenv ]; then
     mkdir -p $PRJ_PATH
 
     STATUS=$(docker inspect --format="{{ .State.Running }}" $PRJ_NAME 2> /dev/null)
 
     if [ $? -eq 1 ]; then
-        docker run -t -d \
-          -p 80:80 \
-          -v $PRJ_PATH:/var/www/html \
-          -v $HOME/.bashrc:/home/docker/.bashrc \
-          -v $HOME/.bash_aliases:/home/docker/.bash_aliases \
-          -v $HOME/.bash_history_$PRJ_NAME:/home/docker/.bash_history_$PRJ_NAME \
-          -v $HOME/.desk:/home/docker/.desk \
-          -v $HOME/.ssh:/home/docker/.ssh \
-          --link mysql:mysql \
-          --name $PRJ_NAME \
-          simondubois/$DOCKER_IMAGE
+        dev-docker-run
+        atom -a $PRJ_PATH
     fi
 
     if [ "$STATUS" == "false" ]; then
@@ -35,9 +49,12 @@ fi
 
 # Configure environment
 export PRJ_PATH=$PWD
-export PATH=$(npm bin):$PATH
 export COMPOSER_DISABLE_XDEBUG_WARN=1
-export HISTFILE=$HOME/.bash_history_$PRJ_NAME
+
+declare -f npm > /dev/null
+if [ $? -eq 0 ]; then
+    export PATH=$(npm bin):$PATH
+fi
 
 # Restore local database
 dev-restoredb () {
@@ -53,9 +70,4 @@ dev-restoredb () {
 dev-migratedb () {
     dev-restoredb
     php artisan migrate --seed
-}
-
-# Scan dev website
-dev-scan () {
-    http-status-check scan http://localhost/
 }

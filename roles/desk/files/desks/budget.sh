@@ -9,7 +9,7 @@ source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
 
 # Deploy the application
 dev-deploy () {
-    git clone git@github.com:simondubois/budget.git -b v2 ./
+    git clone git@github.com:simondubois/$PRJ_NAME.git -b v2 ./
     composer install
     cp .env.example .env
     sed -i "/APP_KEY=/c\APP_KEY="`php -r 'echo md5(uniqid())."\n";'` .env

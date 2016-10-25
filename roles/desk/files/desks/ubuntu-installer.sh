@@ -1,14 +1,16 @@
-# ubuntu-installer.sh
-#
-# Description: CLI to set up my personal Ubuntu system
-#
+#/bin/bash
 
 PRJ_NAME=ubuntu-installer
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 
-source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH
+source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
 
-# Run ansible-pull
-run() {
-	ansible-pull -U git@github.com:simondubois/ubuntu-installer.git
-}
+export HISTFILE=$HOME/.bash_history_$PRJ_NAME
+
+if [ ! -e "$PRJ_PATH" ]; then
+    ln -s "$HOME/.ansible/pull/simon-laptop" "$PRJ_PATH"
+    cd "$PRJ_PATH"
+    git remote set-url origin git@github.com:simondubois/$PRJ_NAME.git
+fi
+
+cd "$PRJ_PATH"
