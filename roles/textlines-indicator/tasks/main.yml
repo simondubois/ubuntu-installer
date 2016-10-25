@@ -30,7 +30,7 @@
 
 - name: copy configuration
   file:
-    src: "{{ ansible_env.HOME }}/Documents/Ubuntu/.textlines"
+    src: "{{ ansible_env.HOME }}/Documents/ubuntu/.textlines"
     dest: "{{ ansible_env.HOME }}/.textlines"
     state: link
     force: yes
