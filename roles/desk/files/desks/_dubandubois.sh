@@ -1,3 +1,4 @@
+#/bin/bash
 
 # Variables
 PRJ_NAME=$1

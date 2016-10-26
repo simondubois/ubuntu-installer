@@ -1,5 +1,6 @@
 #/bin/bash
 
+# Variables
 PRJ_NAME=unsplash-downloader
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 DOCKER_IMAGE=$PRJ_NAME
@@ -18,8 +19,6 @@ dev-docker-run() {
       simondubois/$DOCKER_IMAGE
 }
 
-source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE
-
 # Deploy the application
 dev-deploy () {
     git clone git@github.com:simondubois/$PRJ_NAME.git ./
@@ -36,3 +35,5 @@ prod-download() {
     path=~/unsplash-wallpapers
     php $PRJ_PATH/build/$PRJ_NAME --featured --destination $path --history $path/history.txt --quantity 100
 }
+
+source ~/.desk/desks/_default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE

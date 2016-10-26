@@ -1,5 +1,10 @@
 ---
 
+- name: mysql folder
+  file:
+    path: "{{ ansible_env.HOME }}/www/mysql"
+    state: directory
+
 - name: mysql container
   docker:
     image: mysql:5.5

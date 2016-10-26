@@ -23,8 +23,7 @@
     - {
       role: 'nautilus',
       bookmarks: [
-        'file:///home/sel/www ~/www',
-        'file:///var/www /var/www',
+        'file:///home/sel/www www',
       ],
       folders: [
         { path: "{{ ansible_env.HOME }}/www", icon: 'network' },

@@ -1,11 +1,11 @@
 #/bin/bash
 
+# Variables
 PRJ_NAME=c4media-test
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 DOCKER_IMAGE=$PRJ_NAME
 
-source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE
-source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
+source ~/.desk/desks/_dubandubois.sh $PRJ_NAME $PRJ_PATH
 
 # Deploy the application
 dev-deploy () {
@@ -27,3 +27,5 @@ dev-deploy () {
 prod-restoredb () {
     ssh dubandubois.com "php-7.0 dubandubois.com/$PRJ_NAME/artisan migrate:refresh --seed"
 }
+
+source ~/.desk/desks/_default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE

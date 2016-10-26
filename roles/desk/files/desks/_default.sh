@@ -9,9 +9,21 @@ DOCKER_IMAGE=$3
 export HISTFILE=$HOME/.bash_history_$PRJ_NAME
 touch $HISTFILE
 
+# Configure environment
+export COMPOSER_DISABLE_XDEBUG_WARN=1
+
+# Update PATH
+if hash npm 2> /dev/null; then
+    export PATH=$(npm bin 2> /dev/null):$PATH
+fi
+
+# Update PATH
+if hash composer 2> /dev/null; then
+    export PATH=$(composer config bin-dir --absolute):$PATH
+fi
+
 # Run docker container
-declare -f dev-docker-run > /dev/null
-if [ $? -eq 1 ]; then
+if ! hash dev-docker-run 2> /dev/null; then
     dev-docker-run () {
         docker run -t -d \
           -p 80:80 \
@@ -26,6 +38,22 @@ if [ $? -eq 1 ]; then
           simondubois/$DOCKER_IMAGE
     }
 fi
+
+# Restore local database
+dev-restoredb () {
+    mysql -e "DROP DATABASE \`$PRJ_NAME\`"
+    mysql -e "CREATE DATABASE \`$PRJ_NAME\`"
+    if [ -f "$PRJ_PATH/storage/database.sql" ]
+    then
+        mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
+    fi
+}
+
+# Restore & migrate local database
+dev-migratedb () {
+    dev-restoredb
+    php artisan migrate --seed
+}
 
 # If inside docker container
 if [ ! -f /.dockerenv ]; then
@@ -49,25 +77,9 @@ fi
 
 # Configure environment
 export PRJ_PATH=$PWD
-export COMPOSER_DISABLE_XDEBUG_WARN=1
 
-declare -f npm > /dev/null
-if [ $? -eq 0 ]; then
-    export PATH=$(npm bin):$PATH
+# First run
+if [ ! -d "$PRJ_PATH/.git" ]
+then
+    dev-deploy
 fi
-
-# Restore local database
-dev-restoredb () {
-    mysql -e "DROP DATABASE \`$PRJ_NAME\`"
-    mysql -e "CREATE DATABASE \`$PRJ_NAME\`"
-    if [ -f "$PRJ_PATH/storage/database.sql" ]
-    then
-        mysql $PRJ_NAME < "$PRJ_PATH/storage/database.sql"
-    fi
-}
-
-# Restore & migrate local database
-dev-migratedb () {
-    dev-restoredb
-    php artisan migrate --seed
-}

@@ -1,11 +1,11 @@
 #/bin/bash
 
+# Variables
 PRJ_NAME=budget
 PRJ_PATH="$HOME/www/$PRJ_NAME"
 DOCKER_IMAGE=$PRJ_NAME
 
-source ~/.desk/desks/default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE
-source ~/.desk/desks/dubandubois.sh $PRJ_NAME $PRJ_PATH
+source ~/.desk/desks/_dubandubois.sh $PRJ_NAME $PRJ_PATH
 
 # Deploy the application
 dev-deploy () {
@@ -32,3 +32,5 @@ dev-migratedb () {
     php artisan users:delete -e 1
     php artisan migrate --seed
 }
+
+source ~/.desk/desks/_default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE
