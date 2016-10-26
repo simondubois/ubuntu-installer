@@ -7,8 +7,12 @@
     state: started
     restart_policy: always
     hostname: mysql
+    volumes:
+    - "{{ ansible_env.HOME }}/www/mysql:/var/lib/mysql"
     env:
       MYSQL_ALLOW_EMPTY_PASSWORD: true
+  become: yes
+  become_user: root
 
 - name: phpmyadmin container
   docker:
@@ -28,6 +32,8 @@
       MYSQL_PASSWORD: ''
       PMA_HOST: 'mysql'
       PMA_USER: 'root'
+  become: yes
+  become_user: root
 
 - name: install mysql-workbench
   apt:

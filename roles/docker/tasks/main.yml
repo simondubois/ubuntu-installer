@@ -53,6 +53,7 @@
   service:
     name: docker
     enabled: yes
+    state: started
   become: yes
   become_user: root
 
