@@ -10,7 +10,6 @@ export HISTFILE=$HOME/.bash_history_$PRJ_NAME
 dev-deploy() {
     ln -s "$HOME/.ansible/pull/simon-laptop" "$PRJ_PATH"
     cd "$PRJ_PATH"
-    git remote set-url origin git@github.com:simondubois/$PRJ_NAME.git
     atom -a $PRJ_PATH
 }
 
@@ -23,3 +22,4 @@ if [ ! -d "$PRJ_PATH" ]; then
 fi
 
 cd "$PRJ_PATH"
+git remote set-url origin git@github.com:simondubois/$PRJ_NAME.git
