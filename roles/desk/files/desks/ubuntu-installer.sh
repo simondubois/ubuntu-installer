@@ -14,6 +14,10 @@ dev-deploy() {
     atom -a $PRJ_PATH
 }
 
+prod-run() {
+    ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
+}
+
 if [ ! -d "$PRJ_PATH" ]; then
     dev-deploy
 fi
