@@ -24,3 +24,15 @@
     force: yes
   become: yes
   become_user: root
+
+- name: add kodi ppa
+  apt_repository:
+    repo: deb http://download.opensuse.org/repositories/home:/osmc/xUbuntu_16.04/ /
+  become: yes
+  become_user: root
+
+- name: install kodi
+  apt:
+    name: osmc-installer
+  become: yes
+  become_user: root
