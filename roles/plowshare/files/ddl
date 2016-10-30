@@ -72,7 +72,7 @@ case $1 in
     ;;
 
     edit)
-        subl $download_list
+        atom $download_list
     shift
     ;;
 

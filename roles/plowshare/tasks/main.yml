@@ -26,3 +26,8 @@
     state: link
   become: yes
   become_user: root
+
+- name: chmod ddl script
+  file:
+    path: "{{ role_path }}/files/ddl"
+    mode: a+x
