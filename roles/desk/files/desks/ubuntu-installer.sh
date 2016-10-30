@@ -15,7 +15,7 @@ dev-deploy() {
 }
 
 prod-run() {
-    ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
+    ansible-pull -U https://github.com/simondubois/ubuntu-installer.git -C v2
 }
 
 if [ ! -d "$PRJ_PATH" ]; then
