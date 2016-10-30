@@ -19,7 +19,7 @@ dev-run () {
 }
 
 if [ ! -d "$PRJ_PATH" ]; then
-    dev-deploy
+    git config --global core.excludesfile ~/.gitignore_global
 fi
 
 cd "$PRJ_PATH"

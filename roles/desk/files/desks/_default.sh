@@ -22,6 +22,7 @@ if ! hash dev-docker-run 2> /dev/null; then
           -v $HOME/.bash_aliases:/home/docker/.bash_aliases \
           -v $HISTFILE:/home/docker/.bash_history_$PRJ_NAME \
           -v $HOME/.desk:/home/docker/.desk \
+          -v $HOME/.gitignore_global:/home/docker/.gitignore_global \
           -v $HOME/.ssh:/home/docker/.ssh \
           --link mysql:mysql \
           --name $PRJ_NAME \
@@ -77,5 +78,6 @@ export PATH=$PRJ_PATH/vendor/bin:$PATH
 # First run
 if [ ! -d "$PRJ_PATH/.git" ]
 then
+    git config --global core.excludesfile ~/.gitignore_global
     dev-deploy
 fi

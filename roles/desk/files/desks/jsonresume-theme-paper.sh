@@ -12,8 +12,9 @@ dev-docker-run() {
       -v $PRJ_PATH:/usr/src/app \
       -v $HOME/.bashrc:/home/docker/.bashrc \
       -v $HOME/.bash_aliases:/home/docker/.bash_aliases \
-      -v $HOME/.bash_history_$PRJ_NAME:/home/docker/.bash_history_$PRJ_NAME \
+      -v $HISTFILE:/home/docker/.bash_history_$PRJ_NAME \
       -v $HOME/.desk:/home/docker/.desk \
+      -v $HOME/.gitignore_global:/home/docker/.gitignore_global \
       -v $HOME/.ssh:/home/docker/.ssh \
       -w /usr/src/app \
       --name $PRJ_NAME \

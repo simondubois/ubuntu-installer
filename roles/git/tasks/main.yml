@@ -27,3 +27,9 @@
     value: "{{ role_path }}/files/gitignore_global"
     scope: global
   changed_when: false
+
+- name: link excludesfile
+  file:
+    src: "{{ role_path }}/files/gitignore_global"
+    dest: "{{ ansible_env.HOME }}/.gitignore_global"
+    state: link
