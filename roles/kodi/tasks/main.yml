@@ -40,5 +40,6 @@
 - name: install osmc
   apt:
     name: osmc-installer
+    force: yes
   become: yes
   become_user: root
