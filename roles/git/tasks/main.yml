@@ -21,6 +21,13 @@
     scope: global
   changed_when: false
 
+- name: set global core fileMode
+  git_config:
+    name: core.fileMode
+    value: "false"
+    scope: global
+  changed_when: false
+
 - name: set global core excludesfile
   git_config:
     name: core.excludesfile
