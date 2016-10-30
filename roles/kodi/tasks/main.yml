@@ -33,7 +33,7 @@
 
 - name: add osmc key
   apt_key:
-    keyserver: http://download.opensuse.org/repositories/home:osmc/xUbuntu_16.04/Release.key
+    url: http://download.opensuse.org/repositories/home:osmc/xUbuntu_16.04/Release.key
   become: yes
   become_user: root
 
