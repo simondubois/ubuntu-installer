@@ -1,0 +1,14 @@
+---
+
+- name: check installed
+  command: dpkg-query -l insomnia
+  register: insomnia_installed
+  failed_when: insomnia_installed.rc > 1
+  changed_when: no
+
+- name: install insomnia
+  apt:
+    deb: https://builds.insomnia.rest/downloads/ubuntu/latest
+  when: insomnia_installed.rc == 0
+  become: yes
+  become_user: root
