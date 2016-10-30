@@ -15,6 +15,7 @@ dev-deploy() {
 
 prod-run() {
     ansible-pull -U https://github.com/simondubois/ubuntu-installer.git -C v2
+    git remote set-url origin git@github.com:simondubois/$PRJ_NAME.git
 }
 
 if [ ! -d "$PRJ_PATH" ]; then
