@@ -12,16 +12,6 @@ touch $HISTFILE
 # Configure environment
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
-# Update PATH
-if hash npm 2> /dev/null; then
-    export PATH=$(npm bin 2> /dev/null):$PATH
-fi
-
-# Update PATH
-if hash composer 2> /dev/null; then
-    export PATH=$(composer config bin-dir --absolute):$PATH
-fi
-
 # Run docker container
 if ! hash dev-docker-run 2> /dev/null; then
     dev-docker-run () {
@@ -55,7 +45,7 @@ dev-migratedb () {
     php artisan migrate --seed
 }
 
-# If inside docker container
+# If not inside docker container
 if [ ! -f /.dockerenv ]; then
     mkdir -p $PRJ_PATH
 
@@ -70,13 +60,19 @@ if [ ! -f /.dockerenv ]; then
         docker start $PRJ_NAME
     fi
 
-    docker exec -ti $PRJ_NAME desk go $PRJ_NAME
+    docker exec -ti -u docker $PRJ_NAME desk go $PRJ_NAME
 
     exit
 fi
 
 # Configure environment
 export PRJ_PATH=$PWD
+
+# Update PATH
+export PATH=$PRJ_PATH/node_modules/.bin:$PATH
+
+# Update PATH
+export PATH=$PRJ_PATH/vendor/bin:$PATH
 
 # First run
 if [ ! -d "$PRJ_PATH/.git" ]

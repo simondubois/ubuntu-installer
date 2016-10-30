@@ -8,7 +8,6 @@ DOCKER_IMAGE=$PRJ_NAME
 # Deploy the application
 dev-deploy () {
     git clone git@github.com:c4webbutveckling/$PRJ_NAME.git ./ -b dev-bugfixes
-    composer install
     cp .env.example .env
     sed -i "/APP_KEY=/c\APP_KEY="`php -r 'echo md5(uniqid())."\n";'` .env
     sed -i "/DB_HOST=/c\DB_HOST=mysql" .env
@@ -18,6 +17,7 @@ dev-deploy () {
     sed -i "/CACHE_DRIVER=/c\CACHE_DRIVER=file" .env
     sed -i "/SESSION_DRIVER=/c\SESSION_DRIVER=file" .env
     stag-downloaddb
+    composer install
     dev-restoredb
     npm install
 }
