@@ -6,7 +6,7 @@
 CLI to set up my personal Ubuntu system
 </p>
 
-## Usage
+## How to install
 
 1. Install [Ubuntu 16.04](http://ubuntu.com/download/desktop).
 
@@ -30,7 +30,7 @@ sudo chown root:root /etc/sudoers.d/ansible
 sudo chmod 0440 /etc/sudoers.d/ansible
 ```
 
-6. Deploy and execute this repository :
+## How to run
 
 ```Shell
 ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
