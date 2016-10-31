@@ -1,0 +1,74 @@
+---
+
+- hosts: localhost
+  roles:
+
+    - sources
+    - languages
+    - inotify
+    - devices
+    - tlp
+    - powertop
+
+    - apport
+    - calculator
+    - gparted
+    - libreoffice
+    - nautilus
+    - rar
+    - terminal
+    - unetbootin
+
+    - avconv
+    - easytag
+    - eog
+    - rhythmbox
+    - gimp
+    - vlc
+    - kodi
+    - totem
+
+    - owncloud
+
+    - autorun
+    - {
+      role: 'gtk',
+      theme: 'Numix',
+    }
+    - datetime
+    - {
+      role: 'icons',
+      theme: 'Numix-Circle',
+    }
+    - indicator-sysmonitor
+    - textlines-indicator
+    - keybindings
+    - notifications
+    - redshift
+
+    - my-weather-indicator
+    - slack
+    - skype
+    - plowshare
+    - chromium-browser
+
+    - {
+      role: 'unity',
+      settings: [
+        { schema: 'com.canonical.Unity.Launcher', key: 'favorites', value: "['application://nautilus.desktop', 'application://chromium-browser.desktop', 'application://thunderbird.desktop', 'application://chrome-https___mail.google.com_mail_.desktop', 'application://chrome-https___trello.com_.desktop', 'application://chrome-https___www.duolingo.com_.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']" },
+      ],
+    }
+    - {
+      role: startup,
+      enable: [
+#        '/usr/share/applications/extras-my-weather-indicator.desktop',
+#        '/usr/share/applications/indicator-sysmonitor.desktop',
+        '/usr/share/applications/owncloud.desktop',
+        '/usr/share/applications/redshift-gtk.desktop',
+#        '/usr/share/applications/slack.desktop',
+#        '/usr/share/applications/thunderbird.desktop',
+#        '/usr/share/applications/tilda.desktop',
+#        "{{ ansible_env.HOME }}/.local/share/applications/chrome-https___trello.com_.desktop",
+#        "{{ ansible_env.HOME }}/.local/share/applications/textlines-indicator.desktop",
+      ],
+    }
