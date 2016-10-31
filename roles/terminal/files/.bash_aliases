@@ -9,7 +9,7 @@ alias lla='ls -lha'
 
 alias rm='trash-put'
 
-alias nano='nano -u -c -w -T 4'
+alias nano='nano -u -c -w -E -T 4'
 alias n='nautilus'
 
 alias mysql="mysql -h mysql -u root"
