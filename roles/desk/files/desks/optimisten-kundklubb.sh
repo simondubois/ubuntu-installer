@@ -8,6 +8,8 @@ DOCKER_IMAGE=$PRJ_NAME
 # Deploy the application
 dev-deploy () {
     git clone git@github.com:c4webbutveckling/$PRJ_NAME.git ./
+    chmod a+w -R storage/logs
+    chmod a+w -R storage/framework
     cp .env.example .env
     sed -i "/APP_KEY=/c\APP_KEY="`php -r 'echo md5(uniqid())."\n";'` .env
     sed -i "/DB_HOST=/c\DB_HOST=mysql" .env
@@ -16,7 +18,7 @@ dev-deploy () {
     sed -i "/DB_PASSWORD=/c\DB_PASSWORD=" .env
     sed -i "/CACHE_DRIVER=/c\CACHE_DRIVER=file" .env
     sed -i "/SESSION_DRIVER=/c\SESSION_DRIVER=file" .env
-	dev-restoredb
+    dev-restoredb
     composer install
     dev-migratedb
     npm install

@@ -9,8 +9,9 @@ DOCKER_IMAGE=$PRJ_NAME
 dev-deploy () {
     git clone git@github.com:c4webbutveckling/$PRJ_NAME.git ./ -b dev-bugfixes
     chmod a+w -R storage/logs
-    chmod a+w -R /var/www/html/bootstrap/cache
-    chmod a+w -R /var/www/html/storage/framework
+    chmod a+w -R bootstrap/cache
+    chmod a+w -R storage/framework
+    chmod a+w -R public/uploads
     cp .env.example .env
     sed -i "/APP_KEY=/c\APP_KEY="`php -r 'echo md5(uniqid())."\n";'` .env
     sed -i "/DB_HOST=/c\DB_HOST=mysql" .env
