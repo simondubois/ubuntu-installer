@@ -1,14 +1,14 @@
 #/bin/bash
 
 # Variables
-PRJ_NAME=lampgrossen
+PRJ_NAME=cameranordic
 PRJ_PATH="$HOME/www/$PRJ_NAME"
-PRJ_BRAN=theme-lampgrossen
+PRJ_BRAN=theme-cameranordic-2014
 
 # Download production database
 prod-downloadfiles () {
     rm "$PRJ_PATH/uploads"
-    scp -r lampgrossen.se:/home/lampgros/public_html/uploads "$PRJ_PATH"
+    scp -r cameranordic.se:/home/???/???/uploads "$PRJ_PATH"
     git checkout "$PRJ_PATH/uploads"
 }
 

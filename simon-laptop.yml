@@ -93,7 +93,6 @@
     - tilda
     - trash-cli
     - virtualbox
-    - ssh
 
     - {
       role: 'unity',
@@ -115,3 +114,5 @@
         "{{ ansible_env.HOME }}/.local/share/applications/textlines-indicator.desktop",
       ],
     }
+
+    - ssh
