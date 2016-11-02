@@ -1,16 +1,24 @@
 ---
 
-- name: install plowshare
-  apt:
-    name: plowshare
+- name: clone plowshare repository
+  git:
+    repo: https://github.com/mcrapet/plowshare.git
+    dest: /opt/plowshare
   become: yes
   become_user: root
+  register: clone_plowshare
 
-- name: install plowshare-modules
-  apt:
-    name: plowshare-modules
+- name: install plowshare
+  command: make install
+  args:
+    chdir: /opt/plowshare
   become: yes
   become_user: root
+  when: clone_plowshare.changed
+
+- name: install plowshare modules
+  command: plowmod --install
+  changed_when: false
 
 - name: install screen
   apt:
