@@ -8,7 +8,8 @@ PRJ_BRAN=$3
 # Deploy the application
 dev-deploy () {
     git clone git@github.com:c4webbutveckling/c4cms_new.git ./ -b $PRJ_BRAN  --single-branch
-   cat > $PRJ_PATH/inc/config.inc.php <<EOL
+    chmod a+w -R $PRJ_PATH/uploads
+    cat > $PRJ_PATH/inc/config.inc.php <<EOL
 <?php
 \$_SQL = array(
     'host' => 'mysql',

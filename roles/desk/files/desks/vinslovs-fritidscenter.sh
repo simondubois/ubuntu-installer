@@ -9,6 +9,7 @@ PRJ_BRAN=theme-fritidcenter
 prod-downloadfiles () {
     rm "$PRJ_PATH/uploads"
     scp -r dev.vinslovs-fritidscenter.se.cust.c4hosting.se:/home/vinslovs/dev.vinslovs-fritidscenter.se/uploads "$PRJ_PATH"
+    git checkout "$PRJ_PATH/uploads"
 }
 
 source ~/.desk/desks/_c4cms_new.sh $PRJ_NAME $PRJ_PATH $PRJ_BRAN

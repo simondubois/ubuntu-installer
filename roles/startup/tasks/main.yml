@@ -5,13 +5,10 @@
     autostart_system_path: "/etc/xdg/autostart"
     autostart_user_path: "{{ ansible_env.HOME }}/.config/autostart"
     autostart_disable:
-      - a11y-profile-manager-indicator-autostart.desktop
       - deja-dup-monitor.desktop
-      - gnome-software-service.desktop
-      - gnome-user-share-obexpush.desktop
-      # - indicator-bluetooth.desktop
       - onboard-autostart.desktop
       - orca-autostart.desktop
+      - telepathy-indicator.desktop
       - update-notifier.desktop
       - vino-server.desktop
 
