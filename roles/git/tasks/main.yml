@@ -28,6 +28,14 @@
     scope: global
   changed_when: false
 
+- name: set local core fileMode
+  git_config:
+    name: core.fileMode
+    value: "false"
+    scope: local
+    repo: {{ inventory_dir }}
+  changed_when: false
+
 - name: link excludesfile
   file:
     src: "{{ role_path }}/files/gitignore_global"
