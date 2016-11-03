@@ -33,7 +33,7 @@
     name: core.fileMode
     value: "false"
     scope: local
-    repo: {{ inventory_dir }}
+    repo: inventory_dir
   changed_when: false
 
 - name: link excludesfile
