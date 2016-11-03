@@ -45,4 +45,5 @@ ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
 - log in Skype.
 - install & configure Steam.
 - configure Kodi.
+- configure Atom.
 - calibrate power-tool.
