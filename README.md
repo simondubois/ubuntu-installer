@@ -8,7 +8,7 @@ CLI to set up my personal Ubuntu system
 
 ## How to install
 
-1. Install [Ubuntu 16.04](http://ubuntu.com/download/desktop).
+1. Install [Ubuntu 14.04](http://releases.ubuntu.com/14.04/).
 
 2. Set hostname to match one of the .yml file at the root of the repository.
 
@@ -45,4 +45,5 @@ ansible-pull -U https://github.com/simondubois/ubuntu-installer.git
 - log in Skype.
 - install & configure Steam.
 - configure Kodi.
+- configure Atom.
 - calibrate power-tool.
