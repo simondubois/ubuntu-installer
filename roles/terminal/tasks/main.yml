@@ -41,7 +41,7 @@
     - { key: '/apps/gnome-terminal/profiles/Default/background_darkness', type: 'float', value: '0.75' }
     - { key: '/apps/gnome-terminal/profiles/Default/background_color', type: 'string', value: '#151515' }
     - { key: '/apps/gnome-terminal/profiles/Default/foreground_color', type: 'string', value: '#A1B0B8' }
-    - { key: '/apps/gnome-terminal/profiles/Default/palette', type: 'string', value: '#252525:#FF443E:#C3D82C:#FFC135:#42A5F5:#D81B60:#00ACC1:#EF2929:#F5F5F5:#555753:#8AE234:#FCE94F:#729FCF:#AD7FA8:#34E2E2:#EEEEEC:' }
+    - { key: '/apps/gnome-terminal/profiles/Default/palette', type: 'string', value: '#252525252525:#FFFF44443E3E:#C3C2D8D82C2B:#FFFFC1C13535:#4242A5A4F5F5:#0000ACACC1C1:#0000CDCBCDCB:#F5F5F5F5F5F5:#4CCC4CCC4CCC:#FFFF00000000:#0000FFFF0000:#FFFFFFFF0000:#46458281B4AE:#FFFF0000FFFF:#0000FFFFFFFF:#FFFFFFFFFFFF' }
     - { key: '/apps/gnome-terminal/profiles/Default/scrollback_unlimited', type: 'bool', value: 'true' }
     - { key: '/apps/gnome-terminal/profiles/Default/silent_bell', type: 'bool', value: 'true' }
     - { key: '/apps/gnome-terminal/profiles/Default/use_theme_colors', type: 'bool', value: 'false' }
