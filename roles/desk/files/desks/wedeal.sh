@@ -17,8 +17,8 @@ dev-deploy () {
     sed -i "/CACHE_DRIVER=/c\CACHE_DRIVER=file" .env
     sed -i "/SESSION_DRIVER=/c\SESSION_DRIVER=file" .env
     stag-downloaddb
-    composer install
     dev-restoredb
+    composer install
     npm install
 }
 
