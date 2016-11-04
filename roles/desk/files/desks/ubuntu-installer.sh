@@ -10,7 +10,6 @@ export HISTFILE=$HOME/.bash_history_$PRJ_NAME
 dev-deploy() {
     ln -s "$HOME/.ansible/pull/simon-laptop" "$PRJ_PATH"
     cd "$PRJ_PATH"
-    atom -a $PRJ_PATH
 }
 
 prod-run() {

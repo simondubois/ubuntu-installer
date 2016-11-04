@@ -19,7 +19,6 @@ dev-docker-run() {
       -w /usr/src/app \
       --name $PRJ_NAME \
       simondubois/$DOCKER_IMAGE
-    atom -a $PRJ_PATH
 }
 
 # Deploy the application

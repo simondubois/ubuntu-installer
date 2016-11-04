@@ -54,7 +54,6 @@ if [ ! -f /.dockerenv ]; then
 
     if [ $? -eq 1 ]; then
         dev-docker-run
-        atom -a $PRJ_PATH
     fi
 
     if [ "$STATUS" == "false" ]; then
