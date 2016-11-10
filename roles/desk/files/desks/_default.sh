@@ -41,10 +41,12 @@ dev-restoredb () {
 }
 
 # Restore & migrate local database
-dev-migratedb () {
-    dev-restoredb
-    php artisan migrate --seed
-}
+if ! hash dev-migratedb 2> /dev/null; then
+    dev-migratedb () {
+        dev-restoredb
+        php artisan migrate --seed
+    }
+fi
 
 # If not inside docker container
 if [ ! -f /.dockerenv ]; then
@@ -74,9 +76,14 @@ export PATH=$PRJ_PATH/node_modules/.bin:$PATH
 # Update PATH
 export PATH=$PRJ_PATH/vendor/bin:$PATH
 
+# Config git
+git config --global core.excludesfile ~/.gitignore_global
+git config --global user.email "simon@dubandubois.com"
+git config --global user.name "Simon Dubois"
+git config --global push.default simple
+
 # First run
 if [ ! -d "$PRJ_PATH/.git" ]
 then
-    git config --global core.excludesfile ~/.gitignore_global
     dev-deploy
 fi

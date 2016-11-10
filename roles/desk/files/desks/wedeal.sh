@@ -35,6 +35,7 @@ dev-migratedb () {
     php artisan migrate --seed
     php artisan images:detect-missing --fix
     php artisan classifications:detect-missing --fix
+    php artisan prices:detect-missing --fix
 }
 
 # Scan webpages
