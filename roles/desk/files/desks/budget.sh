@@ -27,7 +27,7 @@ dev-deploy () {
 
 # Restore local database
 dev-migratedb () {
-    replace "/*!40103 SET TIME_ZONE='+00:00' */;" "/*!40103 SET TIME_ZONE='-02:00' */;" -- "$PRJ_PATH/storage/database.sql"
+    sed -i 's/+00:00/-02:00/' "$PRJ_PATH/storage/database.sql"
     dev-restoredb
     php artisan accounts:delete 5
     php artisan users:delete -e 1
