@@ -31,8 +31,8 @@ dev-migratedb () {
     dev-restoredb
     php artisan accounts:delete 5
     php artisan users:delete -e 1
-    php artisan amounts:convert
     php artisan migrate --seed
+    php artisan amounts:convert
 }
 
 source ~/.desk/desks/_default.sh $PRJ_NAME $PRJ_PATH $DOCKER_IMAGE
